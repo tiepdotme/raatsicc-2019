@@ -1,0 +1,27 @@
+body {
+  @apply antialiased;
+}
+
+.Title,
+.Heading,
+.Subheading {
+  @apply font-serif font-bold;
+  letter-spacing: -0.015em;
+}
+
+.Subheading {
+  @apply text-2xl leading-snug;
+}
+
+.Heading {
+  @apply text-3xl leading-snug;
+}
+
+.Title {
+  @apply text-4xl leading-tight;
+}
+
+/* lower levels */
+.Meta {
+  @apply text-sm text-gray-500;
+}

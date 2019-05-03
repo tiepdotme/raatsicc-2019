@@ -1,0 +1,15 @@
+/* https://next.tailwindcss.com/docs/installation */
+
+@import "./theme/font-face";
+@import "./theme/layout";
+@import "./theme/typography";
+
+@tailwind base;
+
+@tailwind components;
+
+/* …custom component classes; stuff that you'd want loaded *before* the utilities */
+
+@tailwind utilities;
+
+/* …finally, custom utils */
