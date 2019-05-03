@@ -1,11 +1,11 @@
 <template>
   <div id="js-siteNavMenu" class="split">
     <nuxt-link
-      class="Nav-link"
       v-for="item in nav.items"
       :key="item.link"
       :to="item.link"
       :exact="item.exact"
+      class="Nav-link"
     >
       <span>{{ item.label }}</span>
     </nuxt-link>

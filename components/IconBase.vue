@@ -1,13 +1,14 @@
 <template>
   <div class="u-icon">
-    <svg xmlns="http://www.w3.org/2000/svg"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
       :width="width"
       :height="height"
-      viewBox="0 0 24 24"
+      viewBox="0 0 45 45"
       :aria-labelledby="iconName"
       role="presentation"
     >
-      <title :id="iconName" lang="en">{{iconName}} icon</title>
+      <title :id="iconName" lang="en">{{ iconName }} icon</title>
       <g :fill="iconColor">
         <slot />
         <!-- <path fill="none" d="M0 0h24v24H0z"/> -->
@@ -19,9 +20,9 @@
 </template>
 
 <script>
-/* 
+/*
 
-  https://vuejs.org/v2/cookbook/editable-svg-icons.html 
+  https://vuejs.org/v2/cookbook/editable-svg-icons.html
 
 */
 export default {

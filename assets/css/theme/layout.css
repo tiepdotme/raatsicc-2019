@@ -18,12 +18,12 @@ html {
 
 /* Grid */
 .Grid {
-  @apply flex;
-  /* @apply -mx-4; */
+  @apply flex -mx-4;
 }
 
 .Grid-item {
-  /* @apply px-4; */
+  @apply px-4;
+  /* @apply flex-grow; */
 }
 
 /* section */

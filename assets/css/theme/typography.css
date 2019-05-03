@@ -4,9 +4,14 @@ body {
 
 .Title,
 .Heading,
-.Subheading {
+.Subheading,
+.Metaheading {
   @apply font-serif font-bold;
   letter-spacing: -0.015em;
+}
+
+.Metaheading {
+  @apply text-lg leading-snug;
 }
 
 .Subheading {

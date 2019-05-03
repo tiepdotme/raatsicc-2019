@@ -2,14 +2,14 @@
   <section class="Section">
     <div class="flex">
       <HeroBlock
-        class="md:w-1/2 lg:w-1/4"
         v-for="item in blockItems"
         :key="item.label"
         :link="item.link"
         :label="item.label"
         :image="item.image"
         :color="item.color"
-      ></HeroBlock>
+        class="md:w-1/2 lg:w-1/4"
+      />
     </div>
   </section>
 </template>
@@ -26,13 +26,13 @@ export default {
       blockItems: [
         {
           label: "About us",
-          link: "/",
+          link: "/about",
           image: "block-bw-flying.jpg",
           color: "red"
         },
         {
-          label: "How we help",
-          link: "/",
+          label: "What we do",
+          link: "/what-we-do",
           image: "block-bw-looking.jpg",
           color: "green"
         },
