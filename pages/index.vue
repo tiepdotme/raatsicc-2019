@@ -1,14 +1,17 @@
 <template>
   <main class="container">
-    <p v-for="(post, index) in allPosts" :key="index">
+    <div v-for="(post, index) in allPosts" :key="index">
       <nuxt-link :to="`/blog/${post.slug}`">
         {{ post.title }}
       </nuxt-link>
-    </p>
+      <div v-html="$md.render(post.body)" />
+    </div>
     <HeroBlocksHome />
     <HomePost />
   </main>
 </template>
+
+
 
 <script>
 import HeroBlocksHome from "~/components/HeroBlocksHome.vue";

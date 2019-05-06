@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc4",
+    "@nuxtjs/markdownit": "^1.2.4",
     "graphql-tag": "^2.10.1",
     "jstransformer-markdown-it": "^2.1.0",
     "netlify-cms": "^2.9.1",
     "nuxt": "^2.6.3",
-    "nuxt-netlify-cms": "^4.0.0",
     "nuxt-purgecss": "^0.2.1",
     "postcss-easy-import": "^3.0.0",
     "postcss-import": "^12.0.1",
