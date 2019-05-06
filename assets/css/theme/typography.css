@@ -2,6 +2,12 @@ body {
   @apply antialiased;
 }
 
+/*
+
+  Headings
+
+ */
+
 .Title,
 .Heading,
 .Subheading,
@@ -26,7 +32,12 @@ body {
   @apply text-4xl leading-tight;
 }
 
-/* lower levels */
+/*
+
+  Text & lower levels
+
+*/
+
 .Meta {
   @apply text-sm text-gray-500;
 }
