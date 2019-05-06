@@ -35,7 +35,16 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  // modules: ["nuxt-netlify-cms"],
+  modules: [
+    // "nuxt-netlify-cms"
+    "@nuxtjs/apollo"
+  ],
+
+  apollo: {
+    clientConfigs: {
+      default: "~/apollo/config.js"
+    }
+  },
 
   /*
    ** Build configuration: extend webpack config here

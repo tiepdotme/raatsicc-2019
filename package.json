@@ -13,6 +13,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc4",
+    "graphql-tag": "^2.10.1",
     "jstransformer-markdown-it": "^2.1.0",
     "netlify-cms": "^2.9.1",
     "nuxt": "^2.6.3",
