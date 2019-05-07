@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <ColumnContent>
+    <ContentColumn>
       <img src="/images/map.jpg" alt="" />
 
       <div class="Grid pt-4">
@@ -26,11 +26,11 @@
           x
         </div>
       </div>
-    </ColumnContent>
+    </ContentColumn>
 
     <hr class="border-b border-gray-300 m-0 mt-12" />
 
-    <ColumnContent>
+    <ContentColumn>
       <div class="Grid">
         <div class="Grid-item w-1/2">
           <CardCta
@@ -49,19 +49,19 @@
           />
         </div>
       </div>
-    </ColumnContent>
+    </ContentColumn>
   </main>
 </template>
 
 <script>
 import CardCta from "~/components/CardCta";
-import ColumnContent from "~/components/ColumnContent";
+import ContentColumn from "~/components/ContentColumn";
 import locations from "~/data/locations";
 
 export default {
   components: {
     CardCta,
-    ColumnContent
+    ContentColumn
   },
   data: () => ({ locations })
 };

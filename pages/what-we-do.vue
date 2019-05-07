@@ -2,26 +2,26 @@
   <main class="container">
     <HeroBlocksWhat />
 
-    <ColumnText>
+    <ContentColumn>
       <h3 class="Heading italic">
         The RAATSICC philosophy is that no-one knows our children and families
         in our remote communities better than the families themselves.
       </h3>
-    </ColumnText>
-    <ColumnText>
+    </ContentColumn>
+    <ContentColumn>
       Yo.
-    </ColumnText>
+    </ContentColumn>
   </main>
 </template>
 
 <script>
 import HeroBlocksWhat from "~/components/HeroBlocksWhat.vue";
-import ColumnText from "~/components/ColumnText.vue";
+import ContentColumn from "~/components/ContentColumn.vue";
 
 export default {
   components: {
     HeroBlocksWhat,
-    ColumnText
+    ContentColumn
   },
   data() {
     return {};
