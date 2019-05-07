@@ -8,6 +8,10 @@ body {
 
  */
 
+.Markdown h1,
+.Markdown h2,
+.Markdown h3,
+.Markdown h4,
 .Title,
 .Heading,
 .Subheading,
@@ -16,20 +20,30 @@ body {
   letter-spacing: -0.015em;
 }
 
+.Markdown h4,
 .Metaheading {
+  @apply text-base leading-snug;
+}
+
+.Markdown h3,
+.Subheading {
   @apply text-lg leading-snug;
 }
 
-.Subheading {
-  @apply text-2xl leading-snug;
-}
-
+.Markdown h2,
 .Heading {
   @apply text-3xl leading-snug;
 }
 
+.Markdown h1,
 .Title {
   @apply text-4xl leading-tight;
+}
+
+/* Markdown theme */
+.Markdown h2 {
+  border-top: 1px solid theme(colors.gray.400);
+  padding-top: theme(spacing.1);
 }
 
 /*
@@ -40,4 +54,16 @@ body {
 
 .Meta {
   @apply text-sm text-gray-500;
+}
+
+/* Markdown theme */
+
+.Markdown a {
+  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.Markdown ul {
+  list-style: disc;
+  padding-left: theme(spacing.4);
 }
