@@ -37,7 +37,7 @@ export default {
           color: "green"
         },
         {
-          label: "Our Constituion",
+          label: "Our Constitution",
           link: "/",
           image: "block-bw-table.jpg",
           color: "blue"
