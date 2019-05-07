@@ -26,7 +26,7 @@
               Protecting Kids Our Way.
             </h2>
 
-            <hr class="border-b border-brand-primary m-0 mt-4" />
+            <hr class="Nav-tagline-rule" />
 
             <NavList />
           </div>
@@ -56,12 +56,26 @@ export default {
 
 .headroom--pinned .Nav {
   box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.05);
+  padding-top: 0;
+}
+
+.headroom--pinned .Nav-tagline {
+  height: 0;
+}
+
+.headroom--pinned .Nav-tagline,
+.headroom--pinned .Nav-tagline-rule {
+  margin: 0;
+  opacity: 0;
 }
 
 .headroom--top .Nav {
   box-shadow: initial;
 }
 
+/* NAV */
+
+.headroom--top .Nav,
 .Nav {
   @apply pt-8 border-b border-gray-300;
 }
@@ -70,7 +84,18 @@ export default {
   @apply font-bold;
 }
 
+.headroom--top .Nav-tagline,
 .Nav-tagline {
   @apply text-brand-primary italic;
+  height: auto;
+  opacity: 1;
+  transition: all 250ms ease;
+}
+
+.headroom--top .Nav-tagline-rule,
+.Nav-tagline-rule {
+  @apply border-b border-brand-primary m-0 mt-4;
+  opacity: 1;
+  transition: all 250ms ease;
 }
 </style>

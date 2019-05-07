@@ -9,7 +9,15 @@
 </template>
 
 <style>
+.headroom--pinned .Nav-acronym {
+  margin: 0;
+  opacity: 0;
+}
+
+.headroom--top .Nav-acronym,
 .Nav-acronym {
   @apply font-serif font-bold text-center mt-3;
+  opacity: 1;
+  transition: all 250ms ease;
 }
 </style>
