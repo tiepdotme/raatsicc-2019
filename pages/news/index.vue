@@ -1,6 +1,5 @@
 <template>
   <main class="container">
-    <HeroBlocksHome />
     <ContentColumn text>
       <PostExcerpt
         v-for="(post, index) in allPosts"
@@ -19,7 +18,6 @@
 
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
-import HeroBlocksHome from "~/components/HeroBlocksHome.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 
@@ -27,7 +25,7 @@ export default {
   apollo: {
     allPosts: gql`
       {
-        allPosts(first: 1) {
+        allPosts(first: 6) {
           _firstPublishedAt
           slug
           tags
@@ -47,11 +45,7 @@ export default {
   },
   components: {
     ContentColumn,
-    HeroBlocksHome,
     PostExcerpt
-  },
-  data() {
-    return {};
   }
 };
 </script>
