@@ -7,6 +7,14 @@ html {
   overflow-y: scroll; */
 }
 
+body {
+  @apply min-h-screen;
+}
+
+main {
+  @apply min-h-full;
+}
+
 /* container */
 .container {
   @apply bg-white;
@@ -29,6 +37,10 @@ html {
 /* section */
 .Section {
   @apply pt-12;
+}
+
+.Subsection {
+  @apply pt-8;
 }
 
 /* post */

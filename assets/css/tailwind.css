@@ -3,6 +3,7 @@
 @import "./theme/font-face";
 @import "./theme/layout";
 @import "./theme/typography";
+@import "./theme/typography-spacing";
 
 @tailwind base;
 
