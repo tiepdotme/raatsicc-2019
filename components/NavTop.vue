@@ -26,7 +26,7 @@
               Protecting Kids Our Way.
             </h2>
 
-            <hr class="border-b border-brand-primary m-0 mt-4">
+            <hr class="border-b border-brand-primary m-0 mt-4" />
 
             <NavList />
           </div>

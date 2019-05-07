@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <HeroBlocksAbout/>
+    <HeroBlocksAbout />
   </main>
 </template>
 
@@ -17,5 +17,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

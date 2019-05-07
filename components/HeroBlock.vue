@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="link" class="Block" :class="bgColorClass">
     <!-- reactive image didn't work in assets -->
-    <img class="Block-image" :src="`/images/${image}`" :alt="label">
+    <img class="Block-image" :src="`/images/${image}`" :alt="label" />
     <div class="Block-inner">
       <h3 class="Title" :class="colorClass">{{ label }}</h3>
     </div>

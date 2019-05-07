@@ -2,14 +2,14 @@
   <section class="Section">
     <div class="flex">
       <HeroBlock
-        class="md:w-1/2 lg:w-1/4"
         v-for="item in blockItems"
         :key="item.label"
         :link="item.link"
         :label="item.label"
         :image="item.image"
         :color="item.color"
-      ></HeroBlock>
+        class="md:w-1/2 lg:w-1/4"
+      />
     </div>
   </section>
 </template>
@@ -54,5 +54,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

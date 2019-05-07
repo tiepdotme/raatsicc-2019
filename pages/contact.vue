@@ -1,22 +1,22 @@
 <template>
   <main class="container">
     <ColumnContent>
-      <img src="/images/map.jpg" alt="">
+      <img src="/images/map.jpg" alt="" />
 
       <div class="Grid pt-4">
-        <div
-          v-for="item in locations.head"
-          :key="item.name"
-          class="Grid-item"
-        >
+        <div v-for="item in locations.head" :key="item.name" class="Grid-item">
           <ul>
             <li class="font-bold">
               {{ item.name }}
             </li>
             <li>{{ item.address1 }}</li>
             <li>{{ item.address2 }}</li>
-            <li><a :href="`tel:${item.phone}`">{{ item.phone }}</a></li>
-            <li><a :href="`mailto:${item.email}`">{{ item.email }}</a></li>
+            <li>
+              <a :href="`tel:${item.phone}`">{{ item.phone }}</a>
+            </li>
+            <li>
+              <a :href="`mailto:${item.email}`">{{ item.email }}</a>
+            </li>
           </ul>
         </div>
         <div class="Grid-item">
@@ -28,7 +28,7 @@
       </div>
     </ColumnContent>
 
-    <hr class="border-b border-gray-300 m-0 mt-12">
+    <hr class="border-b border-gray-300 m-0 mt-12" />
 
     <ColumnContent>
       <div class="Grid">
@@ -67,5 +67,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

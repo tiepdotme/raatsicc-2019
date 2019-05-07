@@ -11,8 +11,6 @@
   </main>
 </template>
 
-
-
 <script>
 import HeroBlocksHome from "~/components/HeroBlocksHome.vue";
 import HomePost from "~/components/HomePost.vue";
@@ -20,13 +18,15 @@ import gql from "graphql-tag";
 
 export default {
   apollo: {
-    allPosts: gql`{
-      allPosts {
-        title
-        body
-        slug
+    allPosts: gql`
+      {
+        allPosts {
+          title
+          body
+          slug
+        }
       }
-    }`
+    `
   },
   components: {
     HeroBlocksHome,
@@ -38,5 +38,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

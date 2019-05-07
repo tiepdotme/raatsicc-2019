@@ -8,7 +8,7 @@
           </div>
           <div class="w-1/2 sm:w-5/6 lg:w-3/4">
             <NavList />
-            <hr class="border-b border-gray-300 m-0 mb-4">
+            <hr class="border-b border-gray-300 m-0 mb-4" />
           </div>
         </div>
       </nav>
@@ -38,5 +38,4 @@ export default {
 .Nav {
   /* @apply pt-8 border-t border-gray-300; */
 }
-
 </style>

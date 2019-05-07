@@ -4,7 +4,8 @@
 
     <ColumnText>
       <h3 class="Heading italic">
-        The RAATSICC philosophy is that no-one knows our children and families in our remote communities better than the families themselves.
+        The RAATSICC philosophy is that no-one knows our children and families
+        in our remote communities better than the families themselves.
       </h3>
     </ColumnText>
     <ColumnText>
@@ -28,5 +29,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

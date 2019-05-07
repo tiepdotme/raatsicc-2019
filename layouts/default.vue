@@ -1,8 +1,8 @@
 <template>
   <div>
-    <NavTop/>
-    <nuxt/>
-    <NavBottom/>
+    <NavTop />
+    <nuxt />
+    <NavBottom />
   </div>
 </template>
 
@@ -18,5 +18,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

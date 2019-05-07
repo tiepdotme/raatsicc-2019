@@ -27,9 +27,9 @@ export default {
     icon: String,
     lede: String,
     link: String,
-    linkLabel: String,
+    linkLabel: String
   }
-}
+};
 </script>
 
 <style scoped>
@@ -44,5 +44,4 @@ export default {
 .Card-link {
   @apply block px-4 py-3 text-white bg-brand-blue;
 }
-
 </style>
