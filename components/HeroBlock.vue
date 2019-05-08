@@ -4,12 +4,15 @@
     :to="to"
     :href="href"
     class="Block"
-    :class="bgColorClass"
+    :class="rootClasses"
   >
     <!-- reactive image didn't work in assets -->
     <img class="Block-image" :src="`/images/${image}`" :alt="label" />
     <div class="Block-inner">
-      <h3 class="Title" :class="colorClass">{{ label }}</h3>
+      <h3 class="Title mb-1" :class="colorClass">{{ label }}</h3>
+      <p v-if="sublabel" class="Subheading italic" :class="colorClass">
+        {{ sublabel }}
+      </p>
     </div>
   </component>
 </template>
@@ -19,13 +22,18 @@ export default {
   props: {
     image: String,
     label: String,
+    sublabel: String,
     to: String,
     href: String,
     color: String
   },
   computed: {
-    bgColorClass() {
-      return this.color && `bg-brand-${this.color}`;
+    rootClasses() {
+      return [
+        this.color && `bg-brand-${this.color}`
+        // this doesn't fuck work WTF?
+        // this.to === this.$route.params.page && "is-active"
+      ];
     },
     colorClass() {
       return this.color !== "" && "text-white";
@@ -36,14 +44,17 @@ export default {
       } else if (this.href) {
         return "a";
       } else {
-        return "button";
+        return "div";
       }
     }
+  },
+  mounted() {
+    console.log(this.$route.params.page);
   }
 };
 </script>
 
-<style>
+<style lang="postcss">
 /* md:w-1/2 lg:w-1/4 */
 .Block {
   @apply relative overflow-hidden flex-grow;
@@ -57,6 +68,10 @@ export default {
 
 .Block-inner {
   @apply px-6 py-5 relative;
+}
+
+.Block-inner h3 {
+  @apply mb-1 !important;
 }
 
 .Block-image {

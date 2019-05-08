@@ -38,6 +38,7 @@ module.exports = {
   modules: [
     // "nuxt-netlify-cms"
     "@nuxtjs/apollo",
+    "@nuxtjs/axios",
     "@nuxtjs/markdownit"
   ],
 
@@ -46,6 +47,8 @@ module.exports = {
       default: "~/apollo/config.js"
     }
   },
+
+  axios: {},
 
   markdownit: {
     injected: true,

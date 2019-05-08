@@ -1,10 +1,10 @@
 <template>
   <main class="container">
     <HeroBlocksAbout />
-    <ContentColumn id="story" text>
+    <ContentColumn v-if="aboutPage" id="story" text>
       <div class="Markdown" v-html="$md.render(aboutPage.story)" />
     </ContentColumn>
-    <ContentColumn id="team" text>
+    <ContentColumn v-if="aboutPage" id="team" text>
       <div class="Markdown" v-html="$md.render(aboutPage.team)" />
       <div class="Grid flex-wrap Subsection">
         <CardTeamMember
@@ -18,7 +18,7 @@
         ></CardTeamMember>
       </div>
     </ContentColumn>
-    <ContentColumn id="constitution" text>
+    <ContentColumn v-if="aboutPage" id="constitution" text>
       <div class="Markdown">
         <h2>Our Constitution</h2>
         <p>
@@ -28,7 +28,7 @@
         </p>
       </div>
     </ContentColumn>
-    <ContentColumn id="member" text>
+    <ContentColumn v-if="aboutPage" id="member" text>
       <div class="Markdown" v-html="$md.render(aboutPage.membership)" />
     </ContentColumn>
   </main>

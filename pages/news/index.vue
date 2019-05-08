@@ -1,7 +1,7 @@
 <template>
   <main class="container">
-    <ContentColumn text>
-      <PostExcerpt
+    <ContentColumn>
+      <Post
         v-for="(post, index) in allPosts"
         :key="index"
         :slug="post.slug"
@@ -11,28 +11,27 @@
         :date="post.datePublished"
         :author="post.author.name"
         :excerpt="post.excerpt"
-      ></PostExcerpt>
+      ></Post>
     </ContentColumn>
   </main>
 </template>
 
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
-import PostExcerpt from "~/components/PostExcerpt.vue";
+import Post from "~/components/Post.vue";
 import gql from "graphql-tag";
 
 export default {
   apollo: {
     allPosts: gql`
       {
-        allPosts(first: 6, orderBy: [datePublished_DESC]) {
+        allPosts(first: 9, orderBy: [datePublished_DESC]) {
           _firstPublishedAt
           slug
           tags
           title
           excerpt
           datePublished
-          body
           image {
             url
           }
@@ -45,9 +44,7 @@ export default {
   },
   components: {
     ContentColumn,
-    PostExcerpt
+    Post
   }
 };
 </script>
-
-<style></style>

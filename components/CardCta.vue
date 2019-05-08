@@ -8,7 +8,7 @@
         <BaselinePanTool24px v-else-if="icon === 'member'" />
         <IconSocialFacebookRev v-else-if="icon === 'facebook'" />
       </IconBase>
-      <div class="Metaheading font-sans text-brand-blue mt-4">
+      <div class="Metaheading text-brand-blue mt-4">
         {{ lede }}
         <br />
         <span class="font-medium" v-html="sublede" />

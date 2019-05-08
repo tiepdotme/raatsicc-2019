@@ -1,10 +1,10 @@
-/* import axios from "axios";
+// import axios from "axios";
 
 export function state() {
   return {
     currentPage: "/",
-    isMobileNavVisible: false,
-    contactData: null
+    isMobileNavVisible: false
+    // contactData: null
   };
 }
 
@@ -13,14 +13,14 @@ export const mutations = {
     state.currentPage = page;
   },
 
-  SET_CONTACT_DATA(state, data) {
-    state.contactData = data;
-  },
+  // SET_CONTACT_DATA(state, data) {
+  //   state.contactData = data;
+  // },
 
   SET_MOBILENAV_VISIBILITY(state, visibility) {
     state.isMobileNavVisible = visibility;
   }
-}; */
+};
 
 /* export const actions = {
   async FETCH_CONTACT_DATA(context) {

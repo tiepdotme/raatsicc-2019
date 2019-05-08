@@ -1,5 +1,11 @@
+/*
+
+  Base
+
+ */
+
 body {
-  @apply antialiased;
+  @apply antialiased text-gray-900;
 }
 
 /*
@@ -8,21 +14,20 @@ body {
 
  */
 
-.Markdown h1,
-.Markdown h2,
-.Markdown h3,
-.Markdown h4,
-.Title,
-.Heading,
-.Subheading,
-.Metaheading {
-  @apply font-serif font-bold;
-  letter-spacing: -0.015em;
-}
 
 .Markdown h4,
 .Metaheading {
-  @apply text-base leading-snug;
+  @apply font-sans font-bold text-base leading-snug;
+}
+
+.Markdown h1,
+.Markdown h2,
+.Markdown h3,
+.Title,
+.Heading,
+.Subheading {
+  @apply font-serif font-bold;
+  letter-spacing: -0.015em;
 }
 
 .Markdown h3,
@@ -60,13 +65,20 @@ body {
 }
 
 /* Markdown theme */
-
 .Markdown a {
   text-decoration: underline;
   text-decoration-line: underline;
 }
 
+.Markdown ul,
+.Markdown ol {
+  padding-left: theme(spacing.6);
+}
+
 .Markdown ul {
   list-style: disc;
-  padding-left: theme(spacing.4);
+}
+
+.Markdown ol {
+  list-style: decimal;
 }

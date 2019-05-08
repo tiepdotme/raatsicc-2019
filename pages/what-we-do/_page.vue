@@ -1,16 +1,7 @@
 <template>
   <main class="container">
-    <section class="Section">
-      <div class="flex">
-        <!-- pretter-ignore -->
-        <HeroBlock
-          label="Corporate Unit"
-          image="block-bw-fierce.jpg"
-          color="red"
-          class="md:w-1/2 lg:w-1/4"
-        />
-      </div>
-    </section>
+    <HeroBlocksWhat class="nested-blocks" />
+
     <ContentColumn v-if="whatPage" id="story" text>
       <div class="Markdown" v-html="$md.render(whatPage.body)" />
     </ContentColumn>
@@ -19,7 +10,7 @@
 
 <script>
 import ContentColumn from "~/components/ContentColumn";
-import HeroBlock from "~/components/HeroBlock.vue";
+import HeroBlocksWhat from "~/components/HeroBlocksWhat.vue";
 import gql from "graphql-tag";
 
 export default {
@@ -47,7 +38,26 @@ export default {
   },
   components: {
     ContentColumn,
-    HeroBlock
+    HeroBlocksWhat
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+/* .nested-blocks >>> .Block:not(:hover):not(.nuxt-link-active) {
+  @apply bg-brand-dust;
+} */
+
+.nested-blocks >>> .nuxt-link-active {
+  @apply bg-brand-primary;
+}
+
+.nested-blocks >>> .nuxt-link-active .Block-image {
+  @apply opacity-0;
+}
+
+.nested-blocks >>> .nuxt-link-active .Block-inner h3,
+.nested-blocks >>> .nuxt-link-active .Block-inner p {
+  @apply text-gray-900;
+}
+</style>

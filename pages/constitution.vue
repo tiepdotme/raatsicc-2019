@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <ContentColumn text>
+    <ContentColumn v-if="constitutionPage" text>
       <div class="Markdown" v-html="$md.render(constitutionPage.body)" />
     </ContentColumn>
   </main>

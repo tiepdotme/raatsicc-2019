@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss" scoped>
 :root {
   --aspect-ratio: 9 / 16;
 }

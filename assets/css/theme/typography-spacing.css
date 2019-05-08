@@ -50,14 +50,14 @@ blockquote {
 .Markdown h1:not(:first-child),
 .Markdown h2:not(:first-child),
 .Markdown h3:not(:first-child),
-.Markdown h4:not(:first-child),
+/* .Markdown h4:not(:first-child), */
 .HeadingSpace:not(:first-child),
 .s-heading:not(:first-child) {
-  @apply mt-6;
+  @apply mt-10;
 }
 
 .s-headingBottom:not(:first-child) {
-  @apply mb-6;
+  @apply mb-10;
 }
 
 /*

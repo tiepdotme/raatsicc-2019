@@ -11,7 +11,7 @@
     <ContentColumn>
       <div class="Markdown">
         <p>We have four pages here…</p>
-        <ul>
+        <ul v-if="allWhatPages">
           <li v-for="item in allWhatPages" :key="item.title">
             <nuxt-link :to="`/what-we-do/${item.slug}`">
               {{ item.title }}
