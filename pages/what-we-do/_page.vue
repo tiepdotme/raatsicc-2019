@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <ContentColumn id="story" text>
+    <ContentColumn v-if="whatPage" id="story" text>
       <div class="Markdown" v-html="$md.render(whatPage.body)" />
     </ContentColumn>
   </main>
@@ -14,8 +14,8 @@ export default {
   apollo: {
     whatPage: {
       query: gql`
-        query WhatPage($slug: String!) {
-          allWhatPages(filter: { slug: { eq: $slug } }) {
+        query whatPage($slug: String!) {
+          whatPage(filter: { slug: { eq: $slug } }) {
             title
             body
           }
@@ -23,12 +23,12 @@ export default {
       `,
       prefetch({ route }) {
         return {
-          slug: route.params.slug
+          slug: route.params.page
         };
       },
       variables() {
         return {
-          slug: this.$route.params.slug
+          slug: this.$route.params.page
         };
       }
     }
