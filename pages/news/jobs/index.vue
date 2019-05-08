@@ -25,7 +25,7 @@ export default {
   apollo: {
     allPosts: gql`
       {
-        allPosts(first: 6, orderBy: [datePublished_DESC]) {
+        allPosts(first: 9, filter: { tags: { eq: "job" } }) {
           _firstPublishedAt
           slug
           tags

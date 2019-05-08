@@ -1,14 +1,12 @@
 <template>
   <main class="container">
     <ContentColumn>
-      <img src="/images/map.jpg" alt="" />
+      <img src="/images/map.jpg" alt />
 
       <div class="Grid pt-4">
         <div v-for="item in locations.head" :key="item.name" class="Grid-item">
           <ul>
-            <li class="font-bold">
-              {{ item.name }}
-            </li>
+            <li class="font-bold">{{ item.name }}</li>
             <li>{{ item.address1 }}</li>
             <li>{{ item.address2 }}</li>
             <li>
@@ -19,12 +17,8 @@
             </li>
           </ul>
         </div>
-        <div class="Grid-item">
-          x
-        </div>
-        <div class="Grid-item">
-          x
-        </div>
+        <div class="Grid-item">x</div>
+        <div class="Grid-item">x</div>
       </div>
     </ContentColumn>
 
@@ -34,18 +28,20 @@
       <div class="Grid">
         <div class="Grid-item w-1/2">
           <CardCta
-            icon="social-facebook"
+            icon="facebook"
             lede="Follow us on Facebook"
+            sublede="Up to the minute news"
             link-label="RAATSICC on Facebook"
-            link="http://www.facebook.com/raatsicc"
+            href="http://www.facebook.com/raatsicc"
           />
         </div>
         <div class="Grid-item w-1/2">
           <CardCta
-            icon="social-facebook"
-            lede="News to share? We'll list it for you"
+            icon="share-news"
+            lede="News to share?"
+            sublede="We'll list it for you"
             link-label="goodnews@raatsicc.org.au"
-            link="mailto:goodnews@raatsicc.org.au"
+            href="mailto:goodnews@raatsicc.org.au"
           />
         </div>
       </div>
@@ -66,5 +62,3 @@ export default {
   data: () => ({ locations })
 };
 </script>
-
-<style></style>

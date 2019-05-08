@@ -18,7 +18,7 @@ export default {
     },
     {
       label: "Jobs",
-      link: "/jobs"
+      link: "/news/jobs"
     },
     {
       label: "Contact",

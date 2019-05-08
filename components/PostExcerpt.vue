@@ -21,7 +21,7 @@
       <nuxt-link class="text-brand-primary" :to="`/news/${slug}`">
         Continue reading
         <IconBase class="ml-" height="14" width="14">
-          <IconAction></IconAction>
+          <BaselineArrowForward24px />
         </IconBase>
       </nuxt-link>
     </p>
@@ -30,18 +30,18 @@
 
 <script>
 import IconBase from "~/components/IconBase";
-import IconAction from "~/components/icons/IconAction";
+import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 
 export default {
   components: {
     IconBase,
-    IconAction
+    BaselineArrowForward24px
   },
   props: ["slug", "title", "tags", "date", "author", "image", "excerpt"]
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .Post {
   @apply block;
 }

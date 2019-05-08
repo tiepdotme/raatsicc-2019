@@ -14,10 +14,42 @@
         :excerpt="post.excerpt"
       ></PostExcerpt>
     </ContentColumn>
+    <hr class="Section-rule" />
+    <ContentColumn text>
+      <div class="Grid">
+        <div class="Grid-item w-1/2">
+          <CardCta
+            icon="member"
+            lede="Join and contribute"
+            sublede="Our members help us blah blah…"
+            link-label="Become a RAATSICC member"
+            to="/about#member"
+          />
+        </div>
+        <div class="Grid-item w-1/2">
+          <CardCta
+            icon="share-news"
+            lede="News to share?"
+            sublede="Send it to us, we'll list it for you"
+            link-label="goodnews@raatsicc.org.au"
+            href="mailto:goodnews@raatsicc.org.au"
+          />
+        </div>
+      </div>
+      <CardCta
+        icon="newsletter"
+        lede="Get all the news in your email inbox"
+        sublede="Subscribe to news"
+        link-label="goodnews@raatsicc.org.au"
+        href="mailto:goodnews@raatsicc.org.au"
+        class="mt-8"
+      />
+    </ContentColumn>
   </main>
 </template>
 
 <script>
+import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn.vue";
 import HeroBlocksHome from "~/components/HeroBlocksHome.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
@@ -46,14 +78,10 @@ export default {
     `
   },
   components: {
+    CardCta,
     ContentColumn,
     HeroBlocksHome,
     PostExcerpt
-  },
-  data() {
-    return {};
   }
 };
 </script>
-
-<style></style>
