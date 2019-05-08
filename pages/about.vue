@@ -1,12 +1,12 @@
 <template>
   <main class="container">
     <HeroBlocksAbout />
-    <ContentColumn text>
+    <ContentColumn id="story" text>
       <div class="Markdown" v-html="$md.render(aboutPage.story)" />
     </ContentColumn>
-    <ContentColumn text>
+    <ContentColumn id="team" text>
       <div class="Markdown" v-html="$md.render(aboutPage.team)" />
-      <div class="Grid Subsection">
+      <div class="Grid flex-wrap Subsection">
         <CardTeamMember
           v-for="item in aboutPage.teamGrid"
           :key="item.name"
@@ -18,18 +18,17 @@
         ></CardTeamMember>
       </div>
     </ContentColumn>
-    <ContentColumn text>
+    <ContentColumn id="constitution" text>
       <div class="Markdown">
         <h2>Our Constitution</h2>
         <p>
           Our Constitution holds our organisation standards.&nbsp;
-          <nuxt-link to="/constitution">
-            You can read them in full here.
-          </nuxt-link>
+          <!-- prettier-ignore -->
+          <nuxt-link to="/constitution">You can read them in full here.</nuxt-link>
         </p>
       </div>
     </ContentColumn>
-    <ContentColumn text>
+    <ContentColumn id="member" text>
       <div class="Markdown" v-html="$md.render(aboutPage.membership)" />
     </ContentColumn>
   </main>
@@ -50,6 +49,8 @@ export default {
           team
           membership
           teamGrid {
+            # dato modular record type
+            # …which contains team_manager records
             ... on TeamManagerRecord {
               _modelApiKey
               name

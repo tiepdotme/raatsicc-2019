@@ -48,8 +48,9 @@ module.exports = {
   },
 
   markdownit: {
-    injected: true
+    injected: true,
     // html: true
+    use: ["markdown-it-attrs"]
   },
 
   /*

@@ -1,22 +1,32 @@
 <template>
   <div class="Card">
-    <figure v-if="image" class="Card-image mt-0">
-      <img :src="image.url" :alt="name" />
-    </figure>
-    <p class="text-sm font-bold mb-0">{{ name }}</p>
-    <p class="text-sm mb-0">{{ title }}</p>
-    <p class="text-sm text-gray-600 mb-0">{{ location }}</p>
+    <Aspect class="Card-image" ratio="1.25">
+      <img v-if="image" :src="image.url" :alt="name" />
+    </Aspect>
+    <p class="Meta font-bold mb-0">{{ name }}</p>
+    <p class="Meta mb-0">{{ title }}</p>
+    <p class="Meta-gray mb-0">{{ location }}</p>
   </div>
 </template>
 
 <script>
+import Aspect from "~/components/Aspect";
+
 export default {
+  components: {
+    Aspect
+  },
   props: ["image", "name", "title", "location"]
 };
 </script>
 
 <style scoped>
+.Card:nth-of-type(2) {
+  @apply mb-4;
+}
+
 .Card-image {
-  margin-bottom: var(--s-figure) !important;
+  @apply bg-gray-300 mt-0 mb-3 !important;
+  /* padding-bottom: 125%; */
 }
 </style>

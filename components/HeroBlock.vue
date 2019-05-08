@@ -1,11 +1,17 @@
 <template>
-  <nuxt-link :to="link" class="Block" :class="bgColorClass">
+  <component
+    :is="type"
+    :to="to"
+    :href="href"
+    class="Block"
+    :class="bgColorClass"
+  >
     <!-- reactive image didn't work in assets -->
     <img class="Block-image" :src="`/images/${image}`" :alt="label" />
     <div class="Block-inner">
       <h3 class="Title" :class="colorClass">{{ label }}</h3>
     </div>
-  </nuxt-link>
+  </component>
 </template>
 
 <script>
@@ -13,16 +19,25 @@ export default {
   props: {
     image: String,
     label: String,
-    link: String,
+    to: String,
+    href: String,
     color: String
   },
   computed: {
     bgColorClass() {
       return this.color && `bg-brand-${this.color}`;
     },
-
     colorClass() {
       return this.color !== "" && "text-white";
+    },
+    type() {
+      if (this.to) {
+        return "nuxt-link";
+      } else if (this.href) {
+        return "a";
+      } else {
+        return "button";
+      }
     }
   }
 };

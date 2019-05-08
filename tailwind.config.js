@@ -11,7 +11,6 @@ module.exports = {
   theme: {
     colors: {
       transparent: "transparent",
-
       black: "#000",
       white: "#fff",
 
@@ -25,7 +24,6 @@ module.exports = {
         dustblue: "rgba(231, 234, 230, 0.5)",
         neutral: "#F4F3EF"
       },
-
       gray: {
         100: "#f7fafc",
         200: "#edf2f7",
@@ -40,7 +38,7 @@ module.exports = {
     },
     spacing: {
       px: "1px",
-      "0": "0",
+      "0": "0.15rem",
       "1": "0.333rem",
       "2": "0.5rem",
       "3": "0.75rem",
@@ -123,7 +121,7 @@ module.exports = {
     lineHeight: {
       none: "1",
       tight: "1.2",
-      snug: "1.375",
+      snug: "1.3333",
       normal: "1.5",
       relaxed: "1.625",
       loose: "2"

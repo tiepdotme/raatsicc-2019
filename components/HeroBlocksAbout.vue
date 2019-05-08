@@ -4,7 +4,7 @@
       <HeroBlock
         v-for="item in blockItems"
         :key="item.label"
-        :link="item.link"
+        :href="item.href"
         :label="item.label"
         :image="item.image"
         :color="item.color"
@@ -26,25 +26,25 @@ export default {
       blockItems: [
         {
           label: "Our Story",
-          link: "/",
+          href: "#story",
           image: "block-bw-team.jpg",
           color: "red"
         },
         {
           label: "Management Committee",
-          link: "/",
+          href: "#team",
           image: "block-bw-handprint.jpg",
           color: "green"
         },
         {
           label: "Our Constitution",
-          link: "/",
+          href: "#constitution",
           image: "block-bw-table.jpg",
           color: "blue"
         },
         {
           label: "Become a Member",
-          link: "/",
+          href: "#member",
           image: "block-bw-generations.jpg",
           color: "orange"
         }

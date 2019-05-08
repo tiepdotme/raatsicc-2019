@@ -28,7 +28,7 @@
       </div>
     </ContentColumn>
 
-    <hr class="border-b border-gray-300 m-0 mt-12" />
+    <hr class="Section-rule" />
 
     <ContentColumn>
       <div class="Grid">

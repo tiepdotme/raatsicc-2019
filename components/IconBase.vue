@@ -1,5 +1,5 @@
 <template>
-  <div class="u-icon">
+  <span class="u-icon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       :width="width"
@@ -10,13 +10,13 @@
     >
       <title :id="iconName" lang="en">{{ iconName }} icon</title>
       <g :fill="iconColor">
-        <slot />
+        <slot></slot>
         <!-- <path fill="none" d="M0 0h24v24H0z"/> -->
         <!-- <slot v-bind="iconBase" /> -->
         <!-- <rect width="24" height="24" fill="none" /> -->
       </g>
     </svg>
-  </div>
+  </span>
 </template>
 
 <script>
@@ -46,3 +46,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+svg {
+  display: inline-block;
+}
+</style>

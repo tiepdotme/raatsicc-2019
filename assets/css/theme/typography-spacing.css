@@ -4,13 +4,13 @@
 
  */
 
-:root {
+/* :root {
   --s-heading: theme('spacing.6');
   --s-paragraph: theme('spacing.3');
   --s-blockquote: theme('spacing.3');
   --s-figure: theme('spacing.3');
   --s-button: theme('spacing.2');
-}
+} */
 
 .Markdown p:not(:last-child),
 .Markdown ul:not(:last-child),
@@ -28,21 +28,17 @@
 .Title:not(:last-child),
 .Supertitle:not(:last-child),
 .Display:not(:last-child) {
-  margin-bottom: var(--s-paragraph);
+  /* margin-bottom: var(--s-paragraph); */
+  @apply mb-3;
 }
 
 .s-paragraphTop:not(:last-child) {
-  margin-top: var(--s-paragraph);
+  @apply mt-3;
 }
 
-figure {
-  margin-top: var(--s-figure);
-  margin-bottom: var(--s-figure);
-}
-
+figure,
 blockquote {
-  margin-top: var(--s-blockquote);
-  margin-bottom: var(--s-blockquote);
+  @apply my-3;
 }
 
 /*
@@ -57,11 +53,11 @@ blockquote {
 .Markdown h4:not(:first-child),
 .HeadingSpace:not(:first-child),
 .s-heading:not(:first-child) {
-  margin-top: var(--s-heading);
+  @apply mt-6;
 }
 
 .s-headingBottom:not(:first-child) {
-  margin-bottom: var(--s-heading);
+  @apply mb-6;
 }
 
 /*
@@ -72,5 +68,5 @@ blockquote {
 
 button + button,
 .Button + .Button {
-  margin-left: var(--s-button);
+  @apply ml-2;
 }

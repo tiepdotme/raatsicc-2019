@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       nav
+      // contact: this.$store.state.contactData.content
     };
   }
 };

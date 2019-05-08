@@ -42,8 +42,7 @@ body {
 
 /* Markdown theme */
 .Markdown h2 {
-  border-top: 1px solid theme(colors.gray.400);
-  padding-top: theme(spacing.1);
+  @apply pt-1 border-t border-gray-400;
 }
 
 /*
@@ -53,7 +52,11 @@ body {
 */
 
 .Meta {
-  @apply text-sm text-gray-500;
+  @apply text-sm leading-snug;
+}
+
+.Meta-gray {
+  @apply text-sm leading-snug text-gray-600;
 }
 
 /* Markdown theme */

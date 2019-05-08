@@ -43,6 +43,10 @@ main {
   @apply pt-8;
 }
 
+.Section-rule {
+  @apply border-b border-gray-300 m-0 mt-12;
+}
+
 /* post */
 .Post {
 }
