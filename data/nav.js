@@ -2,7 +2,8 @@ export default {
   items: [
     {
       label: "Home",
-      link: "/"
+      link: "/",
+      exact: true
     },
     {
       label: "About",

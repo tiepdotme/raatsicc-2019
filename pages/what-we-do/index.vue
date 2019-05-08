@@ -13,9 +13,9 @@
         <p>We have four pages here…</p>
         <ul>
           <li v-for="item in allWhatPages" :key="item.title">
-            <nuxt-link :to="`/what-we-do/${item.slug}`">{{
-              item.title
-            }}</nuxt-link>
+            <nuxt-link :to="`/what-we-do/${item.slug}`">
+              {{ item.title }}
+            </nuxt-link>
           </li>
         </ul>
       </div>
@@ -43,28 +43,6 @@ export default {
         }
       }
     `
-  },
-  data() {
-    return {
-      links: [
-        {
-          label: "Corporate Unit",
-          to: "/what-we-do/corporate-unit"
-        },
-        {
-          label: "PACS Unit",
-          to: "/what-we-do/corporate-unit"
-        },
-        {
-          label: "CARS Unit",
-          to: "/what-we-do/corporate-unit"
-        },
-        {
-          label: "FLAIC Unit",
-          to: "/what-we-do/corporate-unit"
-        }
-      ]
-    };
   }
 };
 </script>

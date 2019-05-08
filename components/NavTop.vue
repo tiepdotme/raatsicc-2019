@@ -14,7 +14,7 @@
               data-modal-toggle
               data-modal-id="nav-mobile"
             >
-              ☰ &nbsp;Menu
+              ☰ Menu
             </div>
           </div>
 
@@ -22,9 +22,7 @@
             <!-- <h1 class="Subheading Nav-siteline">
               Cape York / Gulf Remote Area Aboriginal &amp; Torres Strait Islander Child Care
             </h1>-->
-            <h2 class="Title Nav-tagline">
-              Protecting Kids Our Way.
-            </h2>
+            <h2 class="Title Nav-tagline">Protecting Kids Our Way.</h2>
 
             <hr class="Nav-tagline-rule" />
 
@@ -50,7 +48,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .headroom {
 }
 
@@ -69,15 +67,12 @@ export default {
   opacity: 0;
 }
 
-.headroom--top .Nav {
-  box-shadow: initial;
-}
-
-/* NAV */
+/* NAV UNPINNED */
 
 .headroom--top .Nav,
 .Nav {
   @apply pt-8 border-b border-gray-300;
+  box-shadow: initial;
 }
 
 .Nav-siteline {

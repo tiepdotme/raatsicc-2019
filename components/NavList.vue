@@ -1,5 +1,5 @@
 <template>
-  <div id="js-siteNavMenu" class="split">
+  <div>
     <nuxt-link
       v-for="item in nav.items"
       :key="item.link"
@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .Nav-link {
   @apply font-serif font-bold inline-block ml-10;
   line-height: 5.5;
@@ -40,6 +40,7 @@ export default {
   margin-left: 0;
 }
 
+.Nav-link.nuxt-link-active,
 .Nav-link.nuxt-link-exact-active {
   @apply text-brand-primary border-brand-primary border-0 border-b-2;
 }

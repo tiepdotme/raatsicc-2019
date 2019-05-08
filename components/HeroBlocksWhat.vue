@@ -2,7 +2,7 @@
   <section class="Section">
     <div class="flex">
       <HeroBlock
-        v-for="item in blockItems"
+        v-for="item in WhatPage.blocks"
         :key="item.label"
         :to="item.to"
         :label="item.label"
@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import HeroBlock from "~/components/HeroBlock.vue";
+import HeroBlock from "~/components/HeroBlock";
+import WhatPage from "~/data/what-page";
 
 export default {
   components: {
@@ -23,35 +24,7 @@ export default {
   },
   data() {
     return {
-      blockItems: [
-        {
-          label: "Corporate Unit",
-          to: "/what-we-do/corporate-unit",
-          image: "block-bw-fierce.jpg",
-          color: "red"
-        },
-        {
-          label: "PACS Unit",
-          sublabel: "Program & Client Services Unit",
-          to: "/what-we-do/pac-unit",
-          image: "block-bw-stare.jpg",
-          color: "green"
-        },
-        {
-          label: "CARS Unit",
-          sublabel: "Community Awareness, Resources & Support",
-          to: "/what-we-do/cars-unit",
-          image: "block-bw-troupe.jpg",
-          color: "blue"
-        },
-        {
-          label: "FLAIC Unit",
-          sublabel: "Finance Logistics & Internal ?",
-          to: "/what-we-do/flaic-unit",
-          image: "block-bw-troupe.jpg",
-          color: "orange"
-        }
-      ]
+      WhatPage
     };
   }
 };
