@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <ContentColumn v-if="jobs">
-      <Post
+      <PostExcerpt
         v-for="(post, index) in jobs"
         :key="index"
         :slug="post.slug"
@@ -11,14 +11,14 @@
         :date="post.datePublished"
         :author="post.author.name"
         :excerpt="post.excerpt"
-      ></Post>
+      ></PostExcerpt>
     </ContentColumn>
   </main>
 </template>
 
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
-import Post from "~/components/Post.vue";
+import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 
 export default {
@@ -49,12 +49,12 @@ export default {
   },
   components: {
     ContentColumn,
-    Post
+    PostExcerpt
   },
+  data: () => ({ allPosts: "" }),
   computed: {
     jobs() {
-      // return this.allPosts.tags.includes("job");
-      // return this.allPosts.map(x => x.tags);
+      // map, reduce or filter:
       return this.allPosts.filter(x => x.tags[0] === "job");
     }
   }

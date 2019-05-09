@@ -12,9 +12,9 @@
 
     <!-- headings -->
     <header>
-      <h3 v-if="excerpt" class="Heading mb-2">
+      <h2 v-if="excerpt" class="Heading mb-2">
         <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
-      </h3>
+      </h2>
       <h1 v-else class="Title mb-4">
         <span class="lg:w-5/6">
           {{ title }}
@@ -31,7 +31,7 @@
     </header>
 
     <!-- excerpt or body -->
-    <p v-if="excerpt">
+    <p v-if="excerpt" class="text-gray-600">
       {{ excerpt }}
       <nuxt-link class="text-brand-primary" :to="`/news/${slug}`">
         Continue reading

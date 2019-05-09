@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <ContentColumn>
-      <Post
+      <PostExcerpt
         v-for="(post, index) in allPosts"
         :key="index"
         :slug="post.slug"
@@ -11,14 +11,15 @@
         :date="post.datePublished"
         :author="post.author.name"
         :excerpt="post.excerpt"
-      ></Post>
+      ></PostExcerpt>
     </ContentColumn>
   </main>
 </template>
 
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
-import Post from "~/components/Post.vue";
+// import PostExcerpt from "~/components/PostExcerpt.vue";
+import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 
 export default {
@@ -44,7 +45,7 @@ export default {
   },
   components: {
     ContentColumn,
-    Post
+    PostExcerpt
   }
 };
 </script>

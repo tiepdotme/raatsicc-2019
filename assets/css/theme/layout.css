@@ -34,6 +34,15 @@ main {
   /* @apply flex-grow; */
 }
 
+.Grid-sm {
+  @apply flex -mx-2;
+}
+
+.Grid-sm-item {
+  @apply px-2;
+  /* @apply flex-grow; */
+}
+
 /* section */
 .Section {
   @apply pt-12;

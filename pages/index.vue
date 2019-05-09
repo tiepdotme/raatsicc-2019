@@ -2,7 +2,7 @@
   <main class="container">
     <HeroBlocksHome />
     <ContentColumn text>
-      <Post
+      <PostExcerpt
         v-for="(post, index) in allPosts"
         :key="index"
         :slug="post.slug"
@@ -12,7 +12,7 @@
         :date="post.datePublished"
         :author="post.author.name"
         :excerpt="post.excerpt"
-      ></Post>
+      ></PostExcerpt>
     </ContentColumn>
     <hr class="Section-rule" />
     <ContentColumn text>
@@ -52,7 +52,7 @@
 import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn.vue";
 import HeroBlocksHome from "~/components/HeroBlocksHome.vue";
-import Post from "~/components/Post.vue";
+import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 
 export default {
@@ -66,7 +66,6 @@ export default {
           title
           excerpt
           datePublished
-          body
           image {
             url
           }
@@ -81,7 +80,7 @@ export default {
     CardCta,
     ContentColumn,
     HeroBlocksHome,
-    Post
+    PostExcerpt
   }
 };
 </script>
