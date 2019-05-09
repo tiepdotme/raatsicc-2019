@@ -13,6 +13,7 @@
         </div>
       </nav>
     </div>
+    <div v-for="item in contacts" :key="item.area">{{ item.area }}</div>
   </footer>
 </template>
 
@@ -28,8 +29,8 @@ export default {
   },
   data() {
     return {
-      nav
-      // contact: this.$store.state.contactData.content
+      nav,
+      contacts: this.$store.state.contactData
     };
   }
 };
