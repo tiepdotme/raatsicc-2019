@@ -1,26 +1,18 @@
 <template>
-  <div class="Post" :class="{ 'text-column': body }">
+  <div class="Post">
     <!-- image -->
-    <figure v-if="image" class="Post-image" :class="{ 'is-article': body }">
-      <nuxt-link v-if="excerpt" :to="`/news/${slug}`">
-        <img :src="image.url" alt="title" />
-      </nuxt-link>
-      <template v-else>
-        <img :class="landscapeRatioClass" :src="image.url" alt="title" />
-      </template>
+    <figure v-if="image" class="Post-image">
+      <img :class="landscapeRatioClass" :src="image.url" alt="title" />
     </figure>
 
     <!-- headings -->
-    <header>
-      <h2 v-if="excerpt" class="Heading mb-2">
-        <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
-      </h2>
-      <h1 v-else class="Title mb-4">
+    <header class="text-column">
+      <h1 class="Title mb-4">
         <span class="lg:w-5/6">
           {{ title }}
         </span>
       </h1>
-      <div class="Meta-gray mb-4" :class="{ 'mb-8': body }">
+      <div class="Meta-gray mb-8">
         <time :date-time="date">{{ date | moment("ddd, MMMM Do YYYY") }}</time>
         <span class="mx-0 font-thin text-gray-500">|</span>
         <cite class="not-italic">{{ author }}</cite>
@@ -30,23 +22,14 @@
       </div>
     </header>
 
-    <!-- excerpt or body -->
-    <p v-if="excerpt" class="text-gray-600">
-      {{ excerpt }}
-      <nuxt-link class="text-brand-primary" :to="`/news/${slug}`">
-        Continue reading
-        <IconBase class="ml-" height="14" width="14">
-          <BaselineArrowForward24px />
-        </IconBase>
-      </nuxt-link>
-    </p>
-    <article v-if="body">
+    <!-- v-if=body allows md to render -->
+    <article v-if="body" class="text-column">
       <div class="Markdown" v-html="$md.render(body)" />
 
       <!-- share -->
       <div class="Subsection">
-        <hr class="Section-rule mb-4" />
-        <div class="flex">
+        <hr class="Section-rule border-gray-600 mb-4" />
+        <div class="flex mb-4">
           <div class="Metaheading mr-4">Share this article:</div>
           <a
             class="block pr-4"
@@ -65,8 +48,8 @@
             <IconBase class="ml-" height="14" width="14">
               <BaselineArrowBack24px />
             </IconBase>
-            See all news</nuxt-link
-          >
+            See all news
+          </nuxt-link>
         </p>
       </div>
     </article>
@@ -129,55 +112,6 @@ export default {
 
 <style lang="postcss" scoped>
 .Post {
-  @apply block;
-}
-
-.Post + .Post {
-  @apply pt-12;
-}
-
-.Post-tag {
-  @apply text-xs capitalize border border-gray-500 ml-2 rounded-sm;
-  padding: 1px 4px;
-}
-
-@variants hover {
-  .Post-tag {
-    /* background-color: currentColor; */
-  }
-}
-
-.Post-image {
-  /* @apply bg-brand-neutral mb-4; */
-  @apply bg-transparent mb-4;
-  height: 15vh;
-}
-
-.Post-image img {
-  /* @apply h-full mx-auto; */
-  @apply h-full object-contain;
-}
-
-.Post-image.is-article {
-  @apply relative overflow-hidden;
-}
-
-.Post-image.is-article > .is-landscape {
-  @apply absolute inset-0 object-cover h-full w-full;
-}
-
-/* .Post-image .is-landscape {
-  @apply object-cover;
-} */
-
-@screen xl {
-  .is-article {
-    /* @apply relative bg-transparent mb-6; */
-    @apply bg-transparent mb-6;
-    height: 30vh;
-    /* left: calc((theme(screens.xl) * -0.5) + 50%);
-    width: theme(screens.xl); */
-  }
 }
 
 @screen lg {
@@ -188,4 +122,44 @@ export default {
     width: 108.333333333%;
   }
 }
+
+.Post-tag {
+  @apply text-xs capitalize border border-gray-500 ml-2 rounded-sm;
+  padding: 1px 4px;
+}
+
+.Post-image {
+  @apply bg-brand-neutral relative mb-6 py-2;
+  height: 30vh;
+}
+
+@screen xl {
+  .Post-image {
+    left: calc((theme(screens.xl) * -0.5) + 50%);
+    width: theme(screens.xl);
+  }
+}
+
+.Post-image img {
+  @apply relative w-auto h-full;
+  margin-left: 16.66667%;
+}
+
+@screen lg {
+  .Post-image img {
+    margin-left: 25%;
+  }
+}
+
+/* .Post-image.is-article {
+  @apply relative overflow-hidden;
+}
+
+.Post-image.is-article > .is-landscape {
+  @apply absolute inset-0 object-cover h-full w-full;
+} */
+
+/* .Post-image .is-landscape {
+  @apply object-cover;
+} */
 </style>

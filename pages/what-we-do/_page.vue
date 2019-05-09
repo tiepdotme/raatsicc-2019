@@ -49,7 +49,8 @@ export default {
 } */
 
 .nested-blocks >>> .nuxt-link-active {
-  @apply bg-brand-primary;
+  @apply bg-white;
+  background-image: linear-gradient(to bottom, #eae9e4, #f1f1f1 40%);
 }
 
 .nested-blocks >>> .nuxt-link-active .Block-image {

@@ -56,6 +56,10 @@ main {
   @apply border-b border-gray-300 m-0 mt-12;
 }
 
+.Rule {
+  @apply border-b border-gray-300 m-0;
+}
+
 /* post */
 .Post {
 }
