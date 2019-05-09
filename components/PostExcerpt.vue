@@ -19,9 +19,9 @@
           <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
         </h3>
         <div class="Meta-gray mb-4">
-          <time :date-time="date">{{
-            date | moment("ddd, MMMM Do YYYY")
-          }}</time>
+          <time :date-time="date">
+            {{ date | moment("ddd, MMMM Do YYYY") }}
+          </time>
           <span class="mx-0 font-thin text-gray-500">|</span>
           <cite class="not-italic">{{ author }}</cite>
           <template v-for="(tag, index) in tags">

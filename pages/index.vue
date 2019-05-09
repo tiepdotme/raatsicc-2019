@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <HeroBlocksHome />
-    <ContentColumn text>
+    <ContentColumn>
       <PostExcerpt
         v-for="(post, index) in allPosts"
         :key="index"
@@ -15,7 +15,7 @@
       ></PostExcerpt>
     </ContentColumn>
     <hr class="Section-rule" />
-    <ContentColumn text>
+    <ContentColumn>
       <div class="Grid">
         <div class="Grid-item w-1/2">
           <CardCta

@@ -21,8 +21,8 @@ export default {
     };
   },
   computed: {
-    currentPage() {
-      return this.page && this.page.replace(/\//g, "");
+    currentPageClass() {
+      return this.$store.state.currentPage.replace(/\//g, "-");
     }
   },
   head() {
@@ -31,8 +31,8 @@ export default {
         // Proper strategy for binding a class to <html> #1662
         // https://github.com/nuxt/nuxt.js/issues/1662
         // class: this.modalOpen ? 'm-open' : 'm-close'
-        // class: `page-${this.$store.state.currentPage}`
-        class: `page-${this.currentPage}`
+        class: `page${this.$store.state.currentPage}`
+        // class: `page${this.currentPage}`
       }
     };
   }

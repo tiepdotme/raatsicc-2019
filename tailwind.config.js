@@ -38,8 +38,8 @@ module.exports = {
     },
     spacing: {
       px: "1px",
-      "0": "0.15rem",
-      "1": "0.333rem",
+      "0": "0",
+      "1": "0.3rem",
       "2": "0.5rem",
       "3": "0.75rem",
       "4": "1rem",
@@ -121,7 +121,7 @@ module.exports = {
     lineHeight: {
       none: "1",
       tight: "1.2",
-      snug: "1.3333",
+      snug: "1.375",
       normal: "1.5",
       relaxed: "1.625",
       loose: "2"
