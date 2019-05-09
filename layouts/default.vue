@@ -1,5 +1,5 @@
 <template>
-  <div :class="currentPageClass">
+  <div>
     <NavTop />
     <nuxt />
     <NavBottom />
@@ -15,20 +15,27 @@ export default {
     NavTop,
     NavBottom
   },
+  data() {
+    return {
+      page: this.$store.state.currentPage
+    };
+  },
   computed: {
-    currentPageClass() {
-      // document.body.classlist.add
-      return `page-${this.$store.state.currentPage}`;
+    currentPage() {
+      return this.page && this.page.replace(/\//g, "");
     }
-  }
-  /* head() {
+  },
+  head() {
     return {
       bodyAttrs: {
+        // Proper strategy for binding a class to <html> #1662
+        // https://github.com/nuxt/nuxt.js/issues/1662
         // class: this.modalOpen ? 'm-open' : 'm-close'
-        class: `page-${this.$store.state.currentPage}`
+        // class: `page-${this.$store.state.currentPage}`
+        class: `page-${this.currentPage}`
       }
     };
-  } */
+  }
 };
 </script>
 

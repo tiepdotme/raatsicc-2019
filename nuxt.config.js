@@ -42,6 +42,10 @@ module.exports = {
     "@nuxtjs/markdownit"
   ],
 
+  router: {
+    middleware: "currentPage"
+  },
+
   apollo: {
     clientConfigs: {
       default: "~/apollo/config.js"
