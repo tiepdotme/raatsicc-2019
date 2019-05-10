@@ -4,7 +4,11 @@
     <div class="Grid-sm-item w-1/5">
       <figure class="Post-image" :style="figureNoImg">
         <nuxt-link :to="`/news/${slug}`">
-          <img v-if="image" :src="image.url" alt="title" />
+          <img
+            v-if="image"
+            :src="`${image.url}?w=200&q=25&fm=jpg&auto=format`"
+            alt="title"
+          />
         </nuxt-link>
       </figure>
     </div>
