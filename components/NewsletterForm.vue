@@ -56,15 +56,14 @@ export default {
   @apply flex flex-row w-full;
 }
 
-/* .Form * + * {
+.Form * + * {
   margin: 0;
   margin-top: -1px;
-} */
+}
 
 @screen sm {
   .Form * + * {
-    margin-left: -1px;
-    margin-top: 0;
+    margin: 0;
   }
 }
 
@@ -74,7 +73,7 @@ export default {
 }
 
 .Form input {
-  @apply w-full;
+  @apply flex-grow;
 }
 
 .Form input:focus {
