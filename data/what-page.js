@@ -8,7 +8,7 @@ export default {
     },
     {
       label: "PACS Unit",
-      sublabel: "Program & Client Services Unit",
+      sublabel: "Program & Client Services",
       to: "/what-we-do/pacs-unit",
       image: "block-bw-stare.jpg",
       color: "green"

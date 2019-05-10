@@ -12,7 +12,7 @@ module.exports = {
     colors: {
       transparent: "transparent",
       black: "#000",
-      white: "#f1f1f1",
+      white: "#fefefe",
 
       brand: {
         primary: "#d66633",
@@ -27,8 +27,8 @@ module.exports = {
       gray: {
         100: "#f7fafc",
         200: "#edf2f7",
-        300: "#eee",
-        400: "#ddd",
+        300: "#e5e5e5",
+        400: "#ccc",
         500: "#aaa",
         600: "#858585",
         700: "#4a5568",
@@ -47,7 +47,7 @@ module.exports = {
       "6": "1.5rem",
       "8": "2rem",
       "10": "2.5rem",
-      "12": "3.5rem",
+      "12": "3.25rem",
       "16": "4rem",
       "20": "5rem",
       "24": "6rem",
@@ -98,12 +98,13 @@ module.exports = {
     fontSize: {
       xs: "0.75rem",
       sm: "0.875rem",
+      rg: "0.9375rem",
       base: "1rem",
       lg: "1.0625rem",
       xl: "1.125rem",
       "2xl": "1.1875rem",
       "3xl": "1.5rem",
-      "4xl": "2rem",
+      "4xl": "1.875rem",
       "5xl": "3rem",
       "6xl": "4rem"
     },

@@ -24,7 +24,7 @@
 
 .headroom--top .Nav-acronym,
 .Nav-acronym {
-  @apply font-serif font-bold text-center mt-2 h-auto opacity-100;
+  @apply font-serif font-bold text-sm tracking-wide text-center mt-2 h-auto opacity-100;
   transition: all 250ms ease;
 }
 

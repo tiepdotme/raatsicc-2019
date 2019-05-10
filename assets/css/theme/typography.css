@@ -3,7 +3,6 @@
   Base
 
  */
-
 body {
   @apply antialiased text-gray-900;
 }
@@ -13,13 +12,6 @@ body {
   Headings
 
  */
-
-
-.Markdown h4,
-.Metaheading {
-  @apply font-sans font-bold text-base leading-snug;
-}
-
 .Markdown h1,
 .Markdown h2,
 .Markdown h3,
@@ -45,9 +37,15 @@ body {
   @apply text-4xl leading-tight;
 }
 
-/* Markdown theme */
-.Markdown h2 {
-  @apply pt-1 border-t border-gray-400;
+/* metas */
+.Markdown h4,
+.Metaheading {
+  @apply font-sans font-bold text-base leading-snug;
+}
+
+.Markdown h5,
+.Metalede {
+  @apply font-sans font-semibold text-xl;
 }
 
 /*
@@ -55,13 +53,16 @@ body {
   Text & lower levels
 
 */
-
 .Meta {
   @apply text-sm leading-snug;
 }
 
 .Meta-gray {
   @apply text-sm leading-snug text-gray-600;
+}
+
+.text-gray {
+  @apply text-gray-600;
 }
 
 /* Markdown theme */
@@ -82,3 +83,52 @@ body {
 .Markdown ol {
   list-style: decimal;
 }
+
+.Markdown ul + ul {
+  list-style: disc;
+}
+
+.Markdown strong {
+  @apply font-semibold;
+}
+
+/*
+
+  Markdown tables using Github .md CSS
+  https://gist.github.com/andyferra/2554919
+
+ */
+.Markdown table {
+  @apply w-full mb-3 p-0;
+}
+.Markdown table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+.Markdown table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.Markdown table tr th {
+  font-weight: 600;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+.Markdown table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+.Markdown table tr th :first-child,
+.Markdown table tr td :first-child {
+  margin-top: 0;
+}
+.Markdown table tr th :last-child,
+.Markdown table tr td :last-child {
+  margin-bottom: 0;
+}
+

@@ -49,13 +49,14 @@ export default {
 
 <style lang="postcss" scoped>
 .Icon {
-  /* display: inline-block; */
+  display: inline-block;
   fill: currentColor;
   line-height: 1;
   /* margin-bottom: 2px; */
   max-width: 100%;
   position: relative;
   text-align: center;
+  transform: translateY(-1px);
   user-select: none;
   /* vertical-align: middle; */
 }

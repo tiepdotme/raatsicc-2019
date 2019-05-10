@@ -85,6 +85,6 @@ export default {
   transition: transform 250ms ease;
 }
 .Card-link:hover >>> svg {
-  transform: translate(5px, -1px);
+  transform: translate(3px, -1px);
 }
 </style>

@@ -3,7 +3,7 @@
     <!-- <div id="js-siteHeader" class="c-nav-sticky">
     <div id="js-siteNav" class="c-nav-firstwrapper">-->
     <div class="container">
-      <nav class="Nav">
+      <nav class="Nav Rule">
         <div class="flex">
           <div class="w-1/2 sm:w-1/6 lg:w-1/4">
             <NavLogo />
@@ -71,7 +71,7 @@ export default {
 
 .headroom--top .Nav,
 .Nav {
-  @apply pt-8 border-b border-gray-300;
+  @apply pt-8;
   box-shadow: initial;
 }
 

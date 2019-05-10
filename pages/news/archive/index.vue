@@ -1,8 +1,8 @@
 <template>
   <main class="container">
-    <ContentColumn v-if="posts">
-      <PostExcerpt
-        v-for="(post, index) in posts"
+    <ContentColumn v-if="allPosts">
+      <PostArchiveExcerpt
+        v-for="(post, index) in allPosts"
         :key="index"
         :slug="post.slug"
         :tags="post.tags"
@@ -11,14 +11,14 @@
         :date="post.datePublished"
         :author="post.author.name"
         :excerpt="post.excerpt"
-      ></PostExcerpt>
+      ></PostArchiveExcerpt>
     </ContentColumn>
   </main>
 </template>
 
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
-import PostExcerpt from "~/components/PostExcerpt.vue";
+import PostArchiveExcerpt from "~/components/PostArchiveExcerpt.vue";
 import gql from "graphql-tag";
 
 export default {
@@ -26,7 +26,7 @@ export default {
     allPosts: gql`
       {
         allPosts(
-          first: 9
+          skip: 1
           orderBy: [datePublished_DESC]
           # can only filter for json if exists…
           filter: { tags: { exists: true } }
@@ -49,15 +49,9 @@ export default {
   },
   components: {
     ContentColumn,
-    PostExcerpt
+    PostArchiveExcerpt
   },
-  data: () => ({ allPosts: [] }),
-  computed: {
-    posts() {
-      // map, reduce or filter:
-      return this.allPosts.filter(x => x.tags[0] === "job");
-    }
-  }
+  data: () => ({ allPosts: [] })
 };
 </script>
 

@@ -20,19 +20,22 @@
 .Markdown h2:not(:last-child),
 .Markdown h3:not(:last-child),
 .Markdown h4:not(:last-child),
+.Markdown h5:not(:last-child),
 .Markdown h6:not(:last-child),
 * + .Button:not(:last-child),
-.s-paragraph:not(:last-child),
+.s-paragraph:not(:last-child) {
+  @apply mb-3;
+}
+
 .Heading:not(:last-child),
 .Subtitle:not(:last-child),
 .Title:not(:last-child),
 .Supertitle:not(:last-child),
 .Display:not(:last-child) {
-  /* margin-bottom: var(--s-paragraph); */
-  @apply mb-3;
+  @apply mb-2;
 }
 
-.s-paragraphTop:not(:last-child) {
+.st-paragraph:not(:last-child) {
   @apply mt-3;
 }
 
@@ -49,14 +52,15 @@ blockquote {
 
 .Markdown h1:not(:first-child),
 .Markdown h2:not(:first-child),
-.Markdown h3:not(:first-child),
-/* .Markdown h4:not(:first-child), */
-.HeadingSpace:not(:first-child),
 .s-heading:not(:first-child) {
   @apply mt-10;
 }
 
-.s-headingBottom:not(:first-child) {
+.Markdown h3:not(:first-child) {
+  @apply mt-6;
+}
+
+.sb-heading:not(:first-child) {
   @apply mb-10;
 }
 

@@ -6,7 +6,7 @@
         :key="item.label"
         :to="item.to"
         :label="item.label"
-        :sublabel="item.sublabel"
+        :cta="item.sublabel"
         :image="item.image"
         :color="item.color"
         class="md:w-1/2 lg:w-1/4"

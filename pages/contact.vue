@@ -1,9 +1,12 @@
 <template>
   <main class="container">
     <ContentColumn>
-      <img src="/images/map.jpg" alt />
+      <img
+        src="/images/map-locations.jpg"
+        alt="RAATSICC offices in Far North Queesnaldn"
+      />
 
-      <div class="Grid pt-4">
+      <!-- <div class="Grid pt-4">
         <div v-for="item in locations.head" :key="item.name" class="Grid-item">
           <ul>
             <li class="font-bold">{{ item.name }}</li>
@@ -19,6 +22,18 @@
         </div>
         <div class="Grid-item">x</div>
         <div class="Grid-item">x</div>
+      </div> -->
+      <!-- locations -->
+      <div class="mt-6">
+        <div class="Locations flex flex-column flex-wrap -mx-2">
+          <LocationColumn
+            v-for="item in contacts"
+            :key="item.streetAddress"
+            :location="item"
+            details
+            class="px-2 w-1/3"
+          />
+        </div>
       </div>
     </ContentColumn>
 
@@ -52,13 +67,21 @@
 <script>
 import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn";
-import locations from "~/data/locations";
+import LocationColumn from "~/components/LocationColumn";
+// import locations from "~/data/locations";
 
 export default {
   components: {
     CardCta,
-    ContentColumn
+    ContentColumn,
+    LocationColumn
   },
-  data: () => ({ locations })
+  // data: () => ({ locations })
+  // data: () => ({ contacts: this.$store.state.contactData })
+  data() {
+    return {
+      contacts: this.$store.state.contactData
+    };
+  }
 };
 </script>

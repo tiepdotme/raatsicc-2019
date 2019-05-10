@@ -26,7 +26,7 @@ export default {
     allPosts: gql`
       {
         allPosts(
-          first: 9
+          first: 6
           orderBy: [datePublished_DESC]
           # can only filter for json if exists…
           filter: { tags: { exists: true } }
@@ -55,7 +55,7 @@ export default {
   computed: {
     posts() {
       // map, reduce or filter:
-      return this.allPosts.filter(x => x.tags[0] === "job");
+      return this.allPosts.filter(x => x.tags[0] === "event");
     }
   }
 };

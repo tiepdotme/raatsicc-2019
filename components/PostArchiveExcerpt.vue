@@ -1,21 +1,12 @@
 <template>
-  <article class="Post Grid-sm">
-    <!-- image -->
-    <div class="Grid-sm-item w-1/5">
-      <figure class="Post-image" :style="figureNoImg">
-        <nuxt-link :to="`/news/${slug}`">
-          <img v-if="image" :src="image.url" alt="title" />
-        </nuxt-link>
-      </figure>
-    </div>
-
-    <div class="Grid-sm-item w-4/5">
+  <article class="Post">
+    <div class=" w-4/5">
       <!-- headings -->
       <header>
-        <h3 class="Heading">
+        <h3 class="Subheading mb-2">
           <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
         </h3>
-        <div class="Meta-gray mb-4">
+        <div class="Meta-gray mb-2">
           <time :date-time="date">
             {{ date | moment("ddd, MMMM Do YYYY") }}
           </time>
@@ -28,9 +19,8 @@
       </header>
       <!-- excerpt or body -->
       <p class="text-rg text-gray-600">
-        {{ excerpt }}
         <nuxt-link class="text-brand-primary" :to="`/news/${slug}`">
-          Continue reading
+          View post
           <IconBase class="ml-" height="14" width="14">
             <BaselineArrowForward24px />
           </IconBase>
@@ -58,28 +48,7 @@ export default {
     title: String,
     tags: Array,
     date: String,
-    author: String,
-    image: Object,
-    excerpt: String,
-    isLandscapeImage: Boolean
-  },
-  computed: {
-    landscapeRatioClass() {
-      return this.isLandscapeImage && "is-landscape";
-    },
-    figureNoImg() {
-      return this.image === null && "height:94%";
-    }
+    author: String
   }
 };
 </script>
-
-<style lang="postcss" scoped>
-.Post-image {
-  @apply bg-brand-neutral mt-2;
-}
-
-.Post-image a {
-  @apply block p-2;
-}
-</style>

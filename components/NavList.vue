@@ -26,8 +26,9 @@ export default {
 
 <style lang="postcss" scoped>
 .Nav-link {
-  @apply font-serif font-bold inline-block ml-10;
-  line-height: 5.5;
+  /* @apply font-serif font-bold inline-block ml-10; */
+  @apply text-sm font-medium uppercase inline-block ml-10;
+  line-height: 5;
   transform: translateY(1px);
   transition: color 250ms ease;
 }
@@ -40,8 +41,13 @@ export default {
   margin-left: 0;
 }
 
+.page-news-jobs .Nav-link.nuxt-link-active {
+  @apply text-gray-900 border-0;
+}
+
 .Nav-link.nuxt-link-active,
-.Nav-link.nuxt-link-exact-active {
-  @apply text-brand-primary border-brand-primary border-0 border-b-2;
+.Nav-link.nuxt-link-exact-active,
+.page-news-jobs .Nav-link.nuxt-link-exact-active {
+  @apply text-brand-primary border-brand-primary border-0 border-b;
 }
 </style>

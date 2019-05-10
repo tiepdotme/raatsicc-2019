@@ -56,7 +56,8 @@ module.exports = {
 
   markdownit: {
     injected: true,
-    // html: true
+    html: true,
+    linkify: true,
     use: ["markdown-it-attrs"]
   },
 
@@ -71,7 +72,6 @@ module.exports = {
         // https://github.com/postcss/postcss-url
         // "postcss-url": {},
         "postcss-import": {},
-        "postcss-mixins": {},
         tailwindcss: path.resolve(__dirname, "./tailwind.config.js")
       }
     },

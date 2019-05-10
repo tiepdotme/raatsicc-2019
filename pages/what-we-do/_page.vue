@@ -49,16 +49,16 @@ export default {
 } */
 
 .nested-blocks >>> .nuxt-link-active {
-  @apply bg-white;
-  background-image: linear-gradient(to bottom, #eae9e4, #f1f1f1 40%);
+  @apply z-10;
+  box-shadow: theme(colors.white) 0 0 0 2px;
+  transform: scale(1.025);
 }
 
-.nested-blocks >>> .nuxt-link-active .Block-image {
-  @apply opacity-0;
+.nested-blocks >>> .nuxt-link-active:hover {
+  /* background-color: unset; */
 }
 
-.nested-blocks >>> .nuxt-link-active .Block-inner h3,
-.nested-blocks >>> .nuxt-link-active .Block-inner p {
-  @apply text-gray-900;
+.nested-blocks >>> .nuxt-link-active:hover .Block-image {
+  transform: scale(1);
 }
 </style>

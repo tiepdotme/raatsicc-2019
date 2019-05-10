@@ -1,10 +1,13 @@
 <template>
   <footer class="Footer">
-    <div class="container pt-24 pb-12">
+    <div class="container pt-20 pb-12">
+      <hr class="Rule mt-4" />
       <nav class="Nav">
         <div class="flex">
           <div class="w-1/2 sm:w-1/6 lg:w-1/4">
-            <NavLogo />
+            <div class="pt-4">
+              <NavLogo />
+            </div>
           </div>
           <!-- divide here? -->
           <div class="w-1/2 sm:w-5/6 lg:w-3/4">
@@ -64,10 +67,6 @@ export default {
 </script>
 
 <style scoped>
-.Nav {
-  /* @apply pt-8 border-t border-gray-300; */
-}
-
 .Footer .Section {
   @apply pt-8;
 }
@@ -75,6 +74,6 @@ export default {
 .Locations p:nth-of-type(1),
 .Locations p:nth-of-type(3) {
   /* margin-bottom: 10vh; */
-  @apply mb-2;
+  @apply mb-3;
 }
 </style>

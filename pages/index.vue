@@ -13,6 +13,14 @@
         :author="post.author.name"
         :excerpt="post.excerpt"
       ></PostExcerpt>
+      <p class="mt-12 text-right">
+        <nuxt-link to="/news/archive" class="Button">
+          View all news
+          <IconBase height="14" width="14" class="ml-1">
+            <BaselineArrowForward24px></BaselineArrowForward24px>
+          </IconBase>
+        </nuxt-link>
+      </p>
     </ContentColumn>
     <hr class="Section-rule" />
     <ContentColumn>
@@ -49,9 +57,11 @@
 </template>
 
 <script>
+import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn.vue";
 import HeroBlocksHome from "~/components/HeroBlocksHome.vue";
+import IconBase from "~/components/IconBase.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 
@@ -59,7 +69,7 @@ export default {
   apollo: {
     allPosts: gql`
       {
-        allPosts(first: 1) {
+        allPosts(first: 3) {
           _firstPublishedAt
           slug
           tags
@@ -77,9 +87,11 @@ export default {
     `
   },
   components: {
+    BaselineArrowForward24px,
     CardCta,
     ContentColumn,
     HeroBlocksHome,
+    IconBase,
     PostExcerpt
   }
 };

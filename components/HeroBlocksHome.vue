@@ -8,6 +8,8 @@
         :label="item.label"
         :image="item.image"
         :color="item.color"
+        :cta="item.cta"
+        :cta-reposition="item.ctaReposition"
         class="md:w-1/2 lg:w-1/4"
       />
     </div>
@@ -28,25 +30,30 @@ export default {
           label: "About us",
           to: "/about",
           image: "block-bw-flying.jpg",
-          color: "red"
+          color: "red",
+          cta: "On location since 1990"
         },
         {
           label: "What we do",
           to: "/what-we-do",
           image: "block-bw-looking.jpg",
-          color: "green"
+          color: "green",
+          cta: "Our four core services"
         },
         {
           label: "Join & contribute",
           to: "/volunteer",
           image: "handprint.png",
-          color: ""
+          color: "",
+          cta: "Volunteer with us",
+          ctaReposition: true
         },
         {
           label: "See our events",
-          to: "/",
+          to: "/news/events",
           image: "block-bw-dancing.jpg",
-          color: "blue"
+          color: "blue",
+          cta: "Come join us"
         }
       ]
     };
