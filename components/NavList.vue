@@ -50,4 +50,9 @@ export default {
 .page-news-jobs .Nav-link.nuxt-link-exact-active {
   @apply text-brand-primary border-brand-primary border-0 border-b;
 }
+
+/* MOBILE NAV IN MODAL */
+.Modal-nav .Nav-link {
+  @apply block ml-0;
+}
 </style>

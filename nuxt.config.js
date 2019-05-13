@@ -37,10 +37,18 @@ module.exports = {
    */
   modules: [
     // "nuxt-netlify-cms"
+    "@nuxtjs/dotenv",
     "@nuxtjs/apollo",
     "@nuxtjs/axios",
+    "portal-vue/nuxt",
     "@nuxtjs/markdownit"
   ],
+
+  env: {
+    // LAMBDA_FUNCTIONS_BASE_URL: process.env.LAMBDA_FUNCTIONS_BASE_URL,
+    // CONTACT_FORM_TO: process.env.CONTACT_FORM_TO,
+    DATO_API_TOKEN: process.env.DATO_API_TOKEN
+  },
 
   router: {
     middleware: "currentPage"

@@ -29,6 +29,18 @@ main {
   @apply bg-white;
 }
 
+.container-inner {
+  @apply w-full;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@screen sm {
+  .container-inner {
+    padding: 0;
+  }
+}
+
 /*
 
   Grid

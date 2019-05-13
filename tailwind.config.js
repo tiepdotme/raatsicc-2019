@@ -22,6 +22,7 @@ module.exports = {
         orange: "#c37f3d",
         dust: "#b5ab9c",
         dustblue: "rgba(231, 234, 230, 0.5)",
+        dustorange: "rgba(231, 234, 230, 0.5)",
         neutral: "#F4F3EF"
       },
       gray: {

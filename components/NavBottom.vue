@@ -22,17 +22,26 @@
                   :location="item"
                   class="px-2 w-1/3"
                 />
-                <!-- <LocationComplianceItem /> -->
+                <LocationComplianceItem />
               </div>
             </div>
+            <!-- acknowledgment -->
+            <div class="Meta-gray"></div>
             <!-- copyright -->
             <hr class="Rule mt-8 mb-4" />
-            <div class="Meta-gray">
-              <span>&copy; {{ new Date().getFullYear() }} RAATSICC</span>
-              <span class="font-thin text-gray-500">|</span>
-              <a href="https://callumflack.design/" target="_blank">
-                Site by Callum Flack Design
-              </a>
+            <div class="Meta-gray sm:w-5/6 lg:w-9/12">
+              <p class="mb-2">
+                RAATSICC acknowledge the traditional custodians of the lands on
+                which we live and work and pay respect to our Elders: past,
+                present and future.
+              </p>
+              <p>
+                <span>&copy; {{ new Date().getFullYear() }} RAATSICC</span>
+                <span class="font-thin text-gray-500">|</span>
+                <a href="https://callumflack.design/" target="_blank">
+                  Site by Callum Flack Design
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -42,7 +51,6 @@
 </template>
 
 <script>
-import ContentColumn from "~/components/ContentColumn";
 import LocationColumn from "~/components/LocationColumn";
 import LocationComplianceItem from "~/components/LocationComplianceItem";
 import NavLogo from "~/components/NavLogo";
@@ -51,7 +59,6 @@ import nav from "~/data/nav";
 
 export default {
   components: {
-    ContentColumn,
     LocationColumn,
     LocationComplianceItem,
     NavList,

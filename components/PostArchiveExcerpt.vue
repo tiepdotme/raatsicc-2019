@@ -41,6 +41,7 @@ export default {
     BaselineArrowForward24px,
     IconBase,
     PostTag,
+    // eslint-disable-next-line
     moment
   },
   props: {

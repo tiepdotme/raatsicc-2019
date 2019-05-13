@@ -70,7 +70,7 @@
 
 <script>
 import IconBase from "~/components/IconBase";
-import BaselineArrowBack24px from "~/components/icons/baseline-arrow-back-24px";
+// import BaselineArrowBack24px from "~/components/icons/baseline-arrow-back-24px";
 import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 import IconSocialFacebook from "~/components/icons/IconSocialFacebook";
 import IconShareEmail from "~/components/icons/IconShareEmail";
@@ -82,12 +82,13 @@ let linkText = "Check%20out%20this%20article%20from%20RAATSICC&amp;";
 
 export default {
   components: {
-    BaselineArrowBack24px,
+    // BaselineArrowBack24px,
     BaselineArrowForward24px,
     IconBase,
     IconSocialFacebook,
     IconShareEmail,
     PostTag,
+    // eslint-disable-next-line
     moment
   },
   props: {

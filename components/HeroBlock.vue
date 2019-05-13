@@ -119,7 +119,7 @@ export default {
   transition: transform 250ms ease;
 }
 .Block:hover .Block-image {
-  transform: scale(1.01);
+  transform: scale(1.025);
 }
 
 .Block-cta svg {

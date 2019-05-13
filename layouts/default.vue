@@ -3,6 +3,10 @@
     <NavTop />
     <nuxt />
     <NavBottom />
+    <!-- modals -->
+    <no-ssr>
+      <portal-target name="modals" multiple></portal-target>
+    </no-ssr>
   </div>
 </template>
 

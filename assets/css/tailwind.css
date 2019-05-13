@@ -5,6 +5,7 @@
 @import "./theme/typography";
 @import "./theme/typography-spacing";
 @import "./theme/button";
+@import "./theme/loading";
 
 @tailwind base;
 

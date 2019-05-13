@@ -1,0 +1,5 @@
+.Loading {
+  @apply flex items-center justify-center;
+  height: 25vh;
+  margin-bottom: 25vh;
+}
