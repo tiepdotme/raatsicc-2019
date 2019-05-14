@@ -20,13 +20,25 @@ export default {
 };
 </script>
 
-<style scoped>
-.Card:nth-of-type(2) {
-  @apply mb-4;
+<style lang="postcss" scoped>
+.Card:nth-of-type(2),
+.Card:nth-of-type(4) {
+  @apply mb-3;
+}
+
+/* override .Grid-item */
+.Card + .Card {
+  @apply mt-0;
 }
 
 .Card-image {
   @apply bg-gray-300 mt-0 mb-3 !important;
   /* padding-bottom: 125%; */
+}
+
+@screen sm {
+  .Card:nth-of-type(2) {
+    @apply mb-4;
+  }
 }
 </style>

@@ -1,28 +1,13 @@
 <template>
-  <main class="container">
-    <ContentColumn>
+  <div>
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
+    <ContentColumn v-else>
       <img
-        src="/images/map-locations.jpg"
+        src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg?w=1200&q=50&fm=jpg&auto=format"
         alt="RAATSICC offices in Far North Queesnaldn"
       />
-
-      <!-- <div class="Grid pt-4">
-        <div v-for="item in locations.head" :key="item.name" class="Grid-item">
-          <ul>
-            <li class="font-bold">{{ item.name }}</li>
-            <li>{{ item.address1 }}</li>
-            <li>{{ item.address2 }}</li>
-            <li>
-              <a :href="`tel:${item.phone}`">{{ item.phone }}</a>
-            </li>
-            <li>
-              <a :href="`mailto:${item.email}`">{{ item.email }}</a>
-            </li>
-          </ul>
-        </div>
-        <div class="Grid-item">x</div>
-        <div class="Grid-item">x</div>
-      </div> -->
       <!-- locations -->
       <div class="mt-6">
         <div class="Locations flex flex-column flex-wrap -mx-2">
@@ -31,7 +16,7 @@
             :key="item.streetAddress"
             :location="item"
             details
-            class="px-2 w-1/3"
+            class="px-2 w-1/2 sm:w-1/3"
           />
         </div>
       </div>
@@ -61,12 +46,13 @@
         </div>
       </div>
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>
 import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn";
+import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import LocationColumn from "~/components/LocationColumn";
 // import locations from "~/data/locations";
 
@@ -74,6 +60,7 @@ export default {
   components: {
     CardCta,
     ContentColumn,
+    LoadingSpinner,
     LocationColumn
   },
   // data: () => ({ locations })

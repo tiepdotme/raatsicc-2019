@@ -1,8 +1,11 @@
 <template>
-  <main class="container Section">
+  <div class="Section">
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
     <HeroStripe
-      v-if="volunteerPage"
-      :image="volunteerPage.heroImage.url"
+      v-else
+      :image="`${volunteerPage.heroImage.url}?w=500&q=40&fm=jpg&auto=format`"
       :alt="volunteerPage.heroTitle"
       color="green"
     >
@@ -27,7 +30,7 @@
       </ContentColumn>
       <ContentColumn v-if="volunteerPage" text>
         <div class="Markdown" v-html="$md.render(volunteerPage.body)" />
-        <p class="mt-6">
+        <p class="Subsection">
           <a
             v-for="item in volunteerPage.pdfs"
             :key="item.pdfLabel"
@@ -43,14 +46,15 @@
         </p>
       </ContentColumn>
     </section>
-  </main>
+  </div>
 </template>
 
 <script>
+import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 import ContentColumn from "~/components/ContentColumn.vue";
 import HeroStripe from "~/components/HeroStripe.vue";
 import IconBase from "~/components/IconBase.vue";
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
+import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import gql from "graphql-tag";
 
 export default {
@@ -84,7 +88,8 @@ export default {
     BaselineArrowForward24px,
     ContentColumn,
     HeroStripe,
-    IconBase
+    IconBase,
+    LoadingSpinner
   }
 };
 </script>

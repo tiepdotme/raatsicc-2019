@@ -1,9 +1,9 @@
 <template>
-  <main class="container">
+  <div>
     <ContentColumn v-if="constitutionPage" text>
       <div class="Markdown" v-html="$md.render(constitutionPage.body)" />
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>

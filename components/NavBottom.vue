@@ -1,26 +1,28 @@
 <template>
-  <footer class="Footer">
-    <div class="container pt-20 pb-12">
+  <footer class="container Section-footer">
+    <div class="container-inner">
       <hr class="Rule mt-4" />
       <nav class="Nav">
-        <div class="flex">
-          <div class="w-1/2 sm:w-1/6 lg:w-1/4">
-            <div class="pt-4">
+        <div class="flex flex-col sm:flex-row">
+          <div class="w-1/6 sm:w-1/6 lg:w-1/4">
+            <div class="py-4 sm:pb-0">
               <NavLogo />
             </div>
           </div>
           <!-- divide here? -->
-          <div class="w-1/2 sm:w-5/6 lg:w-3/4">
-            <NavList />
-            <hr class="Rule mb-8" />
+          <div class="w-full sm:w-5/6 lg:w-3/4">
+            <div class="hidden sm:block">
+              <NavList />
+              <hr class="Rule mb-8" />
+            </div>
             <!-- locations -->
-            <div class="w-10/12">
+            <div class="sm:w-10/12">
               <div class="Locations flex flex-column flex-wrap -mx-2">
                 <LocationColumn
                   v-for="item in contacts"
                   :key="item.streetAddress"
                   :location="item"
-                  class="px-2 w-1/3"
+                  class="px-2 w-1/2 sm:w-1/3"
                 />
                 <LocationComplianceItem />
               </div>
@@ -29,13 +31,13 @@
             <div class="Meta-gray"></div>
             <!-- copyright -->
             <hr class="Rule mt-8 mb-4" />
-            <div class="Meta-gray sm:w-5/6 lg:w-9/12">
-              <p class="mb-2">
+            <div class="sm:w-5/6 lg:w-9/12">
+              <p class="Meta-gray s-meta">
                 RAATSICC acknowledge the traditional custodians of the lands on
                 which we live and work and pay respect to our Elders: past,
                 present and future.
               </p>
-              <p>
+              <p class="Meta-gray">
                 <span>&copy; {{ new Date().getFullYear() }} RAATSICC</span>
                 <span class="font-thin text-gray-500">|</span>
                 <a href="https://callumflack.design/" target="_blank">
@@ -73,11 +75,7 @@ export default {
 };
 </script>
 
-<style scoped>
-.Footer .Section {
-  @apply pt-8;
-}
-
+<style lang="postcss" scoped>
 .Locations p:nth-of-type(1),
 .Locations p:nth-of-type(3) {
   /* margin-bottom: 10vh; */

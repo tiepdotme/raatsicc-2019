@@ -18,7 +18,3 @@
 .Button:focus {
   box-shadow: theme(color.text-brand-primary) 0 0 0 2px;
 }
-
-.Button + .Button {
-  @apply ml-3;
-}

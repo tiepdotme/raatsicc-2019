@@ -1,16 +1,20 @@
 <template>
-  <main class="container">
+  <div>
     <HeroBlocksWhat class="nested-blocks" />
 
-    <ContentColumn v-if="whatPage" id="story" text>
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
+    <ContentColumn v-else text>
       <div class="Markdown" v-html="$md.render(whatPage.body)" />
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>
 import ContentColumn from "~/components/ContentColumn";
 import HeroBlocksWhat from "~/components/HeroBlocksWhat.vue";
+import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
 
 export default {
@@ -38,7 +42,8 @@ export default {
   },
   components: {
     ContentColumn,
-    HeroBlocksWhat
+    HeroBlocksWhat,
+    LoadingSpinner
   }
 };
 </script>
@@ -48,17 +53,29 @@ export default {
   @apply bg-brand-dust;
 } */
 
-.nested-blocks >>> .nuxt-link-active {
+/* .nested-blocks >>> .nuxt-link-active {
   @apply z-10;
   box-shadow: theme(colors.white) 0 0 0 2px;
   transform: scale(1.025);
 }
 
 .nested-blocks >>> .nuxt-link-active:hover {
-  /* background-color: unset; */
+  background-color: unset;
 }
 
 .nested-blocks >>> .nuxt-link-active:hover .Block-image {
   transform: scale(1);
+} */
+
+/* .nested-blocks >>> .Block:not(.nuxt-link-active) .Block-inner {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(181, 171, 156, 0.4);
+} */
+
+.nested-blocks >>> .Block:not(.nuxt-link-active) .Block-image {
+  opacity: 0.1;
 }
+/* .nested-blocks >>> .Block.nuxt-link-active .Block-image {
+  opacity: 0.125;
+} */
 </style>

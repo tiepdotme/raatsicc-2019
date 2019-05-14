@@ -22,30 +22,57 @@ body {
   letter-spacing: -0.015em;
 }
 
-.Markdown h3,
-.Subheading {
-  @apply text-lg leading-snug;
+.Markdown h1,
+.Title {
+  @apply text-3xl leading-tight;
 }
 
 .Markdown h2,
 .Heading {
-  @apply text-3xl leading-snug;
+  @apply text-2xl leading-snug;
 }
 
-.Markdown h1,
-.Title {
-  @apply text-4xl leading-tight;
+.Markdown h3,
+.Subheading {
+  @apply text-base leading-snug;
 }
 
 /* metas */
 .Markdown h4,
 .Metaheading {
-  @apply font-sans font-bold text-base leading-snug;
+  @apply text-sm font-sans font-bold leading-snug;
 }
 
 .Markdown h5,
 .Metalede {
-  @apply font-sans font-semibold text-xl;
+  @apply text-lg font-sans font-medium ;
+}
+
+@screen sm {
+  .Markdown h3,
+  .Subheading {
+    @apply text-lg;
+  }
+
+  .Markdown h2,
+  .Heading {
+    @apply text-3xl;
+  }
+
+  .Markdown h1,
+  .Title {
+    @apply text-4xl;
+  }
+
+  .Markdown h4,
+  .Metaheading {
+    @apply text-base;
+  }
+
+  .Markdown h5,
+  .Metalede {
+    @apply text-xl;
+  }
 }
 
 /*
@@ -53,20 +80,50 @@ body {
   Text & lower levels
 
 */
+
+p,
+.Text,
+.Text--sm {
+  @apply text-sm;
+}
+
+/* .Text--sm {
+  @apply text-xs;
+} */
+
 .Meta {
-  @apply text-sm leading-snug;
+  @apply text-xs leading-snug;
 }
 
 .Meta-gray {
-  @apply text-sm leading-snug text-gray-600;
+  @apply text-xs leading-snug text-gray-600;
 }
 
 .text-gray {
   @apply text-gray-600;
 }
 
+@screen sm {
+  p,
+  .Text {
+    @apply text-base;
+  }
+
+  .Text--sm {
+    @apply text-rg;
+  }
+
+  .Meta {
+    @apply text-sm;
+  }
+
+  .Meta-gray {
+    @apply text-sm;
+  }
+}
+
 /* Markdown theme */
-.Markdown a {
+.Markdown a:not(.Button) {
   text-decoration: underline;
   text-decoration-line: underline;
 }
@@ -90,6 +147,17 @@ body {
 
 .Markdown strong {
   @apply font-semibold;
+}
+
+/*
+
+  Badge image in .md
+
+*/
+.Markdown .badge {
+  @apply border border-gray-400 rounded-lg;
+  height: 120px;
+  transform: translateY(20%);
 }
 
 /*

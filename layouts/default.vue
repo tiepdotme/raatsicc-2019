@@ -1,7 +1,10 @@
 <template>
   <div>
-    <NavTop />
-    <nuxt />
+    <NavHeadroom />
+    <!-- enable clean page transitions -->
+    <main class="container">
+      <nuxt />
+    </main>
     <NavBottom />
     <!-- modals -->
     <no-ssr>
@@ -11,12 +14,12 @@
 </template>
 
 <script>
-import NavTop from "@/components/NavTop";
+import NavHeadroom from "@/components/NavHeadroom";
 import NavBottom from "@/components/NavBottom";
 
 export default {
   components: {
-    NavTop,
+    NavHeadroom,
     NavBottom
   },
   computed: {

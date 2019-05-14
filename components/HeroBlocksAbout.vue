@@ -1,6 +1,6 @@
 <template>
   <section class="Section">
-    <div class="flex">
+    <div class="flex flex-col sm:flex-row">
       <HeroBlock
         v-for="item in blockItems"
         :key="item.label"
@@ -8,7 +8,7 @@
         :label="item.label"
         :image="item.image"
         :color="item.color"
-        class="md:w-1/2 lg:w-1/4"
+        class="w-full sm:w-1/2 lg:w-1/4"
       />
     </div>
   </section>
@@ -27,25 +27,29 @@ export default {
         {
           label: "Our Story",
           href: "#story",
-          image: "block-bw-team.jpg",
+          image:
+            "https://www.datocms-assets.com/11614/1557789783-block-bw-team.jpg?w=500&q=40&fm=jpg&auto=format",
           color: "red"
         },
         {
           label: "Management Committee",
           href: "#team",
-          image: "block-bw-handprint.jpg",
+          image:
+            "https://www.datocms-assets.com/11614/1557789770-block-bw-handprint.jpg?w=500&q=40&fm=jpg&auto=format",
           color: "green"
         },
         {
           label: "Our Constitution",
           href: "#constitution",
-          image: "block-bw-table.jpg",
+          image:
+            "https://www.datocms-assets.com/11614/1557789780-block-bw-table.jpg?w=500&q=40&fm=jpg&auto=format",
           color: "blue"
         },
         {
           label: "Become a Member",
           href: "#member",
-          image: "block-bw-generations.jpg",
+          image:
+            "https://www.datocms-assets.com/11614/1557789783-block-bw-team.jpg?w=500&q=40&fm=jpg&auto=format",
           color: "orange"
         }
       ]

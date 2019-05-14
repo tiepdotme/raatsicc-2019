@@ -46,6 +46,28 @@ blockquote {
 
 /*
 
+  Meta spacing
+
+ */
+
+/* .Meta:not(:last-child),
+.Meta-gray:not(:last-child),
+.Text--sm:not(:last-child), */
+.s-meta {
+  @apply mb-2;
+}
+
+@screen sm {
+  /* .Meta:not(:last-child),
+  .Meta-gray:not(:last-child),
+  .Text--sm:not(:last-child), */
+  .s-meta {
+    @apply mb-3;
+  }
+}
+
+/*
+
   Heading spacing
 
  */
@@ -53,15 +75,31 @@ blockquote {
 .Markdown h1:not(:first-child),
 .Markdown h2:not(:first-child),
 .s-heading:not(:first-child) {
-  @apply mt-10;
+  @apply mt-8;
 }
 
 .Markdown h3:not(:first-child) {
-  @apply mt-6;
+  @apply mt-4;
 }
 
 .sb-heading:not(:first-child) {
-  @apply mb-10;
+  @apply mb-8;
+}
+
+@screen sm {
+  .Markdown h1:not(:first-child),
+  .Markdown h2:not(:first-child),
+  .s-heading:not(:first-child) {
+    @apply mt-10;
+  }
+
+  .Markdown h3:not(:first-child) {
+    @apply mt-6;
+  }
+
+  .sb-heading:not(:first-child) {
+    @apply mb-10;
+  }
 }
 
 /*
@@ -72,5 +110,12 @@ blockquote {
 
 button + button,
 .Button + .Button {
-  @apply ml-2;
+  @apply mt-2;
+}
+
+@screen sm {
+  button + button,
+  .Button + .Button {
+    @apply mt-0 ml-3;
+  }
 }

@@ -16,17 +16,12 @@
 import nav from "~/data/nav";
 
 export default {
-  data() {
-    return {
-      nav
-    };
-  }
+  data: () => ({ nav })
 };
 </script>
 
 <style lang="postcss" scoped>
 .Nav-link {
-  /* @apply font-serif font-bold inline-block ml-10; */
   @apply text-sm font-medium uppercase inline-block ml-10;
   line-height: 5;
   transform: translateY(1px);
@@ -49,10 +44,5 @@ export default {
 .Nav-link.nuxt-link-exact-active,
 .page-news-jobs .Nav-link.nuxt-link-exact-active {
   @apply text-brand-primary border-brand-primary border-0 border-b;
-}
-
-/* MOBILE NAV IN MODAL */
-.Modal-nav .Nav-link {
-  @apply block ml-0;
 }
 </style>

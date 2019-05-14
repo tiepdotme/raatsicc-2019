@@ -5,11 +5,9 @@
 */
 html {
   @apply bg-brand-primary;
-
   background-image: linear-gradient(to bottom, rgba(222, 202, 178, 0.9), #f4f3ef 70%);
   background-image: linear-gradient(to bottom, rgba(222, 202, 178, 0.9), #eae9e4 70%);
-  /* min-height: 100%;
-  overflow-y: scroll; */
+  /* background-image: linear-gradient(to bottom, rgba(178, 216, 222, 0.9), #eae9e4 70%); */
 }
 
 body {
@@ -17,7 +15,14 @@ body {
 }
 
 main {
-  @apply min-h-full;
+  @apply min-h-full relative;
+}
+
+main.container:before {
+  @apply absolute inset-x-0 bg-white;
+  content: "";
+  top: -9vh;
+  height: 9vh;
 }
 
 /*
@@ -47,7 +52,7 @@ main {
 
 */
 .Grid {
-  @apply flex -mx-4;
+  @apply flex flex-col -mx-4;
 }
 
 .Grid-item {
@@ -55,13 +60,31 @@ main {
   /* @apply flex-grow; */
 }
 
-.Grid-sm {
-  @apply flex -mx-2;
+.Grid-space,
+.Grid-item + .Grid-item {
+  @apply mt-3;
 }
 
-.Grid-sm-item {
+.Grid--sm {
+  @apply -mx-2;
+}
+
+.Grid--sm > .Grid-item {
   @apply px-2;
-  /* @apply flex-grow; */
+}
+
+@screen sm {
+  .Grid {
+    @apply flex-row;
+  }
+
+  .Grid-item + .Grid-item {
+    @apply mt-0;
+  }
+
+  .Grid-space {
+    @apply mt-6
+  }
 }
 
 /*
@@ -70,23 +93,49 @@ main {
 
 */
 .Section {
-  @apply pt-12;
-}
-
-.Subsection {
   @apply pt-8;
 }
 
+.Section-footer {
+  @apply pt-12 pb-8;
+}
+
+.Subsection {
+  @apply pt-6;
+}
+
 .Section-rule {
-  @apply border-b border-gray-300 m-0 mt-12;
+  @apply border-b border-gray-300 m-0 mt-8;
 }
 
 .Definite-rule {
-  @apply border-b border-gray-500 m-0 mt-12;
+  @apply border-b border-gray-500 m-0 mt-8;
 }
 
 .Rule {
   @apply border-b border-gray-300 m-0;
+}
+
+@screen sm {
+  .Section {
+    @apply pt-12;
+  }
+
+  .Section-footer {
+    @apply pt-20 pb-12;
+  }
+
+  .Subsection {
+    @apply pt-8;
+  }
+
+  .Section-rule {
+    @apply mt-12;
+  }
+
+  .Definite-rule {
+    @apply mt-12;
+  }
 }
 
 /*
@@ -95,15 +144,25 @@ main {
 
 */
 .Post + .Post {
-  @apply pt-12;
+  @apply pt-8;
 }
 
 .Post-image {
-  @apply bg-brand-neutral mt-2;
+  @apply bg-brand-neutral;
 }
 
 .Post-image a {
   @apply block p-2;
+}
+
+@screen sm {
+  .Post + .Post {
+    @apply pt-12;
+  }
+
+  .Post-image {
+    @apply mt-2;
+  }
 }
 
 @screen lg {

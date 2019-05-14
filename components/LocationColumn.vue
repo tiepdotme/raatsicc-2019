@@ -11,9 +11,21 @@
     >
       {{ location.name }}
     </span>
+
     <!-- address -->
-    <span class="block">{{ location.streetAddress }}</span>
-    <span class="block">{{ location.addressRemaining }}</span>
+    <a
+      v-if="location.googleMapLink"
+      :href="location.googleMapLink"
+      target="_blank"
+    >
+      <span class="block">{{ location.streetAddress }}</span>
+      <span class="block">{{ location.addressRemaining }}</span>
+    </a>
+    <span v-else>
+      <span class="block">{{ location.streetAddress }}</span>
+      <span class="block">{{ location.addressRemaining }}</span>
+    </span>
+
     <!-- contacts -->
     <a
       v-if="location.email"
@@ -35,6 +47,7 @@
       </IconBase>
       {{ location.phone }}
     </a>
+
     <!-- extra details -->
     <span v-if="details">
       <span v-if="location.fax" class="block text-gray-600">
@@ -77,7 +90,8 @@ export default {
       email: String,
       phone: String,
       fax: String,
-      onCallContact: String
+      onCallContact: String,
+      googleMapLink: String
     },
     details: {
       type: Boolean

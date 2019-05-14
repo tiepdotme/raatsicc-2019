@@ -1,13 +1,17 @@
 <template>
-  <div class="w-5/6 lg:w-4/6 mx-auto h-full">
+  <div class="sm:w-1/3 sm:mx-auto h-full">
     <nuxt-link to="/" class="Nav-home-link">
       <!-- <img class="Nav-logo" src="~/assets/images/logo.png"> -->
-      <img class="Nav-logo" src="/images/logo-symbol.png" />
-      <!-- <div class="Nav-acronym">RAATSICC</div> -->
+      <!-- <img class="Nav-logo" src="/images/logo-symbol.png" /> -->
+      <img
+        class="Nav-logo"
+        src="https://www.datocms-assets.com/11614/1557801537-logo-symbol.png?w=150&q=40&fm=png&auto=format"
+      />
       <IconLogotype class="Nav-logotype"></IconLogotype>
     </nuxt-link>
   </div>
 </template>
+
 <script>
 import IconLogotype from "~/components/IconLogotype";
 
@@ -18,48 +22,76 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 /* Anchor tag */
-.headroom--pinned .Nav-home-link {
-  @apply items-center;
+.headroom--pinned:not(.headroom--top) .Nav-home-link {
+  @apply justify-end;
 }
 
-.headroom--top .Nav-home-link,
 .Nav-home-link {
-  @apply flex flex-col h-full;
+  @apply flex flex-col justify-center pt-3 pb-1 h-full;
 }
 
 /* Logo */
-.headroom--pinned .Nav-logo {
-  @apply w-1/2;
-}
+/* .headroom--pinned:not(.headroom--top) .Nav-logo {
+  @apply w-7/12;
+} */
 
-.headroom--top .Nav-logo,
 .Nav-logo {
-  @apply w-3/4 mx-auto h-auto opacity-100;
+  @apply mx-auto h-auto opacity-100;
   transition: all 250ms ease;
 }
 
 /* Logotype */
-.headroom--pinned .Nav-logotype {
-  @apply m-0 h-0 opacity-0;
-}
-
-.headroom--top .Nav-logotype,
 .Nav-logotype {
-  @apply mx-auto w-5/6;
-  @apply mt-2 h-auto opacity-100;
+  @apply w-5/6 mx-auto;
+  @apply h-auto opacity-100;
   transition: all 250ms ease;
 }
 
-/* BARRIER */
 .Nav-logotype svg {
   width: 100%;
 }
 
-@responsive lg {
+/* RS */
+@screen sm {
+  /* .headroom--pinned:not(.headroom--top) .Nav-home-link { */
+  .Nav-home-link {
+    @apply pt-0 pb-3;
+  }
+
+  .headroom--pinned:not(.headroom--top) .Nav-logo {
+    @apply w-7/12;
+  }
+
+  .headroom--pinned:not(.headroom--top) .Nav-logotype {
+    @apply m-0 h-0 opacity-0;
+  }
+  .Nav-logotype {
+    @apply mt-1;
+  }
+}
+/* @screen sm {
+  .headroom--top .Nav-logo,
+  .Nav-logo,
+  .headroom--top .Nav-logotype,
+  .Nav-logotype {
+    @apply mx-auto;
+  }
+
   .headroom--pinned .Nav-logo {
-    @apply w-1/3;
+    @apply w-1/2;
+  }
+
+  .headroom--top .Nav-logo,
+  .Nav-logo {
+    @apply w-3/4;
+  }
+}
+
+@screen lg {
+  .headroom--pinned .Nav-logo {
+    @apply w-1/4;
   }
 
   .headroom--top .Nav-logo,
@@ -70,5 +102,5 @@ export default {
   .Nav-logotype:not(.headroom--pinned) {
     @apply w-3/6;
   }
-}
+} */
 </style>

@@ -1,6 +1,6 @@
 <template>
   <section class="Section">
-    <div class="flex">
+    <div class="flex flex-col sm:flex-row">
       <HeroBlock
         v-for="item in WhatPage.blocks"
         :key="item.label"
@@ -9,7 +9,7 @@
         :cta="item.sublabel"
         :image="item.image"
         :color="item.color"
-        class="md:w-1/2 lg:w-1/4"
+        class="w-full sm:w-1/2 lg:w-1/4"
       />
     </div>
   </section>
@@ -30,5 +30,3 @@ export default {
   }
 };
 </script>
-
-<style></style>

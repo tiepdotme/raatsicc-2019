@@ -57,6 +57,7 @@ export const actions = {
             fax
             email
             onCallContact
+            googleMapLink
           }
         }
       `

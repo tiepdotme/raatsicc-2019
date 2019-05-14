@@ -1,11 +1,10 @@
 <template>
-  <article class="Post Grid-sm">
+  <article class="Post Grid Grid--sm">
     <!-- image -->
-    <div class="Grid-sm-item w-1/5">
-      <figure class="Post-image" :style="figureNoImg">
+    <div class="Grid-item w-full sm:w-1/5">
+      <figure v-if="image" class="Post-image">
         <nuxt-link :to="`/news/${slug}`">
           <img
-            v-if="image"
             :src="`${image.url}?w=200&q=25&fm=jpg&auto=format`"
             alt="title"
           />
@@ -13,13 +12,13 @@
       </figure>
     </div>
 
-    <div class="Grid-sm-item w-4/5">
+    <div class="Grid-item w-full sm:w-4/5">
       <!-- headings -->
       <header>
         <h3 class="Heading">
           <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
         </h3>
-        <div class="Meta-gray mb-4">
+        <div class="Meta-gray s-meta">
           <time :date-time="date">
             {{ date | moment("ddd, MMMM Do YYYY") }}
           </time>
@@ -31,7 +30,7 @@
         </div>
       </header>
       <!-- excerpt or body -->
-      <p class="text-rg text-gray-600">
+      <p class="Text--sm text-gray-600">
         {{ excerpt }}
         <nuxt-link class="text-brand-primary" :to="`/news/${slug}`">
           Continue reading
@@ -55,7 +54,7 @@ export default {
     BaselineArrowForward24px,
     IconBase,
     PostTag,
-    // eslint-disable-next-line no-use-before-define
+    // eslint-disable-next-line
     moment
   },
   props: {
@@ -78,13 +77,3 @@ export default {
   }
 };
 </script>
-
-<style lang="postcss" scoped>
-.Post-image {
-  @apply bg-brand-neutral mt-2;
-}
-
-.Post-image a {
-  @apply block p-2;
-}
-</style>

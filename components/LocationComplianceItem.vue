@@ -4,6 +4,10 @@
     <span class="block mb-1 font-semibold">
       HSQS Compliant
     </span>
-    <img class="w-2/3 lg:w-1/3" src="/images/hdaa.png" alt="" />
+    <img
+      class="w-2/3 lg:w-1/3"
+      src="https://www.datocms-assets.com/11614/1557801528-hdaa.png?w=120&q=20&fm=png&auto=format"
+      alt=""
+    />
   </div>
 </template>

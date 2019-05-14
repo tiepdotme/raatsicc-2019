@@ -3,14 +3,14 @@
     :is="type"
     :to="to"
     :href="href"
-    class="Block"
+    class="Block sm:w-1/2 lg:w-1/4"
     :class="rootClasses"
   >
     <!-- reactive image didn't work in assets -->
     <img
       class="Block-image"
       :class="imageOpacityClass"
-      :src="`/images/${image}`"
+      :src="`${image}`"
       :alt="label"
     />
     <div class="Block-inner">
@@ -66,7 +66,7 @@ export default {
       return this.color !== "" && "text-white";
     },
     imageOpacityClass() {
-      return this.ctaReposition !== true && "opacity-50";
+      return this.ctaReposition !== true && "Block-image-opacity";
     },
     ctaClasses() {
       return [
@@ -93,16 +93,8 @@ export default {
 <style lang="postcss">
 .Block {
   @apply relative overflow-hidden flex-grow;
-  height: calc(100vh * 1 / 3);
+  height: calc(100vh * 1 / 5);
   transition: background-color 500ms ease, transform 500ms ease-in-out;
-}
-
-.Block:not(:first-of-type) {
-  @apply border-l border-white;
-}
-
-.Block:hover {
-  /* @apply bg-brand-dust; */
 }
 
 .Block-inner {
@@ -114,12 +106,17 @@ export default {
 }
 
 .Block-image {
-  @apply absolute inset-0 h-full object-cover;
+  @apply absolute inset-0 h-full w-full object-cover;
   mix-blend-mode: multiply;
   transition: transform 250ms ease;
 }
+
 .Block:hover .Block-image {
   transform: scale(1.025);
+}
+
+.Block-image-opacity {
+  opacity: 0.75;
 }
 
 .Block-cta svg {
@@ -131,15 +128,15 @@ export default {
   transition: transform 500ms ease;
 }
 
-@screen md {
-  .Block {
-    @apply w-1/2;
+@screen sm {
+  .Block:not(:first-of-type) {
+    /* @apply border-l border-white; */
   }
 }
 
-@screen lg {
+@screen md {
   .Block {
-    @apply w-1/4;
+    height: calc(100vh * 1 / 4);
   }
 }
 </style>

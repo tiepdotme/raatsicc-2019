@@ -56,7 +56,7 @@
             </IconBase>
           </a>
           <!-- back to news -->
-          <nuxt-link to="/news" class="ml-auto">
+          <nuxt-link to="/news" class="text-brand-primary ml-auto">
             See all news
             <IconBase height="14" width="14">
               <BaselineArrowForward24px />

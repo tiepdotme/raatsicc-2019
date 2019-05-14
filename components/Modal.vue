@@ -61,7 +61,7 @@ export default {
 }
 
 .Modal {
-  @apply h-full;
+  /* @apply h-full; */
   /* @apply bg-white; */
 }
 
@@ -75,7 +75,6 @@ export default {
 }
 
 /* Transition */
-
 .Modal-enter-active,
 .Modal-leave-active {
   transition: opacity 500ms cubic-bezier(0.19, 1, 0.22, 1);

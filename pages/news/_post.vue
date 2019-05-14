@@ -1,6 +1,9 @@
 <template>
-  <main class="container">
-    <ContentColumn v-if="post" article>
+  <div>
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
+    <ContentColumn v-else article>
       <Post
         :slug="post.slug"
         :tags="post.tags"
@@ -12,11 +15,12 @@
         :is-landscape-image="post.horizontalImage"
       ></Post>
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>
 import ContentColumn from "~/components/ContentColumn";
+import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import Post from "~/components/Post";
 import gql from "graphql-tag";
 
@@ -55,6 +59,7 @@ export default {
   },
   components: {
     ContentColumn,
+    LoadingSpinner,
     Post
   }
 };

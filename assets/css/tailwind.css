@@ -6,6 +6,7 @@
 @import "./theme/typography-spacing";
 @import "./theme/button";
 @import "./theme/loading";
+@import "./theme/page-transitions";
 
 @tailwind base;
 

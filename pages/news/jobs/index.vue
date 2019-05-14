@@ -1,6 +1,28 @@
 <template>
-  <main class="container">
-    <ContentColumn v-if="posts">
+  <div class="Section">
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
+    <HeroStripe
+      v-else
+      :image="`${jobsPage.heroImage.url}?w=500&q=40&fm=jpg&auto=format`"
+      :alt="jobsPage.heroTitle"
+      color="blue"
+    >
+      <div class="container bg-transparent">
+        <ContentColumn class="relative">
+          <div class="py-4">
+            <h1 class="Title text-white">
+              {{ jobsPage.heroTitle }}
+            </h1>
+            <p class="Subheading italic text-white">
+              {{ jobsPage.heroSubtitle }}
+            </p>
+          </div>
+        </ContentColumn>
+      </div>
+    </HeroStripe>
+    <ContentColumn>
       <PostExcerpt
         v-for="(post, index) in posts"
         :key="index"
@@ -13,12 +35,14 @@
         :excerpt="post.excerpt"
       ></PostExcerpt>
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>
-import ContentColumn from "~/components/ContentColumn.vue";
-import PostExcerpt from "~/components/PostExcerpt.vue";
+import ContentColumn from "~/components/ContentColumn";
+import HeroStripe from "~/components/HeroStripe";
+import PostExcerpt from "~/components/PostExcerpt";
+import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
 
 export default {
@@ -45,10 +69,23 @@ export default {
           }
         }
       }
+    `,
+    jobsPage: gql`
+      {
+        jobsPage {
+          heroImage {
+            url
+          }
+          heroTitle
+          heroSubtitle
+        }
+      }
     `
   },
   components: {
     ContentColumn,
+    HeroStripe,
+    LoadingSpinner,
     PostExcerpt
   },
   data: () => ({ allPosts: [] }),

@@ -1,12 +1,15 @@
 <template>
-  <main class="container">
+  <div>
     <HeroBlocksAbout />
-    <ContentColumn v-if="aboutPage" id="story" text>
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
+    <ContentColumn v-else id="story" text>
       <div class="Markdown" v-html="$md.render(aboutPage.story)" />
     </ContentColumn>
     <ContentColumn v-if="aboutPage" id="team" text>
       <div class="Markdown" v-html="$md.render(aboutPage.team)" />
-      <div class="Grid flex-wrap Subsection">
+      <div class="Grid Grid--sm flex-row flex-wrap Subsection">
         <CardTeamMember
           v-for="item in aboutPage.teamGrid"
           :key="item.name"
@@ -22,22 +25,25 @@
       <div class="Markdown">
         <h2>Our Constitution</h2>
         <p>
-          Our Constitution holds our organisation standards.&nbsp;
+          Our Constitution holds our organisation standards. Read them in full:
+        </p>
+        <p class="">
           <!-- prettier-ignore -->
-          <nuxt-link to="/constitution">You can read them in full here.</nuxt-link>
+          <nuxt-link to="/constitution" class="Button">Our Constitution</nuxt-link>
         </p>
       </div>
     </ContentColumn>
     <ContentColumn v-if="aboutPage" id="member" text>
       <div class="Markdown" v-html="$md.render(aboutPage.membership)" />
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>
 import CardTeamMember from "~/components/CardTeamMember";
 import ContentColumn from "~/components/ContentColumn";
 import HeroBlocksAbout from "~/components/HeroBlocksAbout";
+import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import gql from "graphql-tag";
 
 export default {
@@ -68,7 +74,8 @@ export default {
   components: {
     CardTeamMember,
     ContentColumn,
-    HeroBlocksAbout
+    HeroBlocksAbout,
+    LoadingSpinner
   }
 };
 </script>

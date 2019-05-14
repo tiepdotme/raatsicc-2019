@@ -1,6 +1,9 @@
 <template>
-  <main class="container">
-    <ContentColumn v-if="posts">
+  <div>
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
+    <ContentColumn v-else>
       <PostExcerpt
         v-for="(post, index) in posts"
         :key="index"
@@ -13,11 +16,12 @@
         :excerpt="post.excerpt"
       ></PostExcerpt>
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
+import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 
@@ -49,6 +53,7 @@ export default {
   },
   components: {
     ContentColumn,
+    LoadingSpinner,
     PostExcerpt
   },
   data: () => ({ allPosts: [] }),
@@ -60,5 +65,3 @@ export default {
   }
 };
 </script>
-
-<style></style>

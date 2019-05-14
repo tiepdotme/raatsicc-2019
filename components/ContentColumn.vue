@@ -1,11 +1,11 @@
 <template>
   <section class="Section">
-    <div class="flex">
+    <div class="container-inner flex">
       <div class="hidden sm:block sm:w-1/6 lg:w-1/4">&nbsp;</div>
-      <div v-if="article" class="sm:w-5/6 lg:w-1/2">
+      <div v-if="article" class="w-full sm:w-5/6 lg:w-1/2">
         <slot />
       </div>
-      <div v-else class="sm:w-5/6 lg:w-7/12">
+      <div v-else class="w-full sm:w-5/6 lg:w-7/12">
         <slot />
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <div>
     <HeroBlocksWhat />
 
     <ContentColumn text>
@@ -20,7 +20,7 @@
         </ul>
       </div>
     </ContentColumn>
-  </main>
+  </div>
 </template>
 
 <script>
