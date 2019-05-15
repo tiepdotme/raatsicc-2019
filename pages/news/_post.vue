@@ -12,8 +12,23 @@
         :date="post.datePublished"
         :author="post.author.name"
         :body="post.body"
-        :is-landscape-image="post.horizontalImage"
-      ></Post>
+      >
+        <template v-if="post.jobs" v-slot:jobs>
+          <template v-for="job in post.jobs">
+            <!-- eslint-disable -->
+            <PostJob
+              :title="job.positionTitle"
+              :hours="job.hours"
+              :location="job.location"
+              :salary="job.salary"
+              :program="job.program"
+              :note="job.note"
+              :date="job.dueDate"
+              :pdf="job.applyPdf.url"
+            />
+          </template>
+        </template>
+      </Post>
     </ContentColumn>
   </div>
 </template>
@@ -22,6 +37,7 @@
 import ContentColumn from "~/components/ContentColumn";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import Post from "~/components/Post";
+import PostJob from "~/components/PostJob";
 import gql from "graphql-tag";
 
 export default {
@@ -42,6 +58,22 @@ export default {
             author {
               name
             }
+            jobs {
+              # dato modular record type
+              # …which contains job records
+              ... on JobRecord {
+                positionTitle
+                hours
+                salary
+                location
+                program
+                dueDate
+                note
+                applyPdf {
+                  url
+                }
+              }
+            }
           }
         }
       `,
@@ -60,7 +92,8 @@ export default {
   components: {
     ContentColumn,
     LoadingSpinner,
-    Post
+    Post,
+    PostJob
   }
 };
 </script>

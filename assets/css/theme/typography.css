@@ -156,8 +156,17 @@ p,
 */
 .Markdown .badge {
   @apply border border-gray-400 rounded-lg;
-  height: 120px;
+  height: 80px;
   transform: translateY(20%);
+}
+
+@screen sm {
+  .Markdown .badge {
+    @apply absolute;
+    height: 120px;
+    transform: translateY(30%);
+    left: 120px;
+  }
 }
 
 /*

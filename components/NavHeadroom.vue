@@ -1,5 +1,5 @@
 <template>
-  <headroom :speed="500" :z-index="101" :down-tolerance="5">
+  <headroom :speed="500" :z-index="101" :down-tolerance="50">
     <NavTop />
     <NavTopMobile class="block sm:hidden" />
   </headroom>

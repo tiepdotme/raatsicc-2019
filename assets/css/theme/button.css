@@ -2,7 +2,7 @@
   @apply inline-flex items-center px-5;
   @apply text-brand-primary font-medium no-underline;
   @apply border border-brand-primary rounded-sm;
-  height: 44px;
+  height: 38px;
   padding-bottom: 2px;
 }
 

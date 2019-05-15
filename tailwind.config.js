@@ -13,6 +13,8 @@ module.exports = {
       transparent: "transparent",
       black: "#000",
       white: "#fefefe",
+      text: "#1a202c",
+      "text-gray": "#858585",
 
       brand: {
         primary: "#d66633",
