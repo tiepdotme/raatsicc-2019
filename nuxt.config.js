@@ -1,3 +1,4 @@
+require("dotenv").config();
 const pkg = require("./package");
 const path = require("path");
 
@@ -37,7 +38,6 @@ module.exports = {
    */
   modules: [
     // "nuxt-netlify-cms"
-    "@nuxtjs/dotenv",
     "@nuxtjs/apollo",
     "@nuxtjs/axios",
     "portal-vue/nuxt",
