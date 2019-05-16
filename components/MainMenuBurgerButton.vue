@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="[isActive ? 'is-active' : '', burgerTypeClass]"
+    :class="[active ? 'is-active' : '', burgerTypeClass]"
     type="button"
     class="hamburger"
     @click.prevent="toggle"
@@ -19,6 +19,8 @@
   B/c this is ES6 and doesn't get compiled on `yarn build`,
   and b/c it's only one file, i'm including it directly.
   https://github.com/imfaber/vue-tasty-burgers/blob/master/src/components/BurgerButton.vue
+
+  NB: we removed the isActive data type and use the active prop instead.
 */
 export default {
   props: {
@@ -46,22 +48,23 @@ export default {
       default: "m"
     }
   },
+
   data() {
     return {
-      burgerTypeClass: null,
-      isActive: null
+      burgerTypeClass: null
     };
   },
+
   computed: {
     layerStyle: function() {
       return {
-        "background-color": this.isActive ? this._activeColor : this.color
+        "background-color": this.active ? this._activeColor : this.color
       };
     }
   },
+
   created: function() {
     this.burgerTypeClass = `hamburger--${this.type}`;
-    this.isActive = this.active;
     this._activeColor = this.activeColor || this.color;
 
     switch (this.size) {
@@ -102,10 +105,10 @@ export default {
         break;
     }
   },
+
   methods: {
     toggle() {
-      this.isActive = !this.isActive;
-      this.$emit("toggle", this.isActive);
+      this.$emit("toggle", this.active);
     }
   }
 };

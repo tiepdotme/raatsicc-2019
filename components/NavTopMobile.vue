@@ -5,29 +5,30 @@
         ref="burger"
         type="3dy"
         size="s"
-        color="#151515"
-        active-color="#151515"
+        color="#1a202c"
+        active-color="#1a202c"
+        :active="mobileNavOpen"
         @toggle="toggleMobileNav()"
       />
-    </div>
-    <no-ssr>
-      <portal to="modals">
-        <Modal
-          :show="mobileNavOpen"
-          class="theme-Modal"
-          @close="mobileNavOpen = false"
-        >
-          <div class="container h-ful">
-            <div class="container-inner">
-              <NavList
-                class="Modal-nav"
-                :class="mobileNavOpen && 'is-active'"
-              />
+      <no-ssr>
+        <portal to="modals">
+          <Modal
+            :show="mobileNavOpen"
+            class="theme-Modal"
+            @close="mobileNavOpen = false"
+          >
+            <div class="container h-ful">
+              <div class="container-inner">
+                <NavList
+                  class="Modal-nav"
+                  :class="mobileNavOpen && 'is-active'"
+                />
+              </div>
             </div>
-          </div>
-        </Modal>
-      </portal>
-    </no-ssr>
+          </Modal>
+        </portal>
+      </no-ssr>
+    </div>
   </div>
 </template>
 
@@ -42,7 +43,7 @@ export default {
     Modal,
     NavList
   },
-  data: () => ({ mobileNavOpen: false }),
+  data: () => ({ mobileNavOpen: null }),
   watch: {
     // eslint-disable-next-line
     $route(to, from) {
