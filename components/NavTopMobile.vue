@@ -89,15 +89,34 @@ export default {
   @apply pb-4;
 }
 
-/* Transition */
-/* .Modal-enter-active,
-.Modal-leave-active {
-  transition: opacity 500ms cubic-bezier(0.19, 1, 0.22, 1);
+/* MODAL TRANSITIONS */
+.Modal-enter-active .Modal-nav /deep/ .Nav-link,
+.Modal-leave-active .Modal-nav /deep/ .Nav-link {
+  transition: opacity 250ms cubic-bezier(0.19, 1, 0.22, 1),
+    transform 250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.Modal-enter .Modal-nav /deep/ .Nav-link,
+.Modal-leave-to .Modal-nav /deep/ .Nav-link {
+  opacity: 0;
+  transform: scale(1.05) translateY(-20px);
 }
 
-.Modal-enter,
-.Modal-leave-to {
-  @apply opacity-0;
-  transform: scale(1.05);
-} */
+.Modal-enter-active .Modal-nav /deep/ .Nav-link:nth-child(1) {
+  transition-delay: 250ms;
+}
+.Modal-enter-active .Modal-nav /deep/ .Nav-link:nth-child(2) {
+  transition-delay: 300ms;
+}
+.Modal-enter-active .Modal-nav /deep/ .Nav-link:nth-child(3) {
+  transition-delay: 350ms;
+}
+.Modal-enter-active .Modal-nav /deep/ .Nav-link:nth-child(4) {
+  transition-delay: 400ms;
+}
+.Modal-enter-active .Modal-nav /deep/ .Nav-link:nth-child(5) {
+  transition-delay: 450ms;
+}
+.Modal-enter-active .Modal-nav /deep/ .Nav-link:nth-child(6) {
+  transition-delay: 500ms;
+}
 </style>
