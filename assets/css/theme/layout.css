@@ -48,47 +48,6 @@ main.container:before {
 
 /*
 
-  Grid
-
-*/
-.Grid {
-  @apply flex flex-col -mx-4;
-}
-
-.Grid-item {
-  @apply px-4;
-  /* @apply flex-grow; */
-}
-
-.Grid-space,
-.Grid-item + .Grid-item {
-  @apply mt-3;
-}
-
-.Grid--sm {
-  @apply -mx-2;
-}
-
-.Grid--sm > .Grid-item {
-  @apply px-2;
-}
-
-@screen sm {
-  .Grid {
-    @apply flex-row;
-  }
-
-  .Grid-item + .Grid-item {
-    @apply mt-0;
-  }
-
-  .Grid-space {
-    @apply mt-6
-  }
-}
-
-/*
-
   Section spacers
 
 */

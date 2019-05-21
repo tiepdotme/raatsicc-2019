@@ -2,6 +2,7 @@
 
 @import "./theme/font-face";
 @import "./theme/layout";
+@import "./theme/layout-grid";
 @import "./theme/typography";
 @import "./theme/typography-spacing";
 @import "./theme/button";
