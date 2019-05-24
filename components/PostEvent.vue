@@ -13,7 +13,7 @@
         {{ date | moment("ddd, MMMM Do YYYY") }}
       </time>
       <span v-if="location" class="st-meta">
-        <span class="mx-px font-thin">|</span>
+        <span class="mx-px font-thin opacity-50">|</span>
         {{ location }}
       </span>
     </p>
