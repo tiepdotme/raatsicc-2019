@@ -1,25 +1,26 @@
 <template>
   <article class="Post">
-    <div class=" w-4/5">
+    <div class="w-full sm:w-4/5">
       <!-- headings -->
       <header>
-        <h3 class="Subheading mb-2">
+        <h3 class="Subheading mb-px">
           <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
         </h3>
-        <div class="Meta-gray mb-2">
+        <div class="Meta-gray mb-1">
           <time :date-time="date">
             {{ date | moment("ddd, MMMM Do YYYY") }}
           </time>
-          <span class="mx-0 font-thin text-gray-500">|</span>
-          <cite class="not-italic">{{ author }}</cite>
-          <template v-for="(tag, index) in tags">
+          <!-- <span class="mx-0 font-thin text-gray-500">|</span> -->
+          <!-- <cite class="not-italic">{{ author }}</cite> -->
+          <!-- <template v-for="(tag, index) in tags">
             <PostTag :key="index" :tag="tag" />
-          </template>
+          </template> -->
+          <PostTag v-if="tag !== null" :tag="tag" />
         </div>
       </header>
       <!-- excerpt or body -->
-      <p class="text-rg text-gray-600">
-        <nuxt-link class="text-brand-primary" :to="`/news/${slug}`">
+      <p class="Meta text-brand-primary">
+        <nuxt-link class="" :to="`/news/${slug}`">
           View post
           <IconBase class="ml-" height="14" width="14">
             <BaselineArrowForward24px />
@@ -35,6 +36,7 @@ import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-
 import IconBase from "~/components/IconBase";
 import PostTag from "~/components/PostTag";
 import moment from "vue-moment";
+import tag from "@/mixins/tag";
 
 export default {
   components: {
@@ -44,12 +46,14 @@ export default {
     // eslint-disable-next-line
     moment
   },
+  mixins: [tag],
   props: {
     slug: String,
     title: String,
-    tags: Array,
     date: String,
-    author: String
+    event: Boolean,
+    staff: Boolean,
+    job: Boolean
   }
 };
 </script>

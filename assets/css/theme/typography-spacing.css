@@ -40,9 +40,17 @@
   @apply mt-3;
 }
 
+.st-cta-button {
+  @apply mt-4;
+}
+
 figure,
 blockquote {
   @apply my-3;
+}
+
+@screen md {
+
 }
 
 /*
@@ -61,7 +69,7 @@ blockquote {
   @apply mt-1;
 }
 
-@screen sm {
+@screen md {
   /* .Meta:not(:last-child),
   .Meta-gray:not(:last-child),
   .Text--sm:not(:last-child), */
@@ -90,7 +98,7 @@ blockquote {
 }
 
 .sb-heading:not(:first-child) {
-  @apply mb-8;
+  @apply mb-6;
 }
 
 @screen sm {
@@ -105,7 +113,7 @@ blockquote {
   }
 
   .sb-heading:not(:first-child) {
-    @apply mb-10;
+    @apply mb-8;
   }
 }
 

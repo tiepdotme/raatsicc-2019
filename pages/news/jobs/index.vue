@@ -27,13 +27,13 @@
         v-for="(post, index) in posts"
         :key="index"
         :slug="post.slug"
-        :tags="post.tags"
         :image="post.image"
         :title="post.title"
         :date="post.datePublished"
-        :author="post.author.name"
         :excerpt="post.excerpt"
+        :job="post.isJob"
       ></PostExcerpt>
+      <PostArchiveLink />
     </ContentColumn>
   </div>
 </template>
@@ -41,6 +41,7 @@
 <script>
 import ContentColumn from "~/components/ContentColumn";
 import HeroStripe from "~/components/HeroStripe";
+import PostArchiveLink from "~/components/PostArchiveLink.vue";
 import PostExcerpt from "~/components/PostExcerpt";
 import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
@@ -49,23 +50,15 @@ export default {
   apollo: {
     allPosts: gql`
       {
-        allPosts(
-          first: 9
-          orderBy: [datePublished_DESC]
-          # can only filter for json if exists…
-          filter: { tags: { exists: true } }
-        ) {
+        allPosts(orderBy: [datePublished_DESC]) {
           _firstPublishedAt
           slug
-          tags
           title
           excerpt
           datePublished
+          isJob
           image {
             url
-          }
-          author {
-            name
           }
         }
       }
@@ -86,13 +79,15 @@ export default {
     ContentColumn,
     HeroStripe,
     LoadingSpinner,
+    PostArchiveLink,
     PostExcerpt
   },
   data: () => ({ allPosts: [] }),
   computed: {
     posts() {
       // map, reduce or filter:
-      return this.allPosts.filter(x => x.tags[0] === "job");
+      // return this.allPosts.filter(x => x.tags[0] === "job");
+      return this.allPosts.filter(x => x.isJob).slice(0, 9);
     }
   }
 };

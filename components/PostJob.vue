@@ -1,9 +1,9 @@
 <template>
   <div class="Job">
-    <h2 class="Heading font-sans tracking-normal text-brand-primar">
+    <h2 class="Heading font-sans font-bold tracking-normal text-brand-blue">
       {{ title }}
     </h2>
-    <p v-if="date" class="font-semibold text-brand-primary">
+    <p v-if="date" class="font-semibold text-brand-blue">
       Applications close
       <time :date-time="date">{{ date | moment("ddd, MMMM Do YYYY") }}</time>
     </p>
@@ -23,7 +23,7 @@
       <span class="Job-attribute Meta">Program:</span>
       {{ program }}
     </p>
-    <p v-if="note" class="text-gray">
+    <p v-if="note" class="text-gray st-meta">
       <!-- <span class="Job-attribute Meta-gray">Note:</span> -->
       {{ note }}
     </p>

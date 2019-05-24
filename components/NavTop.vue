@@ -55,8 +55,14 @@ export default {
         return "What we do";
       } else if (this.$route.name === "what-we-do-page") {
         return "What we do";
+      } else if (this.$route.name === "news-post") {
+        return "News";
+      } else if (this.$route.name === "news-events") {
+        return "News ▸ Events";
       } else if (this.$route.name === "news-jobs") {
-        return "Jobs";
+        return "News ▸ Jobs";
+      } else if (this.$route.name === "news-staff") {
+        return "News ▸ Staff";
       } else if (this.$route.name === "news-archive") {
         return "News archive";
       }

@@ -23,6 +23,7 @@ export default {
 <style lang="postcss" scoped>
 .Nav-link {
   @apply text-sm font-medium uppercase inline-block ml-10;
+  @apply border-b border-transparent;
   line-height: 5;
   transform: translateY(1px);
   transition: color 250ms ease;
@@ -37,12 +38,12 @@ export default {
 }
 
 .page-news-jobs .Nav-link.nuxt-link-active {
-  @apply text-gray-900 border-0;
+  @apply text-gray-900 border-transparent;
 }
 
 .Nav-link.nuxt-link-active,
 .Nav-link.nuxt-link-exact-active,
 .page-news-jobs .Nav-link.nuxt-link-exact-active {
-  @apply text-brand-primary border-brand-primary border-0 border-b;
+  @apply text-brand-primary border-brand-primary;
 }
 </style>

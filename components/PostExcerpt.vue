@@ -22,11 +22,11 @@
           <time :date-time="date">
             {{ date | moment("ddd, MMMM Do YYYY") }}
           </time>
-          <span class="mx-0 font-thin text-gray-500">|</span>
-          <cite class="not-italic">{{ author }}</cite>
-          <template v-for="(tag, index) in tags">
+          <!-- <span class="mx-0 font-thin text-gray-500">|</span> -->
+          <!-- <template v-for="(tag, index) in tags">
             <PostTag :key="index" :tag="tag" />
-          </template>
+          </template> -->
+          <PostTag v-if="tag !== null" :tag="tag" />
         </div>
       </header>
       <!-- excerpt or body -->
@@ -48,6 +48,7 @@ import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-
 import IconBase from "~/components/IconBase";
 import PostTag from "~/components/PostTag";
 import moment from "vue-moment";
+import tag from "@/mixins/tag";
 
 export default {
   components: {
@@ -57,20 +58,18 @@ export default {
     // eslint-disable-next-line
     moment
   },
+  mixins: [tag],
   props: {
     slug: String,
     title: String,
-    tags: Array,
     date: String,
-    author: String,
     image: Object,
     excerpt: String,
-    isLandscapeImage: Boolean
+    event: Boolean,
+    staff: Boolean,
+    job: Boolean
   },
   computed: {
-    landscapeRatioClass() {
-      return this.isLandscapeImage && "is-landscape";
-    },
     figureNoImg() {
       return this.image === null && "height:94%";
     }

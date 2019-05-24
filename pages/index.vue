@@ -10,15 +10,16 @@
         v-for="(post, index) in allPosts"
         :key="index"
         :slug="post.slug"
-        :tags="post.tags"
         :image="post.image"
         :title="post.title"
         :date="post.datePublished"
-        :author="post.author.name"
         :excerpt="post.excerpt"
+        :job="post.isJob"
+        :staff="post.isStaff"
+        :event="post.isEvent"
       />
       <p class="Section text-right">
-        <nuxt-link to="/news" class="Button">
+        <nuxt-link to="/news" class="Button Button--outline">
           View all news
           <IconBase height="14" width="14" class="ml-1">
             <BaselineArrowForward24px></BaselineArrowForward24px>
@@ -28,7 +29,7 @@
     </ContentColumn>
     <hr class="Section-rule" />
     <ContentColumn>
-      <div class="Grid">
+      <!-- <div class="Grid">
         <div class="Grid-item sm:w-1/2">
           <CardCta
             icon="member"
@@ -47,15 +48,7 @@
             href="mailto:goodnews@raatsicc.org.au"
           />
         </div>
-      </div>
-      <!-- <CardCta
-        icon="newsletter"
-        lede="Subscribe to news"
-        sublede="Get all the news in your email inbox"
-        link-label="goodnews@raatsicc.org.au"
-        href="mailto:goodnews@raatsicc.org.au"
-        class="mt-8"
-      /> -->
+      </div> -->
       <CardCta
         icon="resources"
         lede="Resources heading"
@@ -64,6 +57,14 @@
         href="https://www.datocms-assets.com/11614/1557789367-raatsicc-resources-flyer2017.pdf"
         class="Grid-space"
         orange
+      />
+      <CardCta
+        icon="newsletter"
+        lede="Subscribe to news"
+        sublede="Get all the news in your email inbox"
+        link-label="goodnews@raatsicc.org.au"
+        href="mailto:goodnews@raatsicc.org.au"
+        class="mt-8"
       />
     </ContentColumn>
   </div>
@@ -95,15 +96,14 @@ export default {
         allPosts(first: 3, orderBy: [datePublished_DESC]) {
           _firstPublishedAt
           slug
-          tags
           title
           excerpt
           datePublished
+          isJob
+          isStaff
+          isEvent
           image {
             url
-          }
-          author {
-            name
           }
         }
       }

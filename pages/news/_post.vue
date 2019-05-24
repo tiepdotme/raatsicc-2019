@@ -10,8 +10,17 @@
         :image="post.image"
         :title="post.title"
         :date="post.datePublished"
-        :author="post.author.name"
         :body="post.body"
+        :button="post.includeButton"
+        :button-link="post.buttonLink"
+        :button-label="post.buttonLabel"
+        :job="post.isJob"
+        :staff="post.isStaff"
+        :event="post.isEvent"
+        :event-title="post.eventTitle"
+        :event-date="post.eventDate"
+        :event-is-not-one-day="post.eventIsNotOneDay"
+        :event-location="post.eventLocation"
       >
         <template v-if="post.jobs" v-slot:jobs>
           <template v-for="job in post.jobs">
@@ -47,16 +56,21 @@ export default {
         query Post($slug: String!) {
           post(filter: { slug: { eq: $slug } }) {
             slug
-            tags
             title
             datePublished
+            isEvent
+            isJob
+            isStaff
+            eventDate
+            eventIsNotOneDay
+            eventTitle
+            eventLocation
             body
-            horizontalImage
+            includeButton
+            buttonLink
+            buttonLabel
             image {
               url
-            }
-            author {
-              name
             }
             jobs {
               # dato modular record type

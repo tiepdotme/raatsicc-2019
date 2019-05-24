@@ -14,7 +14,7 @@ module.exports = {
       black: "#000",
       white: "#fefefe",
       text: "#1a202c",
-      "text-gray": "#858585",
+      textgray: "#858585",
 
       brand: {
         primary: "#d66633",

@@ -26,8 +26,9 @@ export default {
 
 <style lang="postcss" scoped>
 .Post-tag {
-  @apply text-xs capitalize border border-gray-500 ml-1 rounded-sm;
+  @apply inline-block text-xs capitalize border border-gray-500 ml-1 rounded-sm;
   padding: 0.5px 4px 1px;
+  transform: translateY(-1px);
 }
 
 .Post-tag:hover {

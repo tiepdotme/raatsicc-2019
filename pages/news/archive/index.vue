@@ -8,12 +8,11 @@
         v-for="(post, index) in allPosts"
         :key="index"
         :slug="post.slug"
-        :tags="post.tags"
-        :image="post.image"
         :title="post.title"
         :date="post.datePublished"
-        :author="post.author.name"
-        :excerpt="post.excerpt"
+        :job="post.isJob"
+        :staff="post.isStaff"
+        :event="post.isEvent"
       ></PostArchiveExcerpt>
     </ContentColumn>
   </div>
@@ -29,24 +28,15 @@ export default {
   apollo: {
     allPosts: gql`
       {
-        allPosts(
-          skip: 1
-          orderBy: [datePublished_DESC]
-          # can only filter for json if exists…
-          filter: { tags: { exists: true } }
-        ) {
+        allPosts(skip: 1, orderBy: [datePublished_DESC]) {
           _firstPublishedAt
           slug
-          tags
           title
           excerpt
           datePublished
-          image {
-            url
-          }
-          author {
-            name
-          }
+          isEvent
+          isJob
+          isStaff
         }
       }
     `

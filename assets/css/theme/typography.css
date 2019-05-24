@@ -82,6 +82,8 @@ body {
 */
 
 p,
+ul,
+ol,
 .Text,
 .Text--sm {
   @apply text-sm;
@@ -105,6 +107,8 @@ p,
 
 @screen sm {
   p,
+  ul,
+  ol,
   .Text {
     @apply text-base;
   }
