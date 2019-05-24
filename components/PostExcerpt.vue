@@ -4,10 +4,7 @@
     <div class="Grid-item w-full sm:w-1/5">
       <figure v-if="image" class="Post-image">
         <nuxt-link :to="`/news/${slug}`">
-          <img
-            :src="`${image.url}?w=200&q=25&fm=jpg&auto=format`"
-            alt="title"
-          />
+          <img :src="`${image.url}?w=200&q=25&auto=format`" alt="title" />
         </nuxt-link>
       </figure>
     </div>
@@ -22,10 +19,6 @@
           <time :date-time="date">
             {{ date | moment("ddd, MMMM Do YYYY") }}
           </time>
-          <!-- <span class="mx-0 font-thin text-gray-500">|</span> -->
-          <!-- <template v-for="(tag, index) in tags">
-            <PostTag :key="index" :tag="tag" />
-          </template> -->
           <PostTag v-if="tag !== null" :tag="tag" />
         </div>
       </header>
@@ -76,3 +69,23 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+.Post-image {
+  @apply bg-brand-neutral;
+  height: 20vh;
+}
+
+.Post-image img {
+  @apply relative w-auto h-full block p-2;
+}
+
+@screen sm {
+  .Post-image {
+    @apply h-auto mt-2;
+  }
+  .Post-image img {
+    @apply w-full h-auto;
+  }
+}
+</style>

@@ -28,7 +28,7 @@
       {{ note }}
     </p>
     <p v-if="pdf" class="st-meta">
-      <a :href="pdf" target="_blank" class="Button mt-2">
+      <a :href="pdf" target="_blank" class="Button Button--blue mt-2">
         Apply&nbsp;
         <IconBase height="14" width="14">
           <BaselineArrowForward24px />

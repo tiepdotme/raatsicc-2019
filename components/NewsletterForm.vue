@@ -1,12 +1,12 @@
 <template lang="pug">
-  form.Form(
+  form.Form.Text(
     action="//raatsicc.us12.list-manage.com/subscribe/post?u=9f5db629b2194c9c6b6d11db6&amp;id=9f44bb7e9f",
     method="post",
     name="mc-embedded-subscribe-form",
     target='_blank',
     novalidate
   )
-    input(
+    input.Button.Button--input(
       placeholder="Add your email",
       type="email",
       name="EMAIL",
@@ -19,7 +19,7 @@
         tabindex="-1",
         value=""
       )
-    button(
+    button.Button.Button--blue(
       type="submit",
       name="subscribe",
     )
@@ -56,7 +56,7 @@ export default {
   @apply flex flex-row w-full;
 }
 
-.Form * + * {
+/* .Form * + * {
   margin: 0;
   margin-top: -1px;
 }
@@ -65,26 +65,17 @@ export default {
   .Form * + * {
     margin: 0;
   }
-}
+} */
 
-.Form input,
-.Form button {
-  @apply block px-4 py-3;
+.Button {
+  --button-border-radius: 0;
+  --button-height: 44px;
 }
 
 .Form input {
   @apply flex-grow;
 }
 
-.Form input:focus {
-  box-shadow: theme(colors.brand.blue) 0 0 0 2px;
-  outline: none;
-}
-
-.Form button {
-  @apply pl-5 text-white bg-brand-blue;
-}
-
-@variants focus {
+@screen sm {
 }
 </style>

@@ -118,17 +118,34 @@ export default {
 
 @screen sm {
   .Post-image {
-    @apply left-0 w-auto;
-    height: 30vh;
+    height: 33.333vh;
+    /* ContentColumn = sm:w-5/6 */
+    left: -20vw;
   }
   .Post-image img {
     @apply relative w-auto h-full m-0;
-    margin-left: 16.66667%;
+    /* ContentColumn = sm:w-5/6 */
+    margin-left: 20%;
+  }
+  .text-column {
+    @apply relative;
+    /* match the ContentColumn width */
+    width: 90%;
   }
 }
 @screen lg {
+  .Post-image {
+    /* wrapped in container, ContentColumn width doesn't count */
+    left: calc((theme(screens.lg) * -0.5) + 50%);
+    width: theme(screens.lg);
+  }
   .Post-image img {
+    /* ContentColumn = sm:w-5/6 */
     margin-left: 25%;
+  }
+  .text-column {
+    /* match the ContentColumn width */
+    width: 108.333333333%;
   }
 }
 @screen xl {

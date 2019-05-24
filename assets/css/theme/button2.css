@@ -13,7 +13,7 @@
   --button-disabled-opacity: 0.6;
   --button-font-case: initial;
   --button-font-weight: 500;
-  --button-height: 44px;
+  --button-height: 36px;
   --button-inline-spacing: 0;
   --button-padding-x: 1em;
 
@@ -59,7 +59,8 @@
     var(--button-box-shadow-color) 0 0 0 var(--button-box-shadow-stroke-hover);
 }
 
-.Button:active {
+.Button:active,
+.Button:focus {
   box-shadow:
     var(--button-box-shadow-color) 0 0 0 var(--button-box-shadow-stroke-active);
 }
@@ -102,5 +103,13 @@
   --button-color: theme(colors.brand.primary);
   --button-border-color: theme(colors.brand.primary);
   --button-box-shadow-color: theme(colors.brand.primary);
+  /* @apply bg-transparent text-white border border-white; */
+}
+
+.Button--input {
+  --button-bg-color: white;
+  --button-color: theme(colors.text);
+  --button-border-width: 0;
+  --button-box-shadow-color: theme(colors.brand.blue);
   /* @apply bg-transparent text-white border border-white; */
 }

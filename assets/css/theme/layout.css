@@ -99,35 +99,16 @@ main.container:before {
 
 /*
 
-  Post
+  Post excerpts
+  (News index & archive pages)
 
 */
 .Post + .Post {
   @apply pt-8;
 }
 
-.Post-image {
-  @apply bg-brand-neutral;
-}
-
-.Post-image a {
-  @apply block p-2;
-}
-
 @screen sm {
   .Post + .Post {
     @apply pt-12;
-  }
-
-  .Post-image {
-    @apply mt-2;
-  }
-}
-
-@screen lg {
-  /* match the ContentColumn width */
-  .text-column {
-    @apply relative;
-    width: 108.333333333%;
   }
 }

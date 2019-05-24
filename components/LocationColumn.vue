@@ -1,5 +1,5 @@
 <template>
-  <p class="Meta" :class="{ 'text-base mb-4': details }">
+  <p :class="textSizeClass">
     <!-- heading -->
     <span class="block font-semibold uppercase">
       {{ location.area }}
@@ -56,13 +56,13 @@
         </IconBase>
         {{ location.fax }}
       </span>
-      <span
+      <!-- <span
         v-if="location.onCallContact"
         class="block text-sm text-gray-600"
         :class="{ 'mt-1': details }"
       >
         On call: {{ location.onCallContact }}
-      </span>
+      </span> -->
     </span>
   </p>
 </template>
@@ -96,12 +96,12 @@ export default {
     details: {
       type: Boolean
     }
+  },
+  computed: {
+    textSizeClass() {
+      return this.details ? "Text mb-4" : "Meta";
+    }
   }
-  // computed: {
-  //   details() {
-  //     return this.$route.name === "contact";
-  //   }
-  // }
 };
 </script>
 

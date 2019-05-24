@@ -3,18 +3,18 @@
     <nav class="Nav Rule container-inner">
       <div class="flex">
         <!-- logo -->
-        <div class="w-1/6 sm:w-1/4">
+        <div class="w-1/6 sm:w-1/5 lg:w-1/4">
           <NavLogo />
         </div>
         <!-- mobile page location & list -->
         <div class="Nav-pagename flex sm:hidden w-full">
           <nuxt-link :to="pageLink">
-            <h1 class="sm:w-5/6 lg:w-3/4">{{ pageName }}</h1>
+            <h1>{{ pageName }}</h1>
           </nuxt-link>
         </div>
         <!-- acronymn & list -->
-        <div class="hidden sm:block sm:w-5/6 lg:w-3/4">
-          <h1 class="Nav-acronym text-brand-primary sm:w-5/6 lg:w-3/4">
+        <div class="hidden sm:block sm:w-4/5 lg:w-3/4">
+          <h1 class="Nav-acronym text-brand-primary sm:w-4/5 lg:w-3/4">
             Cape York / Gulf Remote Area Aboriginal &amp; Torres Strait Islander
             Child Care
             <span class="font-bold text-gray-900">
@@ -127,11 +127,12 @@ export default {
   @apply text-sm font-semibold uppercase;
 }
 
-@screen sm {
+@screen md {
   .Nav {
     @apply pt-0;
   }
-
+}
+@screen lg {
   .Nav-acronym {
     @apply text-sm;
   }

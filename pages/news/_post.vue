@@ -23,9 +23,9 @@
         :event-location="post.eventLocation"
       >
         <template v-if="post.jobs" v-slot:jobs>
-          <template v-for="job in post.jobs">
-            <!-- eslint-disable -->
+          <template v-for="(job, index) in post.jobs">
             <PostJob
+              :key="index"
               :title="job.positionTitle"
               :hours="job.hours"
               :location="job.location"

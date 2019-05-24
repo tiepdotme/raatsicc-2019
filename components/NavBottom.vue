@@ -4,13 +4,14 @@
       <hr class="Rule mt-4" />
       <nav class="Nav">
         <div class="flex flex-col sm:flex-row">
-          <div class="w-1/6 sm:w-1/6 lg:w-1/4">
+          <!-- logo -->
+          <div class="w-1/6 sm:w-1/5 lg:w-1/4">
             <div class="py-4 sm:pb-0">
               <NavLogo />
             </div>
           </div>
           <!-- divide here? -->
-          <div class="w-full sm:w-5/6 lg:w-3/4">
+          <div class="w-full sm:w-4/5 lg:w-3/4">
             <div class="hidden sm:block">
               <NavList />
               <hr class="Rule mb-8" />
@@ -39,7 +40,7 @@
               </p>
               <p class="Meta-gray">
                 <span>&copy; {{ new Date().getFullYear() }} RAATSICC</span>
-                <span class="font-thin text-gray-500">|</span>
+                <span class="font-thin text-gray-500 mx-px">|</span>
                 <a href="https://callumflack.design/" target="_blank">
                   Site by Callum Flack Design
                 </a>
