@@ -1,6 +1,6 @@
 <template lang="pug">
   form.Form.Text(
-    action="//raatsicc.us12.list-manage.com/subscribe/post?u=9f5db629b2194c9c6b6d11db6&amp;id=9f44bb7e9f",
+    action="https://raatsicc.us20.list-manage.com/subscribe/post?u=9c7d1ebc0a46a1dec40146e3e&amp;id=a7a886c2cd",
     method="post",
     name="mc-embedded-subscribe-form",
     target='_blank',
@@ -15,7 +15,7 @@
     div(style="position: absolute; left: -5000px;", aria-hidden="true")
       input(
         type="text",
-        name="b_9f5db629b2194c9c6b6d11db6_9f44bb7e9f",
+        name="b_9c7d1ebc0a46a1dec40146e3e_a7a886c2cd",
         tabindex="-1",
         value=""
       )
