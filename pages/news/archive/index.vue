@@ -28,7 +28,9 @@ export default {
   apollo: {
     allPosts: gql`
       {
-        allPosts(skip: 1, orderBy: [datePublished_DESC]) {
+        # default 20, max 100
+        # https://www.datocms.com/docs/content-delivery-api/pagination
+        allPosts(first: 100, skip: 1, orderBy: [datePublished_DESC]) {
           _firstPublishedAt
           slug
           title
