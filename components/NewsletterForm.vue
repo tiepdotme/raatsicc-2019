@@ -33,6 +33,11 @@
 import IconBase from "@/components/IconBase";
 import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 
+/*
+  TODO: add netlify function call to functions/subscribe.js
+  https://github.com/jamesqquick/Learn-Build-Teach-Site/blob/master/src/components/newsletter.js
+*/
+
 export default {
   components: {
     IconBase,
