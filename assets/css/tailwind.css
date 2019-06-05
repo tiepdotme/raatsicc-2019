@@ -8,6 +8,7 @@
 @import "./theme/button2";
 @import "./theme/loading";
 @import "./theme/page-transitions";
+@import "./theme/icon";
 
 @tailwind base;
 

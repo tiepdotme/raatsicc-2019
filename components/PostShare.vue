@@ -12,9 +12,7 @@
           rel="noopener"
           aria-label="Share on Facebook"
         >
-          <IconBase height="30" width="30">
-            <IconSocialFacebook />
-          </IconBase>
+          <icon name="facebook" height="30" width="30" />
         </a>
         <!-- email -->
         <a
@@ -22,40 +20,25 @@
           :href="emailUrl"
           target="_blank"
           rel="noopener"
-          aria-label="Share on Facebook"
+          aria-label="Share by email"
         >
-          <IconBase height="30" width="30">
-            <IconShareEmail />
-          </IconBase>
+          <icon name="email-circle" height="30" width="30" />
         </a>
       </div>
       <!-- back to news -->
       <nuxt-link to="/news" class="text-gray mt-1 sm:mt-0">
         See all news
-        <IconBase height="14" width="14">
-          <BaselineArrowForward24px />
-        </IconBase>
+        <icon name="arrow-forward" height="14" width="14" />
       </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
-import IconBase from "~/components/IconBase";
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
-import IconSocialFacebook from "~/components/icons/IconSocialFacebook";
-import IconShareEmail from "~/components/icons/IconShareEmail";
-
 let baseUrl = "https%3A//raatsicc.org.au";
 let linkText = "Check%20out%20this%20article%20from%20RAATSICC&amp;";
 
 export default {
-  components: {
-    BaselineArrowForward24px,
-    IconBase,
-    IconSocialFacebook,
-    IconShareEmail
-  },
   props: ["slug"],
   computed: {
     /* see: https://sharingbuttons.io/ + http://www.sharelinkgenerator.com/ */

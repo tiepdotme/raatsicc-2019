@@ -46,9 +46,7 @@
           class="Button"
         >
           {{ buttonLabel }}
-          <IconBase height="14" width="14" class="ml-1">
-            <BaselineArrowForward24px />
-          </IconBase>
+          <icon name="arrow-forward" height="14" width="14" class="ml-1" />
         </a>
       </p>
 
@@ -62,8 +60,6 @@
 </template>
 
 <script>
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
-import IconBase from "~/components/IconBase.vue";
 import PostEvent from "~/components/PostEvent";
 import PostTag from "~/components/PostTag";
 import PostShare from "~/components/PostShare";
@@ -72,8 +68,6 @@ import tag from "@/mixins/tag";
 
 export default {
   components: {
-    BaselineArrowForward24px,
-    IconBase,
     PostEvent,
     PostShare,
     PostTag,

@@ -9,6 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "icons": "vsvg -s assets/icons -t components/icons",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
@@ -24,7 +25,8 @@
     "portal-vue": "^2.1.4",
     "vue-headroom": "^0.10.1",
     "vue-loading-spinner": "^1.0.11",
-    "vue-moment": "^4.0.0"
+    "vue-moment": "^4.0.0",
+    "vue-svgicon": "^3.2.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",

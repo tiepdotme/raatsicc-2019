@@ -5,8 +5,8 @@
     </div>
     <ContentColumn v-else>
       <img
-        src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg?w=1200&q=50&fm=jpg&auto=format"
-        alt="RAATSICC offices in Far North Queesnaldn"
+        src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg?w=1200&q=50&auto=format"
+        alt="RAATSICC offices in Far North Queensland"
       />
       <!-- locations -->
       <div class="mt-6">
@@ -28,7 +28,7 @@
       <div class="Grid">
         <div class="Grid-item w-1/2">
           <CardCta
-            icon="facebook"
+            card-name="facebook"
             lede="Follow us on Facebook"
             sublede="Up to the minute news"
             link-label="RAATSICC on Facebook"
@@ -37,7 +37,7 @@
         </div>
         <div class="Grid-item w-1/2">
           <CardCta
-            icon="share-news"
+            card-name="news"
             lede="News to share?"
             sublede="We'll list it for you"
             link-label="goodnews@raatsicc.org.au"

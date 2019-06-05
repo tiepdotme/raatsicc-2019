@@ -25,19 +25,12 @@
     )
       | {{ buttonText }}
       //- span.LinkSignal-target →
-      IconBase.ml-1(height="14" width="14")
-        BaselineArrowForward24px
+      icon.ml-1(name="arrow-forward" height="14" width="14")
 </template>
 
 <script>
-import IconBase from "@/components/IconBase";
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
-
 export default {
-  components: {
-    IconBase,
-    BaselineArrowForward24px
-  },
+  components: {},
   computed: {
     buttonText() {
       // if (this.loading) {

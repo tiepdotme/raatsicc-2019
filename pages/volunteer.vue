@@ -5,7 +5,7 @@
     </div>
     <HeroStripe
       v-else
-      :image="`${volunteerPage.heroImage.url}?w=500&q=40&fm=jpg&auto=format`"
+      :image="`${volunteerPage.heroImage.url}?w=500&q=40&auto=format`"
       :alt="volunteerPage.heroTitle"
       color="green"
     >
@@ -39,9 +39,7 @@
             class="Button"
           >
             {{ item.pdfLabel }}
-            <IconBase height="14" width="14" class="ml-1">
-              <BaselineArrowForward24px></BaselineArrowForward24px>
-            </IconBase>
+            <icon name="arrow-forward" height="14" width="14" class="ml-1" />
           </a>
         </p>
       </ContentColumn>
@@ -50,10 +48,8 @@
 </template>
 
 <script>
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 import ContentColumn from "~/components/ContentColumn.vue";
 import HeroStripe from "~/components/HeroStripe.vue";
-import IconBase from "~/components/IconBase.vue";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import gql from "graphql-tag";
 
@@ -85,10 +81,8 @@ export default {
     `
   },
   components: {
-    BaselineArrowForward24px,
     ContentColumn,
     HeroStripe,
-    IconBase,
     LoadingSpinner
   }
 };

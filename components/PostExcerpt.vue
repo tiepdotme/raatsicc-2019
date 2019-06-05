@@ -27,9 +27,7 @@
         {{ excerpt }}
         <nuxt-link class="text-brand-primary" :to="`/news/${slug}`">
           Continue reading
-          <IconBase class="ml-" height="14" width="14">
-            <BaselineArrowForward24px />
-          </IconBase>
+          <icon name="arrow-forward" class="ml-" height="14" width="14" />
         </nuxt-link>
       </p>
     </div>
@@ -37,16 +35,12 @@
 </template>
 
 <script>
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
-import IconBase from "~/components/IconBase";
 import PostTag from "~/components/PostTag";
 import moment from "vue-moment";
 import tag from "@/mixins/tag";
 
 export default {
   components: {
-    BaselineArrowForward24px,
-    IconBase,
     PostTag,
     // eslint-disable-next-line
     moment

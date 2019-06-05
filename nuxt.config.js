@@ -30,7 +30,11 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/vue-headroom", "@/plugins/vue-moment"],
+  plugins: [
+    "~/plugins/vue-headroom",
+    "@/plugins/vue-moment",
+    "~/plugins/vue-svgicon"
+  ],
 
   /*
    ** Nuxt.js modules

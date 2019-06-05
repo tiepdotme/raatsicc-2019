@@ -24,23 +24,15 @@
       </p>
       <div v-if="cta" class="Meta font-medium" :class="ctaClasses">
         {{ cta }}
-        <IconBase height="14" width="14" class="Block-cta">
-          <BaselineArrowForward24px />
-        </IconBase>
+        <icon name="arrow-forward" height="14" width="14" class="Block-cta" />
       </div>
     </div>
   </component>
 </template>
 
 <script>
-import IconBase from "~/components/IconBase.vue";
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
-
 export default {
-  components: {
-    IconBase,
-    BaselineArrowForward24px
-  },
+  components: {},
   props: {
     image: String,
     label: String,

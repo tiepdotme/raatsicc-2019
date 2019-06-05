@@ -1,14 +1,12 @@
 <template>
   <div class="Card" :class="isOrangeClass">
     <div class="Card-body">
-      <IconBase class="Card-icon" height="30" width="30">
-        <BaselineEmail24px v-if="icon === 'newsletter'" />
-        <BaselineFeedback24px v-else-if="icon === 'share-news'" />
-        <BaselineFlag24px v-else-if="icon === 'difference'" />
-        <BaselinePanTool24px v-else-if="icon === 'member'" />
-        <BaselineBookmark24px v-else-if="icon === 'resources'" />
-        <IconSocialFacebookRev v-else-if="icon === 'facebook'" />
-      </IconBase>
+      <icon
+        :name="cardTypeToIcon(cardName)"
+        height="30"
+        width="30"
+        class="Card-icon"
+      />
       <div class="Card-heading Metaheading">
         {{ lede }}
         <br />
@@ -16,43 +14,31 @@
       </div>
     </div>
     <!-- button or form -->
-    <NewsletterForm v-if="icon === 'newsletter'" />
+    <NewsletterForm v-if="cardName === 'newsletter'" />
     <CfdLink v-else :to="to" :href="href" class="Card-link">
       {{ linkLabel }}
-      <IconBase height="14" width="14">
-        <BaselineArrowForward24px />
-      </IconBase>
+      <icon name="arrow-forward" height="14" width="14" />
     </CfdLink>
   </div>
 </template>
 
 <script>
-import IconBase from "@/components/IconBase";
-import IconSocialFacebookRev from "@/components/icons/IconSocialFacebookRev";
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
-import BaselineEmail24px from "~/components/icons/baseline-email-24px";
-import BaselineFeedback24px from "~/components/icons/baseline-feedback-24px";
-import BaselineFlag24px from "~/components/icons/baseline-flag-24px";
-import BaselinePanTool24px from "~/components/icons/baseline-pan-tool-24px";
-import BaselineBookmark24px from "~/components/icons/baseline-bookmark-24px";
 import CfdLink from "@/components/CfdLink";
 import NewsletterForm from "@/components/NewsletterForm";
 
 export default {
   components: {
-    BaselineArrowForward24px,
-    BaselineBookmark24px,
-    BaselineEmail24px,
-    BaselineFeedback24px,
-    BaselineFlag24px,
-    BaselinePanTool24px,
     CfdLink,
-    IconBase,
-    IconSocialFacebookRev,
     NewsletterForm
   },
   props: {
-    icon: String,
+    /*
+      cardName prop defines:
+      * the icon name (see cardTypeToIcon as our map)
+      * whether the newsletter form is shown
+    */
+    cardName: String,
+    name: String,
     lede: String,
     sublede: {
       String,
@@ -75,6 +61,27 @@ export default {
   computed: {
     isOrangeClass() {
       return this.orange && "is-orange";
+    }
+  },
+  methods: {
+    /*
+     * Assign icon name for given card name
+     * @param {string} type
+     * @returns {string}
+     */
+    cardTypeToIcon(type) {
+      // Match card types to their equivalent icon name
+      const typeToIconMap = {
+        resources: "bookmark",
+        newsletter: "email",
+        volunteer: "pan-tool",
+        difference: "flag",
+        news: "question-answer",
+        facebook: "facebook-solid"
+      };
+
+      // Type names must be lowercase
+      return typeToIconMap[type.toLowerCase()];
     }
   }
 };

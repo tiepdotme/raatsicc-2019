@@ -21,9 +21,7 @@
       <p class="Section text-right">
         <nuxt-link to="/news" class="Button Button--outline">
           View all news
-          <IconBase height="14" width="14" class="ml-1">
-            <BaselineArrowForward24px></BaselineArrowForward24px>
-          </IconBase>
+          <icon name="arrow-forward" height="14" width="14" class="ml-1" />
         </nuxt-link>
       </p>
     </ContentColumn>
@@ -32,7 +30,7 @@
       <!-- <div class="Grid">
         <div class="Grid-item sm:w-1/2">
           <CardCta
-            icon="member"
+            card-name="volunteer"
             lede="Join and contribute"
             sublede="Our members help us blah blah…"
             link-label="Become a RAATSICC member"
@@ -41,7 +39,7 @@
         </div>
         <div class="Grid-item sm:w-1/2">
           <CardCta
-            icon="share-news"
+            card-name="news"
             lede="News to share?"
             sublede="Send it to us, we'll list it for you"
             link-label="goodnews@raatsicc.org.au"
@@ -50,7 +48,7 @@
         </div>
       </div> -->
       <CardCta
-        icon="resources"
+        card-name="resources"
         lede="Resources heading"
         sublede="Resources sub-heading"
         link-label="Order from our Resources "
@@ -59,7 +57,7 @@
         orange
       />
       <CardCta
-        icon="newsletter"
+        card-name="newsletter"
         lede="Subscribe to news"
         sublede="Get all the news in your email inbox"
         link-label="goodnews@raatsicc.org.au"
@@ -71,22 +69,18 @@
 </template>
 
 <script>
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn.vue";
 import HeroBlocksHome from "~/components/HeroBlocksHome.vue";
-import IconBase from "~/components/IconBase.vue";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 
 export default {
   components: {
-    BaselineArrowForward24px,
     CardCta,
     ContentColumn,
     HeroBlocksHome,
-    IconBase,
     LoadingSpinner,
     PostExcerpt
   },

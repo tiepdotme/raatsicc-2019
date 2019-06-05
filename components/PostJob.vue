@@ -30,23 +30,17 @@
     <p v-if="pdf" class="st-meta">
       <a :href="pdf" target="_blank" class="Button Button--blue mt-2">
         Apply&nbsp;
-        <IconBase height="14" width="14">
-          <BaselineArrowForward24px />
-        </IconBase>
+        <icon name="arrow-forward" height="14" width="14" />
       </a>
     </p>
   </div>
 </template>
 
 <script>
-import IconBase from "@/components/IconBase";
-import BaselineArrowForward24px from "~/components/icons/baseline-arrow-forward-24px";
 import moment from "vue-moment";
 
 export default {
   components: {
-    IconBase,
-    BaselineArrowForward24px,
     // eslint-disable-next-line
     moment
   },

@@ -32,9 +32,7 @@
       :href="`mailto:${location.email}`"
       class="block text-gray-600"
     >
-      <IconBase height="12" width="12">
-        <BaselineMailOutline24px />
-      </IconBase>
+      <icon name="mail-outline" height="12" width="12" />
       {{ location.email }}
     </a>
     <a
@@ -42,18 +40,14 @@
       :href="`tel:${location.phone}`"
       class="block text-gray-600"
     >
-      <IconBase height="12" width="12">
-        <BaselineCall24px />
-      </IconBase>
+      <icon name="call" height="12" width="12" />
       {{ location.phone }}
     </a>
 
     <!-- extra details -->
     <span v-if="details">
       <span v-if="location.fax" class="block text-gray-600">
-        <IconBase height="12" width="12">
-          <BaselineMoveToInbox24px />
-        </IconBase>
+        <icon name="move-to-inbox" height="12" width="12" />
         {{ location.fax }}
       </span>
       <!-- <span
@@ -68,18 +62,7 @@
 </template>
 
 <script>
-import IconBase from "~/components/IconBase";
-import BaselineCall24px from "~/components/icons/baseline-call-24px";
-import BaselineMailOutline24px from "~/components/icons/baseline-mail-outline-24px";
-import BaselineMoveToInbox24px from "~/components/icons/baseline-move-to-inbox-24px.vue";
-
 export default {
-  components: {
-    BaselineCall24px,
-    BaselineMailOutline24px,
-    BaselineMoveToInbox24px,
-    IconBase
-  },
   // props: ["location"],
   props: {
     location: {
