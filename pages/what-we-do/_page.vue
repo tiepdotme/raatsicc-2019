@@ -5,8 +5,8 @@
     <div v-if="$apollo.loading" class="Loading">
       <LoadingSpinner />
     </div>
-    <ContentColumn v-else text>
-      <div class="Markdown" v-html="$md.render(whatPage.body)" />
+    <ContentColumn v-else>
+      <div class="Markdown" v-html="$md.render(whatSubpage.body)" />
     </ContentColumn>
   </div>
 </template>
@@ -19,11 +19,10 @@ import gql from "graphql-tag";
 
 export default {
   apollo: {
-    whatPage: {
+    whatSubpage: {
       query: gql`
-        query whatPage($slug: String!) {
-          whatPage(filter: { slug: { eq: $slug } }) {
-            title
+        query whatSubpage($slug: String!) {
+          whatSubpage(filter: { slug: { eq: $slug } }) {
             body
           }
         }
