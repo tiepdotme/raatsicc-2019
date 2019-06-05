@@ -1,5 +1,5 @@
 <template>
-  <section class="Section">
+  <nav class="Section">
     <div class="flex flex-col sm:flex-row">
       <HeroBlock
         v-for="item in blockItems"
@@ -13,7 +13,7 @@
         class="w-full sm:w-1/2 lg:w-1/4"
       />
     </div>
-  </section>
+  </nav>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
           label: "About us",
           to: "/about",
           image:
-            "https://www.datocms-assets.com/11614/1557789763-block-bw-flying.jpg?w=500&q=40&fm=jpg&auto=format",
+            "https://www.datocms-assets.com/11614/1557789763-block-bw-flying.jpg?w=500&q=40&auto=format",
           color: "red",
           cta: "On location since 1990"
         },
@@ -38,7 +38,7 @@ export default {
           label: "What we do",
           to: "/what-we-do",
           image:
-            "https://www.datocms-assets.com/11614/1557789774-block-bw-looking.jpg?w=500&q=40&fm=jpg&auto=format",
+            "https://www.datocms-assets.com/11614/1557789774-block-bw-looking.jpg?w=500&q=40&auto=format",
           color: "green",
           cta: "Our four core services"
         },
@@ -55,7 +55,7 @@ export default {
           label: "See our events",
           to: "/news/events",
           image:
-            "https://www.datocms-assets.com/11614/1557789749-block-bw-dancing.jpg?w=500&q=40&fm=jpg&auto=format",
+            "https://www.datocms-assets.com/11614/1557789749-block-bw-dancing.jpg?w=500&q=40&auto=format",
           color: "blue",
           cta: "Come join us"
         }

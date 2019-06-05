@@ -1,5 +1,5 @@
 <template>
-  <section class="Section">
+  <nav class="Section">
     <div class="flex flex-col sm:flex-row">
       <HeroBlock
         v-for="item in WhatPage.blocks"
@@ -12,7 +12,7 @@
         class="w-full sm:w-1/2 lg:w-1/4"
       />
     </div>
-  </section>
+  </nav>
 </template>
 
 <script>
@@ -25,6 +25,10 @@ export default {
   },
   data() {
     return {
+      /*
+        To reduce complexity, this data isn't from Dato.
+        It's just a nice, quick .json.
+      */
       WhatPage
     };
   }
