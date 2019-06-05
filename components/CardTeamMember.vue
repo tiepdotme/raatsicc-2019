@@ -1,7 +1,17 @@
 <template>
   <div class="Card">
     <Aspect class="Card-image" ratio="1.25">
-      <img v-if="image" :src="image.url" :alt="name" />
+      <img
+        v-if="image"
+        :src="`${image.url}?w=380&q=33&auto=format`"
+        :alt="name"
+      />
+      <img
+        v-else
+        src="https://www.datocms-assets.com/11614/1557801537-logo-symbol.png?w=150&q=40&fm=png&auto=format"
+        alt="RAATSICC logo as a placeholder for the tea member portrait"
+        class="Card-image-placeholder"
+      />
     </Aspect>
     <p class="Meta font-bold mb-0">{{ name }}</p>
     <p class="Meta mb-0">{{ title }}</p>
@@ -34,6 +44,12 @@ export default {
 .Card-image {
   @apply bg-gray-300 mt-0 mb-3 !important;
   /* padding-bottom: 125%; */
+}
+
+.Card-image-placeholder {
+  margin: auto;
+  height: auto;
+  width: 33%;
 }
 
 @screen sm {
