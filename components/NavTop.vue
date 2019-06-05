@@ -15,11 +15,11 @@
         <!-- acronymn & list -->
         <div class="hidden sm:block sm:w-4/5 lg:w-3/4">
           <h1 class="Nav-acronym text-brand-primary sm:w-4/5 lg:w-3/4">
-            Cape York / Gulf Remote Area Aboriginal &amp; Torres Strait Islander
-            Child Care
-            <span class="font-bold text-gray-900">
+            Cape York/Gulf Remote Area Aboriginal and Torres Strait Islander
+            Child Care Advisory Association Inc.
+            <!-- <span class="font-bold text-gray-900">
               &nbsp;/ Protecting Kids Our Way.
-            </span>
+            </span> -->
           </h1>
           <!-- <h2 class="Title Nav-tagline">Protecting Kids Our Way.</h2> -->
           <hr class="Nav-tagline-rule" />
@@ -78,28 +78,6 @@ export default {
   box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.05);
 }
 
-.Nav {
-  /* @apply pt-1; */
-}
-
-/* OLD LARGE TAGLINE + RULE */
-/* .headroom--pinned .Nav-tagline {
-  height: 0;
-} */
-
-/* .headroom--pinned .Nav-tagline,
-.headroom--pinned .Nav-tagline-rule {
-  @apply m-0 opacity-0;
-} */
-
-/* .headroom--top .Nav-tagline,
-.Nav-tagline {
-  @apply text-brand-primary italic;
-  height: auto;
-  opacity: 1;
-  transition: all 250ms ease;
-} */
-
 /* .headroom--top .Nav-tagline-rule, */
 .Nav-tagline-rule {
   @apply border-b border-brand-primary m-0 mt-4 opacity-100;
@@ -113,7 +91,8 @@ export default {
 
 /* .headroom--top .Nav-acronym, */
 .Nav-acronym {
-  @apply font-serif font-extrabold uppercase text-xs tracking-wide;
+  @apply font-serif font-extrabold text-xs tracking-wide;
+  @apply uppercase;
   @apply mt-8 h-auto opacity-100;
   transition: all 250ms ease;
 }
