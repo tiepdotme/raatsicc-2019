@@ -57,7 +57,7 @@ blockquote {
  */
 
 /* .Meta:not(:last-child),
-.Meta-gray:not(:last-child),
+.Meta text-gray:not(:last-child),
 .Text--sm:not(:last-child), */
 .s-meta {
   @apply mb-1;
@@ -68,7 +68,7 @@ blockquote {
 
 @screen md {
   /* .Meta:not(:last-child),
-  .Meta-gray:not(:last-child),
+  .Meta text-gray:not(:last-child),
   .Text--sm:not(:last-child), */
   .s-meta {
     @apply mb-2;

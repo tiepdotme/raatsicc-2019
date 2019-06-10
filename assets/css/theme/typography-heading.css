@@ -1,0 +1,48 @@
+/*
+
+  Headings
+
+ */
+
+.Markdown h1,
+.Markdown h2,
+.Markdown h3,
+.Title,
+.Heading,
+.Subheading {
+  @apply font-serif font-bold leading-snug tracking-tight;
+}
+
+.Markdown h1,
+.Title {
+  @apply leading-tight;
+  font-size: calc(theme(fontSize.4xl) * var(--text-ratio));
+}
+
+.Markdown h2,
+.Heading {
+  font-size: calc(theme(fontSize.3xl) * var(--text-ratio));
+}
+
+.Markdown h3,
+.Subheading {
+  font-size: calc(theme(fontSize.lg) * var(--text-ratio));
+}
+
+/*
+
+  Metaheadings
+
+*/
+
+.Markdown h4,
+.Metaheading {
+  @apply font-sans font-bold leading-snug;
+  font-size: calc(theme(fontSize.base) * var(--text-ratio));
+}
+
+.Markdown h5,
+.Metalede {
+  @apply font-sans font-medium;
+  font-size: calc(theme(fontSize.text-xl) * var(--text-ratio));
+}

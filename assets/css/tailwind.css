@@ -12,12 +12,14 @@
 /* Custom components */
 @import "./theme/font-face";
 @import "./theme/icon";
+@import "./theme/button";
+@import "./theme/typography-scale";
+@import "./theme/typography-text";
+@import "./theme/typography-heading";
 @import "./theme/layout";
 @import "./theme/layout-rule";
 @import "./theme/layout-grid";
 @import "./theme/layout-section";
-@import "./theme/typography";
-@import "./theme/button";
 @import "./theme/loading";
 @import "./theme/page-transitions";
 
@@ -25,6 +27,5 @@
 @import "./tailwind/utilities.css";
 
 /* Custom utils */
-@import "./theme/typography-scale";
 @import "./theme/typography-spacing2";
 @import "./theme/aria";

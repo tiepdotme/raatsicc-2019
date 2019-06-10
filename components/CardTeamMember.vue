@@ -15,7 +15,7 @@
     </Aspect>
     <p class="Meta font-bold mb-0">{{ name }}</p>
     <p class="Meta mb-0">{{ title }}</p>
-    <p class="Meta-gray mb-0">{{ location }}</p>
+    <p class="Meta text-gray mb-0">{{ location }}</p>
   </div>
 </template>
 

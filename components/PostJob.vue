@@ -24,7 +24,7 @@
       {{ program }}
     </p>
     <p v-if="note" class="text-gray st-m">
-      <!-- <span class="Job-attribute Meta-gray">Note:</span> -->
+      <!-- <span class="Job-attribute Meta text-gray">Note:</span> -->
       {{ note }}
     </p>
     <p v-if="pdf" class="st-m">

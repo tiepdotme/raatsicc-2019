@@ -12,7 +12,7 @@
           {{ title }}
         </span>
       </h1>
-      <div class="Meta-gray s-h">
+      <div class="Meta text-gray s-h">
         <time :date-time="date">{{ date | moment("ddd, MMMM Do YYYY") }}</time>
         <!-- <span class="mx-0 font-thin text-gray-500">|</span> -->
         <!-- <cite class="not-italic">{{ author }}</cite> -->

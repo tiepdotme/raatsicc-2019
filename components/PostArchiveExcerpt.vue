@@ -6,7 +6,7 @@
         <h3 class="Subheading mb-px">
           <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
         </h3>
-        <div class="Meta-gray mb-1">
+        <div class="Meta text-gray mb-1">
           <time :date-time="date">
             {{ date | moment("ddd, MMMM Do YYYY") }}
           </time>

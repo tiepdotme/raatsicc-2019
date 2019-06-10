@@ -29,16 +29,16 @@
               </div>
             </div>
             <!-- acknowledgment -->
-            <div class="Meta-gray"></div>
+            <div class="Meta text-gray"></div>
             <!-- copyright -->
             <hr class="Rule mt-8 mb-4" />
             <div class="sm:w-5/6 lg:w-9/12">
-              <p class="Meta-gray s-m">
+              <p class="Meta text-gray s-m">
                 RAATSICC acknowledge the traditional custodians of the lands on
                 which we live and work and pay respect to our Elders: past,
                 present and future.
               </p>
-              <p class="Meta-gray">
+              <p class="Meta text-gray">
                 <span>&copy; {{ new Date().getFullYear() }} RAATSICC</span>
                 <span class="font-thin text-gray-500 mx-px">|</span>
                 <a href="https://callumflack.design/" target="_blank">

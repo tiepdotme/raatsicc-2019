@@ -15,7 +15,7 @@
         <h3 class="Heading">
           <nuxt-link :to="`/news/${slug}`">{{ title }}</nuxt-link>
         </h3>
-        <div class="Meta-gray s-m">
+        <div class="Meta text-gray s-m">
           <time :date-time="date">
             {{ date | moment("ddd, MMMM Do YYYY") }}
           </time>
