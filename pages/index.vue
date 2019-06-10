@@ -114,11 +114,16 @@ export default {
     `
   },
   data: () => ({ allPosts: [], homePage: null }),
-  computed: {
-    /* assign page to the gql query containing the meta tags */
-    page() {
-      return !this.$apollo.loading && this.$apollo.data.homePage;
-    }
+  mounted() {
+    this.$nextTick(() => {
+      this.page = this.$apollo.data.homePage;
+    });
   }
+  /* computed: {
+    // assign page to the gql query containing the meta tags
+    page() {
+      return this.$apollo.data && this.$apollo.data.homePage;
+    }
+  } */
 };
 </script>
