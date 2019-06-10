@@ -17,6 +17,7 @@ body {
 p,
 ul,
 ol,
+.Button,
 .Text,
 .Text--sm {
   font-size: calc(theme(fontSize.base) * var(--text-ratio));
