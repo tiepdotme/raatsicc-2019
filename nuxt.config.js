@@ -1,5 +1,8 @@
 const pkg = require("./package");
 const path = require("path");
+import config from "./config";
+
+const baseURL = config.PROD ? config.SITE_URL : "http://localhost";
 
 module.exports = {
   mode: "universal",
@@ -33,14 +36,17 @@ module.exports = {
   plugins: [
     "~/plugins/vue-headroom",
     "@/plugins/vue-moment",
-    "~/plugins/vue-svgicon"
+    "~/plugins/vue-svgicon",
+    {
+      src: "~/plugins/v-lazy-image",
+      ssr: false
+    }
   ],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
-    // "nuxt-netlify-cms"
     "@nuxtjs/dotenv",
     "@nuxtjs/apollo",
     "@nuxtjs/axios",
@@ -52,6 +58,13 @@ module.exports = {
     // LAMBDA_FUNCTIONS_BASE_URL: process.env.LAMBDA_FUNCTIONS_BASE_URL,
     // CONTACT_FORM_TO: process.env.CONTACT_FORM_TO,
     DATO_API_TOKEN: process.env.DATO_API_TOKEN
+  },
+
+  proxy: {
+    "/.netlify": {
+      target: `${baseURL}:9000`,
+      pathRewrite: { "^/.netlify/functions": "" }
+    }
   },
 
   router: {
@@ -80,12 +93,10 @@ module.exports = {
     postcss: {
       // Add plugin names as key and arguments as value
       // Disable a plugin by passing false as value
-      plugins: {
-        // https://github.com/postcss/postcss-url
-        // "postcss-url": {},
-        "postcss-import": {},
-        tailwindcss: path.resolve(__dirname, "./tailwind.config.js")
-      }
+      plugins: [
+        require("postcss-import"),
+        require("tailwindcss")("./tailwind.config.js")
+      ]
     },
     extend(config, ctx) {
       // Run ESLint on save
