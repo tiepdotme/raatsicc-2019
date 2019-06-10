@@ -45,6 +45,7 @@ import ContentColumn from "~/components/ContentColumn";
 import HeroBlocksAbout from "~/components/HeroBlocksAbout";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -67,6 +68,7 @@ export default {
               }
             }
           }
+          ${metaTagsQuery}
         }
       }
     `
@@ -76,6 +78,13 @@ export default {
     ContentColumn,
     HeroBlocksAbout,
     LoadingSpinner
+  },
+  mixins: [head],
+  computed: {
+    /* assign page to the gql query containing the meta tags */
+    page() {
+      return !this.$apollo.loading && this.$apollo.data.aboutPage;
+    }
   }
 };
 </script>

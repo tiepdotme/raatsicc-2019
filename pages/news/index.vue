@@ -27,6 +27,7 @@ import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import PostArchiveLink from "~/components/PostArchiveLink.vue";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -46,6 +47,13 @@ export default {
           }
         }
       }
+    `,
+    newsPage: gql`
+      {
+        newsPage {
+          ${metaTagsQuery}
+        }
+      }
     `
   },
   components: {
@@ -53,6 +61,14 @@ export default {
     LoadingSpinner,
     PostArchiveLink,
     PostExcerpt
+  },
+  mixins: [head],
+  data: () => ({ newsPage: null }),
+  computed: {
+    /* assign page to the gql query containing the meta tags */
+    page() {
+      return !this.$apollo.loading && this.$apollo.data.newsPage;
+    }
   }
 };
 </script>

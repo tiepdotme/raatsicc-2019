@@ -9,6 +9,7 @@
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -16,12 +17,20 @@ export default {
       {
         constitutionPage {
           body
+          ${metaTagsQuery}
         }
       }
     `
   },
   components: {
     ContentColumn
+  },
+  mixins: [head],
+  computed: {
+    /* assign page to the gql query containing the meta tags */
+    page() {
+      return !this.$apollo.loading && this.$apollo.data.constitutionPage;
+    }
   }
 };
 </script>

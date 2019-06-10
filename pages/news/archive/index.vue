@@ -30,7 +30,7 @@ export default {
       {
         # default 20, max 100
         # https://www.datocms.com/docs/content-delivery-api/pagination
-        allPosts(first: 100, skip: 1, orderBy: [datePublished_DESC]) {
+        allPosts(first: 100, skip: 6, orderBy: [datePublished_DESC]) {
           _firstPublishedAt
           slug
           title

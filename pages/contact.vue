@@ -61,6 +61,8 @@ import ImageDynamic from "~/components/ImageDynamic";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import LocationColumn from "~/components/LocationColumn";
 // import locations from "~/data/locations";
+import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   components: {
@@ -70,12 +72,26 @@ export default {
     LoadingSpinner,
     LocationColumn
   },
-  // data: () => ({ locations })
-  // data: () => ({ contacts: this.$store.state.contactData })
+  mixins: [head],
+  apollo: {
+    contactPage: gql`
+      {
+        contactPage {
+          ${metaTagsQuery}
+        }
+      }
+    `
+  },
   data() {
     return {
       contacts: this.$store.state.contactData
     };
+  },
+  computed: {
+    /* assign page to the gql query containing the meta tags */
+    page() {
+      return !this.$apollo.loading && this.$apollo.data.contactPage;
+    }
   }
 };
 </script>

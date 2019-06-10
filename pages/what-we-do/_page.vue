@@ -16,6 +16,7 @@ import ContentColumn from "~/components/ContentColumn";
 import HeroBlocksWhat from "~/components/HeroBlocksWhat.vue";
 import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -24,6 +25,7 @@ export default {
         query whatSubpage($slug: String!) {
           whatSubpage(filter: { slug: { eq: $slug } }) {
             body
+            ${metaTagsQuery}
           }
         }
       `,
@@ -43,6 +45,13 @@ export default {
     ContentColumn,
     HeroBlocksWhat,
     LoadingSpinner
+  },
+  mixins: [head],
+  computed: {
+    /* assign page to the gql query containing the meta tags */
+    page() {
+      return !this.$apollo.loading && this.$apollo.data.whatSubpage;
+    }
   }
 };
 </script>
