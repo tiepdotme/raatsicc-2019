@@ -6,8 +6,8 @@
 html {
   @apply bg-brand-primary;
   background-image: linear-gradient(to bottom, rgba(222, 202, 178, 0.9), #f4f3ef 70%);
+  background-image: linear-gradient(to bottom, rgba(178, 216, 222, 0.9), #eae9e4 70%);
   background-image: linear-gradient(to bottom, rgba(222, 202, 178, 0.9), #eae9e4 70%);
-  /* background-image: linear-gradient(to bottom, rgba(178, 216, 222, 0.9), #eae9e4 70%); */
 }
 
 body {
@@ -46,69 +46,3 @@ main.container:before {
   }
 }
 
-/*
-
-  Section spacers
-
-*/
-.Section {
-  @apply pt-8;
-}
-
-.Section-footer {
-  @apply pt-12 pb-8;
-}
-
-.Subsection {
-  @apply pt-6;
-}
-
-.Section-rule {
-  @apply border-b border-gray-300 m-0 mt-8;
-}
-
-.Definite-rule {
-  @apply border-b border-gray-500 m-0 mt-8;
-}
-
-.Rule {
-  @apply border-b border-gray-300 m-0;
-}
-
-@screen sm {
-  .Section {
-    @apply pt-12;
-  }
-
-  .Section-footer {
-    @apply pt-20 pb-12;
-  }
-
-  .Subsection {
-    @apply pt-8;
-  }
-
-  .Section-rule {
-    @apply mt-12;
-  }
-
-  .Definite-rule {
-    @apply mt-12;
-  }
-}
-
-/*
-
-  Post excerpts
-  (News index & archive pages)
-
-*/
-.Post + .Post {
-  @apply pt-8;
-}
-
-@screen sm {
-  .Post + .Post {
-    @apply pt-12;
-  }
-}

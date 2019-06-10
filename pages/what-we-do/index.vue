@@ -9,7 +9,7 @@
     </ContentColumn>
     <ContentColumn>
       <div class="Markdown" v-html="$md.render(whatPage.lede)" />
-      <div class="Markdown st-paragraph">
+      <div class="Markdown st-p">
         <ul v-if="allWhatSubpages">
           <li v-for="item in allWhatSubpages" :key="item.title">
             <nuxt-link :to="`/what-we-do/${item.slug}`">

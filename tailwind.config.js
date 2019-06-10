@@ -111,6 +111,21 @@ module.exports = {
       "5xl": "3rem",
       "6xl": "4rem"
     },
+    /* Corresponding to breakpoints */
+    responsiveScale: {
+      textXs: "0.875",
+      textSm: "0.95",
+      textMd: "1",
+      titleXs: "0.75",
+      titleSm: "0.9",
+      titleMd: "1",
+      blockXs: "0.75",
+      blockSm: "0.9",
+      blockMd: "1",
+      spaceXs: "0.75",
+      spaceSm: "0.9",
+      spaceMd: "1"
+    },
     fontWeight: {
       hairline: "100",
       thin: "200",

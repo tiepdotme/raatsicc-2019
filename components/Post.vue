@@ -12,7 +12,7 @@
           {{ title }}
         </span>
       </h1>
-      <div class="Meta-gray sb-heading">
+      <div class="Meta-gray s-h">
         <time :date-time="date">{{ date | moment("ddd, MMMM Do YYYY") }}</time>
         <!-- <span class="mx-0 font-thin text-gray-500">|</span> -->
         <!-- <cite class="not-italic">{{ author }}</cite> -->
@@ -38,7 +38,7 @@
       <div class="Markdown" v-html="$md.render(body)" />
 
       <!-- if button -->
-      <p v-if="button" class="st-cta-button">
+      <p v-if="button" class="st-m">
         <a
           :href="buttonLink"
           target="_blank"
@@ -46,7 +46,7 @@
           class="Button"
         >
           {{ buttonLabel }}
-          <icon name="arrow-forward" height="14" width="14" class="ml-1" />
+          <icon name="arrow-forward" height="14" width="14" class="st-m ml-1" />
         </a>
       </p>
 

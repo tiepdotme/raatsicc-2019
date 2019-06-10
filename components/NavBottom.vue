@@ -1,5 +1,5 @@
 <template>
-  <footer class="container Section-footer">
+  <footer class="container Section--footer">
     <div class="container-inner">
       <hr class="Rule mt-4" />
       <nav class="Nav">
@@ -33,7 +33,7 @@
             <!-- copyright -->
             <hr class="Rule mt-8 mb-4" />
             <div class="sm:w-5/6 lg:w-9/12">
-              <p class="Meta-gray s-meta">
+              <p class="Meta-gray s-m">
                 RAATSICC acknowledge the traditional custodians of the lands on
                 which we live and work and pay respect to our Elders: past,
                 present and future.

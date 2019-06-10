@@ -12,7 +12,7 @@
       <time v-else :date-time="date">
         {{ date | moment("ddd, MMMM Do YYYY") }}
       </time>
-      <span v-if="location" class="st-meta">
+      <span v-if="location" class="st-m">
         <span class="mx-px font-thin opacity-50">|</span>
         {{ location }}
       </span>

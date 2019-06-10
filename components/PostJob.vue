@@ -7,7 +7,7 @@
       Applications close
       <time :date-time="date">{{ date | moment("ddd, MMMM Do YYYY") }}</time>
     </p>
-    <p v-if="location" class="st-meta">
+    <p v-if="location" class="st-m">
       <span class="Job-attribute Meta">Location:</span>
       {{ location }}
     </p>
@@ -23,12 +23,12 @@
       <span class="Job-attribute Meta">Program:</span>
       {{ program }}
     </p>
-    <p v-if="note" class="text-gray st-meta">
+    <p v-if="note" class="text-gray st-m">
       <!-- <span class="Job-attribute Meta-gray">Note:</span> -->
       {{ note }}
     </p>
-    <p v-if="pdf" class="st-meta">
-      <a :href="pdf" target="_blank" class="Button Button--blue mt-2">
+    <p v-if="pdf" class="st-m">
+      <a :href="pdf" target="_blank" class="Button Button--blue st-m">
         Apply&nbsp;
         <icon name="arrow-forward" height="14" width="14" />
       </a>

@@ -9,7 +9,7 @@
     </ContentColumn>
     <ContentColumn v-if="aboutPage" id="team" text>
       <div class="Markdown" v-html="$md.render(aboutPage.team)" />
-      <div class="Grid Grid--sm flex-row flex-wrap Subsection">
+      <div class="Grid Grid--sm flex-row flex-wrap Section-md">
         <CardTeamMember
           v-for="item in aboutPage.teamGrid"
           :key="item.name"

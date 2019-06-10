@@ -22,7 +22,7 @@
       </div>
     </ContentColumn>
 
-    <hr class="Section-rule" />
+    <hr class="Rule" />
 
     <ContentColumn>
       <div class="Grid">

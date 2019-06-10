@@ -1,21 +1,30 @@
-/* https://next.tailwindcss.com/docs/installation */
+/*
+ * https://next.tailwindcss.com/docs/installation
+ *
+ * @tailwind directives cannot come before @import so they exist in seperate
+ * files under `tailwind/`
+ */
 
+
+/* Tailwind base & components */
+@import "./tailwind/base.css";
+
+/* Custom components */
 @import "./theme/font-face";
+@import "./theme/icon";
 @import "./theme/layout";
+@import "./theme/layout-rule";
 @import "./theme/layout-grid";
+@import "./theme/layout-section";
 @import "./theme/typography";
-@import "./theme/typography-spacing";
-@import "./theme/button2";
+@import "./theme/button";
 @import "./theme/loading";
 @import "./theme/page-transitions";
-@import "./theme/icon";
 
-@tailwind base;
+/* Tailwind utils */
+@import "./tailwind/utilities.css";
 
-@tailwind components;
-
-/* …custom component classes; stuff that you'd want loaded *before* the utilities */
-
-@tailwind utilities;
-
-/* …finally, custom utils */
+/* Custom utils */
+@import "./theme/typography-scale";
+@import "./theme/typography-spacing2";
+@import "./theme/aria";

@@ -1,20 +1,133 @@
+/* iremono */
 .Button {
-  @apply inline-flex items-center px-5;
-  @apply text-brand-primary font-medium no-underline;
-  @apply border border-brand-primary rounded-sm;
-  height: 38px;
+  --button-bg-color: theme(colors.brand.primary);
+  --button-bg-color-hover: var(--button-bg-color);
+  --button-border-color: var(--button-bg-color);
+  --button-border-width: 1px;
+  --button-border-radius: 2px;
+  --button-box-shadow-color: var(--button-bg-color);
+  --button-box-shadow-stroke-hover: 1px;
+  --button-box-shadow-stroke-active: 2px;
+  --button-box-shadow-stroke-inset: 1px;
+  --button-color: theme(colors.white);
+  --button-disabled-opacity: 0.6;
+  --button-font-case: initial;
+  --button-font-weight: 500;
+  --button-height: 36px;
+  --button-inline-spacing: 0;
+  --button-padding-x: 1em;
+
+  align-items: center;
+  background-color: var(--button-bg-color);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  border-style: solid;
+  border-width: var(--button-border-width);
+  box-sizing: border-box;
+  color: var(--button-color);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: var(--button-font-weight);
+  height: var(--button-height);
+  justify-content: center;
+  margin: 0;
+  padding: 0 var(--button-padding-x);
+  position: relative;
+  text-decoration: none;
+  text-transform: var(--button-font-case);
+  user-select: none;
+  /* responsive alignment of button text (every font has different leading settings) */
   padding-bottom: 2px;
+  padding-bottom: 0.133333333em;
 }
 
+/*
+  UI states
+ */
+
+.Button:hover,
 .Button:focus,
 .Button:active {
+  background-color: var(--button-bg-color-hover);
   outline: 0;
+  text-decoration: none;
 }
 
 .Button:hover {
-  box-shadow: theme(color.text-brand-primary) 0 0 0 1px;
+  box-shadow:
+    var(--button-box-shadow-color) 0 0 0 var(--button-box-shadow-stroke-hover);
 }
 
+.Button:active,
 .Button:focus {
-  box-shadow: theme(color.text-brand-primary) 0 0 0 2px;
+  box-shadow:
+    var(--button-box-shadow-color) 0 0 0 var(--button-box-shadow-stroke-active);
+}
+
+/*
+  with icons
+ */
+
+.Button > svg {
+  transform: translateY(0.0625em) !important;
+}
+
+/*
+  sizes
+ */
+
+.Button--sm {
+  --button-height: 34px;
+}
+
+.Button--lg {
+  --button-height: 60px;
+}
+
+/*
+  variations
+ */
+
+.Button--blue {
+  --button-bg-color: theme(colors.brand.blue);
+}
+
+.Button--white {
+  --button-bg-color: theme(colors.white);
+  --button-color: theme(colors.black);
+}
+
+.Button--outline {
+  --button-bg-color: transparent;
+  --button-color: theme(colors.brand.primary);
+  --button-border-color: theme(colors.brand.primary);
+  --button-box-shadow-color: theme(colors.brand.primary);
+  /* @apply bg-transparent text-white border border-white; */
+}
+
+.Button--input {
+  --button-bg-color: white;
+  --button-color: theme(colors.text);
+  --button-border-width: 0;
+  --button-box-shadow-color: theme(colors.brand.blue);
+  /* @apply bg-transparent text-white border border-white; */
+}
+
+/*
+
+  Inline button spacing
+
+ */
+
+button + button,
+.Button + .Button {
+  @apply mt-2;
+}
+
+@screen sm {
+  button + button,
+  .Button + .Button {
+    @apply mt-0 ml-3;
+  }
 }

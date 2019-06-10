@@ -25,7 +25,7 @@
         </nuxt-link>
       </p>
     </ContentColumn>
-    <hr class="Section-rule" />
+    <hr class="Rule" />
     <ContentColumn>
       <!-- <div class="Grid">
         <div class="Grid-item sm:w-1/2">

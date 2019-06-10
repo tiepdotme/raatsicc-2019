@@ -30,7 +30,7 @@
       </ContentColumn>
       <ContentColumn v-if="volunteerPage" text>
         <div class="Markdown" v-html="$md.render(volunteerPage.body)" />
-        <p class="Subsection">
+        <p class="Section-md">
           <a
             v-for="item in volunteerPage.pdfs"
             :key="item.pdfLabel"
