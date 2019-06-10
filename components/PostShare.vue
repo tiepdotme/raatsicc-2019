@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hr class="Section--rule Rule" />
+    <hr class="Section--rule Rule mb-4" />
     <div class="flex flex-col sm:flex-row justify-between mb-4 text-gray">
       <div class="flex">
         <span class="mr-3">Share this article:</span>

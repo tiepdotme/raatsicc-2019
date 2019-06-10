@@ -43,10 +43,10 @@
           :href="buttonLink"
           target="_blank"
           rel="noopener noreferrer"
-          class="Button"
+          class="Button st-m"
         >
           {{ buttonLabel }}
-          <icon name="arrow-forward" height="14" width="14" class="st-m ml-1" />
+          <icon name="arrow-forward" height="14" width="14" class="ml-1" />
         </a>
       </p>
 
