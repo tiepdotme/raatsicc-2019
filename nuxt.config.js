@@ -1,5 +1,5 @@
 const pkg = require("./package");
-const path = require("path");
+// const path = require("path");
 import config from "./config";
 
 const baseURL = config.PROD ? config.SITE_URL : "http://localhost";
@@ -51,7 +51,8 @@ module.exports = {
     "@nuxtjs/apollo",
     "@nuxtjs/axios",
     "portal-vue/nuxt",
-    "@nuxtjs/markdownit"
+    "@nuxtjs/markdownit",
+    "@nuxtjs/sitemap"
   ],
 
   /* env: {
@@ -84,6 +85,11 @@ module.exports = {
     html: true,
     linkify: true,
     use: ["markdown-it-attrs"]
+  },
+
+  /* https://github.com/nuxt-community/sitemap-module */
+  sitemap: {
+    hostname: config.SITE_URL
   },
 
   /*
