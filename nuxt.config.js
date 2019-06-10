@@ -54,11 +54,11 @@ module.exports = {
     "@nuxtjs/markdownit"
   ],
 
-  env: {
+  /* env: {
     // LAMBDA_FUNCTIONS_BASE_URL: process.env.LAMBDA_FUNCTIONS_BASE_URL,
     // CONTACT_FORM_TO: process.env.CONTACT_FORM_TO,
     DATO_API_TOKEN: process.env.DATO_API_TOKEN
-  },
+  }, */
 
   proxy: {
     "/.netlify": {

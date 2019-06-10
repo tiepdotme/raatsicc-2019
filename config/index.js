@@ -12,5 +12,5 @@ export default {
   SITE_URL: "https://www.raatsicc.org.au",
 
   // Read only token
-  DATO_CMS_API_TOKEN: "512356dde044c448b976d360f3c789"
+  DATO_CMS_API_TOKEN: "55524c93dac61709c12e1514c04412"
 };
