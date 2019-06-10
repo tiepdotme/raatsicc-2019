@@ -16,9 +16,9 @@
 }
 
 .Section--rule {
-  padding-top: calc(theme(spacing.8) * var(--block-size-ratio));
+  /* padding-top: calc(theme(spacing.8) * var(--block-size-ratio)); */
   margin-top: calc(theme(spacing.12) * var(--block-size-ratio));
-  margin-bottom: calc(theme(spacing.4) * var(--block-size-ratio));
+  /* margin-bottom: calc(theme(spacing.4) * var(--block-size-ratio)); */
 }
 
 .Section-md {

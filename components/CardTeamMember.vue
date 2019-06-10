@@ -9,7 +9,7 @@
       <img
         v-else
         src="https://www.datocms-assets.com/11614/1557801537-logo-symbol.png?w=150&q=40&fm=png&auto=format"
-        alt="RAATSICC logo as a placeholder for the tea member portrait"
+        alt="RAATSICC logo as a placeholder for the team member portrait"
         class="Card-image-placeholder"
       />
     </Aspect>
@@ -32,7 +32,7 @@ export default {
 
 <style lang="postcss" scoped>
 .Card:nth-of-type(2),
-.Card:nth-of-type(4) {
+.Card:nth-of-type(3) {
   @apply mb-3;
 }
 
@@ -53,7 +53,8 @@ export default {
 }
 
 @screen sm {
-  .Card:nth-of-type(2) {
+  .Card:nth-of-type(2),
+  .Card:nth-of-type(3) {
     @apply mb-4;
   }
 }
