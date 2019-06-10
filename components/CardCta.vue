@@ -7,15 +7,15 @@
         width="30"
         class="Card-icon"
       />
-      <div class="Card-heading Metaheading">
+      <div class="Card-heading Metaheading st-p">
         {{ lede }}
         <br />
         <span class="font-medium" v-html="sublede" />
       </div>
     </div>
     <!-- button or form -->
-    <NewsletterForm v-if="cardName === 'newsletter'" />
-    <CfdLink v-else :to="to" :href="href" class="Card-link">
+    <FormNewsletter v-if="cardName === 'newsletter'" />
+    <CfdLink v-else :to="to" :href="href" class="Card-link Text">
       {{ linkLabel }}
       <icon name="arrow-forward" height="14" width="14" />
     </CfdLink>
@@ -24,12 +24,12 @@
 
 <script>
 import CfdLink from "@/components/CfdLink";
-import NewsletterForm from "@/components/NewsletterForm";
+import FormNewsletter from "@/components/FormNewsletter";
 
 export default {
   components: {
     CfdLink,
-    NewsletterForm
+    FormNewsletter
   },
   props: {
     /*
@@ -94,10 +94,6 @@ export default {
 
 .Card-body {
   @apply px-4 py-4 my-1;
-}
-
-.Card-heading {
-  @apply mt-4;
 }
 
 .Card-icon,
