@@ -4,9 +4,14 @@
       <LoadingSpinner />
     </div>
     <ContentColumn v-else>
-      <img
+      <!-- <img
         src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg?w=1200&q=50&auto=format"
         alt="RAATSICC offices in Far North Queensland"
+      /> -->
+      <ImageDynamic
+        src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg"
+        alt="RAATSICC offices in Far North Queensland"
+        class="Extract"
       />
       <!-- locations -->
       <div class="mt-6">
@@ -22,11 +27,11 @@
       </div>
     </ContentColumn>
 
-    <hr class="Rule" />
+    <hr class="Section--rule Rule mb-0" />
 
     <ContentColumn>
       <div class="Grid">
-        <div class="Grid-item w-1/2">
+        <div class="Grid-item w-full sm:w-1/2">
           <CardCta
             card-name="facebook"
             lede="Follow us on Facebook"
@@ -35,7 +40,7 @@
             href="http://www.facebook.com/raatsicc"
           />
         </div>
-        <div class="Grid-item w-1/2">
+        <div class="Grid-item w-full sm:w-1/2">
           <CardCta
             card-name="news"
             lede="News to share?"
@@ -52,6 +57,7 @@
 <script>
 import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn";
+import ImageDynamic from "~/components/ImageDynamic";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import LocationColumn from "~/components/LocationColumn";
 // import locations from "~/data/locations";
@@ -60,6 +66,7 @@ export default {
   components: {
     CardCta,
     ContentColumn,
+    ImageDynamic,
     LoadingSpinner,
     LocationColumn
   },
@@ -72,3 +79,18 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+.Extract {
+  left: calc(-50vw + 50%);
+  position: relative;
+  width: 100vw;
+}
+
+@screen sm {
+  .Extract {
+    @apply w-full;
+    left: auto;
+  }
+}
+</style>

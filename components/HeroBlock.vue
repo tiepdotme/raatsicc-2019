@@ -7,7 +7,7 @@
     :class="rootClasses"
   >
     <!-- reactive image didn't work in assets -->
-    <img
+    <ImageDynamic
       class="Block-image"
       :class="imageOpacityClass"
       :src="`${image}`"
@@ -31,8 +31,12 @@
 </template>
 
 <script>
+import ImageDynamic from "~/components/ImageDynamic";
+
 export default {
-  components: {},
+  components: {
+    ImageDynamic
+  },
   props: {
     image: String,
     label: String,
@@ -98,10 +102,17 @@ export default {
 }
 
 .Block-image {
-  @apply absolute inset-0 h-full w-full object-cover;
+  @apply absolute inset-0 w-full h-full object-cover;
   mix-blend-mode: multiply;
   transition: transform 250ms ease;
 }
+/* reach into ImageDynamic img */
+/* see: https://www.notion.so/callum/deep-deprecation-it-s-never-part-of-the-compiled-css-so-don-t-worry-24395f233aac4b769d47546f3c2bd7db */
+/* update: css'd in ImageDynamic */
+/* .Block-image ::v-deep img, */
+/* .Block-image /deep/ img {
+  @apply object-cover;
+} */
 
 .Block:hover .Block-image {
   transform: scale(1.025);

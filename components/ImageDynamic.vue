@@ -1,6 +1,6 @@
 <template>
   <no-ssr>
-    <span>
+    <figure>
       <!-- SVG blur -->
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="hidden">
         <defs>
@@ -15,7 +15,7 @@
         :src-placeholder="urlPlaceholder"
         :srcset="srcset"
       />
-    </span>
+    </figure>
   </no-ssr>
 </template>
 
@@ -34,7 +34,7 @@
  */
 
 // const optimizeParams = "fit=crop&crop=edges&auto=format,enhance&q=50";
-const optimizeParams = "auto=format,enhance&q=33";
+const optimizeParams = "auto=format&q=33";
 const sizes = [480, 640, 960, 1200];
 
 export default {
@@ -62,7 +62,7 @@ export default {
   computed: {
     deviation() {
       return this.blurLevel * this.rate;
-    },
+    }
   },
   created() {
     const maxWidth = this.maxWidth || sizes[sizes.length - 1];
@@ -72,7 +72,7 @@ export default {
     this.srcset = sizes
       .filter(size => size <= maxWidth)
       .map(size => `${url}&w=${size * 1.5} ${size}w`)
-      .join(', ');
+      .join(", ");
   },
   methods: {
     animate() {
@@ -91,7 +91,7 @@ export default {
 
       requestAnimationFrame(step);
     }
-  },
+  }
 };
 </script>
 
@@ -109,5 +109,9 @@ export default {
 }
 .v-lazy-image-loaded {
   filter: none;
+}
+
+img {
+  @apply object-cover;
 }
 </style>
