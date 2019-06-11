@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ContentColumn v-if="constitutionPage" text>
-      <div class="Markdown" v-html="$md.render(constitutionPage.body)" />
+    <ContentColumn v-if="page" text>
+      <div class="Markdown" v-html="$md.render(page.body)" />
     </ContentColumn>
   </div>
 </template>
@@ -13,9 +13,9 @@ import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
-    constitutionPage: gql`
+    page: gql`
       {
-        constitutionPage {
+        page: constitutionPage {
           body
           ${metaTagsQuery}
         }
@@ -26,12 +26,7 @@ export default {
     ContentColumn
   },
   mixins: [head],
-  computed: {
-    /* assign page to the gql query containing the meta tags */
-    page() {
-      return !this.$apollo.loading && this.$apollo.data.constitutionPage;
-    }
-  }
+  data: () => ({ page: null })
 };
 </script>
 

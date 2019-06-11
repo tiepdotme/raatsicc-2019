@@ -5,18 +5,18 @@
     </div>
     <HeroStripe
       v-else
-      :image="`${jobsPage.heroImage.url}?w=500&q=40&auto=format`"
-      :alt="jobsPage.heroTitle"
+      :image="`${page.heroImage.url}?w=500&q=40&auto=format`"
+      :alt="page.heroTitle"
       color="blue"
     >
       <div class="container bg-transparent">
         <ContentColumn class="relative">
           <div class="py-4">
             <h1 class="Title text-white">
-              {{ jobsPage.heroTitle }}
+              {{ page.heroTitle }}
             </h1>
             <p class="Subheading italic text-white">
-              {{ jobsPage.heroSubtitle }}
+              {{ page.heroSubtitle }}
             </p>
           </div>
         </ContentColumn>
@@ -63,9 +63,9 @@ export default {
         }
       }
     `,
-    jobsPage: gql`
+    page: gql`
       {
-        jobsPage {
+        page: jobsPage {
           heroImage {
             url
           }
@@ -82,7 +82,7 @@ export default {
     PostArchiveLink,
     PostExcerpt
   },
-  data: () => ({ allPosts: [] }),
+  data: () => ({ allPosts: [], page: null }),
   computed: {
     posts() {
       // map, reduce or filter:

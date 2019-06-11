@@ -6,7 +6,7 @@
       <LoadingSpinner />
     </div>
     <ContentColumn v-else>
-      <div class="Markdown" v-html="$md.render(whatSubpage.body)" />
+      <div class="Markdown" v-html="$md.render(page.body)" />
     </ContentColumn>
   </div>
 </template>
@@ -20,10 +20,10 @@ import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
-    whatSubpage: {
+    page: {
       query: gql`
-        query whatSubpage($slug: String!) {
-          whatSubpage(filter: { slug: { eq: $slug } }) {
+        query page($slug: String!) {
+          page: whatSubpage(filter: { slug: { eq: $slug } }) {
             body
             ${metaTagsQuery}
           }
@@ -47,12 +47,7 @@ export default {
     LoadingSpinner
   },
   mixins: [head],
-  computed: {
-    /* assign page to the gql query containing the meta tags */
-    page() {
-      return !this.$apollo.loading && this.$apollo.data.whatSubpage;
-    }
-  }
+  data: () => ({ page: null })
 };
 </script>
 

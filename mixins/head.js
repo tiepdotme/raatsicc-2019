@@ -16,7 +16,15 @@ export const metaTagsQuery = `
 
 export default {
   head() {
-    const { metaTags } = this.page;
+    const metaTags = this.page && this.page.metaTags;
+
+    if (!metaTags) {
+      // On client side render (or pages where this.page is not set)
+      // this.page will not be defined on first head() call
+      // This is not an issue when generating static site as all pages are
+      // rendered server side, no client side navigation occurs
+      return {};
+    }
 
     return {
       /* prettier-ignore */

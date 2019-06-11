@@ -5,13 +5,13 @@
       <LoadingSpinner />
     </div>
     <ContentColumn v-else id="story" text>
-      <div class="Markdown" v-html="$md.render(aboutPage.story)" />
+      <div class="Markdown" v-html="$md.render(page.story)" />
     </ContentColumn>
-    <ContentColumn v-if="aboutPage" id="team" text>
-      <div class="Markdown" v-html="$md.render(aboutPage.team)" />
+    <ContentColumn v-if="page" id="team" text>
+      <div class="Markdown" v-html="$md.render(page.team)" />
       <div class="Grid Grid--sm flex-row flex-wrap Section-md">
         <CardTeamMember
-          v-for="item in aboutPage.teamGrid"
+          v-for="item in page.teamGrid"
           :key="item.name"
           :title="item.title"
           :image="item.portrait"
@@ -21,7 +21,7 @@
         ></CardTeamMember>
       </div>
     </ContentColumn>
-    <ContentColumn v-if="aboutPage" id="constitution" text>
+    <ContentColumn v-if="page" id="constitution" text>
       <div class="Markdown">
         <h2>Our Constitution</h2>
         <p>
@@ -33,8 +33,8 @@
         </p>
       </div>
     </ContentColumn>
-    <ContentColumn v-if="aboutPage" id="member" text>
-      <div class="Markdown" v-html="$md.render(aboutPage.membership)" />
+    <ContentColumn v-if="page" id="member" text>
+      <div class="Markdown" v-html="$md.render(page.membership)" />
     </ContentColumn>
   </div>
 </template>
@@ -48,10 +48,17 @@ import gql from "graphql-tag";
 import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
+  components: {
+    CardTeamMember,
+    ContentColumn,
+    HeroBlocksAbout,
+    LoadingSpinner
+  },
+  mixins: [head],
   apollo: {
-    aboutPage: gql`
+    page: gql`
       {
-        aboutPage {
+        page: aboutPage {
           story
           team
           membership
@@ -73,24 +80,6 @@ export default {
       }
     `
   },
-  components: {
-    CardTeamMember,
-    ContentColumn,
-    HeroBlocksAbout,
-    LoadingSpinner
-  },
-  mixins: [head],
-  data: () => ({ aboutPage: null }),
-  mounted() {
-    this.$nextTick(() => {
-      this.page = this.$apollo.data.aboutPage;
-    });
-  }
-  /* computed: {
-    // assign page to the gql query containing the meta tags
-    page() {
-      return this.$apollo.data && this.$apollo.data.aboutPage;
-    }
-  } */
+  data: () => ({ page: null })
 };
 </script>

@@ -76,7 +76,6 @@ import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
 import head, { metaTagsQuery } from "~/mixins/head";
-// import config from "../config";
 
 export default {
   components: {
@@ -105,25 +104,14 @@ export default {
         }
       }
     `,
-    homePage: gql`
+    page: gql`
       {
-        homePage {
+        page: homePage {
           ${metaTagsQuery}
         }
       }
     `
   },
-  data: () => ({ allPosts: [], homePage: null }),
-  mounted() {
-    this.$nextTick(() => {
-      this.page = this.$apollo.data.homePage;
-    });
-  }
-  /* computed: {
-    // assign page to the gql query containing the meta tags
-    page() {
-      return this.$apollo.data && this.$apollo.data.homePage;
-    }
-  } */
+  data: () => ({ allPosts: [], page: null })
 };
 </script>

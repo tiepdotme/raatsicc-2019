@@ -1,35 +1,42 @@
 <template>
   <div>
-    <HeroBlocksWhat />
+    <div v-if="$apollo.loading" class="Loading">
+      <LoadingSpinner />
+    </div>
+    <div v-else>
+      <HeroBlocksWhat />
 
-    <ContentColumn text>
-      <h3 class="Heading italic">
-        {{ whatPage.subtitle }}
-      </h3>
-    </ContentColumn>
-    <ContentColumn>
-      <div class="Markdown" v-html="$md.render(whatPage.lede)" />
-      <div class="Markdown st-p">
-        <ul v-if="allWhatSubpages">
-          <li v-for="item in allWhatSubpages" :key="item.title">
-            <nuxt-link :to="`/what-we-do/${item.slug}`">
-              {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </div>
-    </ContentColumn>
+      <ContentColumn text>
+        <h3 class="Heading italic">
+          {{ page.subtitle }}
+        </h3>
+      </ContentColumn>
+      <ContentColumn>
+        <div class="Markdown" v-html="$md.render(page.lede)" />
+        <div class="Markdown st-p">
+          <ul v-if="allWhatSubpages">
+            <li v-for="item in allWhatSubpages" :key="item.title">
+              <nuxt-link :to="`/what-we-do/${item.slug}`">
+                {{ item.title }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </div>
+      </ContentColumn>
+    </div>
   </div>
 </template>
 
 <script>
 import HeroBlocksWhat from "~/components/HeroBlocksWhat.vue";
 import ContentColumn from "~/components/ContentColumn.vue";
+import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
 import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   components: {
+    LoadingSpinner,
     HeroBlocksWhat,
     ContentColumn
   },
@@ -42,9 +49,9 @@ export default {
         }
       }
     `,
-    whatPage: gql`
+    page: gql`
       {
-        whatPage {
+        page: whatPage {
           subtitle
           lede
           ${metaTagsQuery}
@@ -53,12 +60,6 @@ export default {
     `
   },
   mixins: [head],
-  data: () => ({ whatPage: null }),
-  computed: {
-    /* assign page to the gql query containing the meta tags */
-    page() {
-      return !this.$apollo.loading && this.$apollo.data.whatPage;
-    }
-  }
+  data: () => ({ page: null })
 };
 </script>

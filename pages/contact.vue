@@ -74,9 +74,9 @@ export default {
   },
   mixins: [head],
   apollo: {
-    contactPage: gql`
+    page: gql`
       {
-        contactPage {
+        page: contactPage {
           ${metaTagsQuery}
         }
       }
@@ -84,14 +84,9 @@ export default {
   },
   data() {
     return {
-      contacts: this.$store.state.contactData
+      contacts: this.$store.state.contactData,
+      page: null
     };
-  },
-  computed: {
-    /* assign page to the gql query containing the meta tags */
-    page() {
-      return !this.$apollo.loading && this.$apollo.data.contactPage;
-    }
   }
 };
 </script>

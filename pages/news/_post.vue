@@ -48,7 +48,7 @@ import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import Post from "~/components/Post";
 import PostJob from "~/components/PostJob";
 import gql from "graphql-tag";
-import head, { metaTagsQuery } from "~/mixins/head";
+import head from "~/mixins/head";
 
 export default {
   apollo: {
@@ -89,7 +89,6 @@ export default {
                 }
               }
             }
-            ${metaTagsQuery}
           }
         }
       `,
