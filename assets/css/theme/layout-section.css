@@ -39,7 +39,7 @@
     --block-size-ratio: theme(responsiveScale.blockSm);
   }
 }
-@screen md {
+@screen lg {
   :root {
     --block-size-ratio: theme(responsiveScale.blockMd);
   }

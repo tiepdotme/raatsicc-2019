@@ -12,7 +12,7 @@
     --space-ratio: theme(responsiveScale.spaceSm);
   }
 }
-@screen md {
+@screen lg {
   :root {
     --text-ratio: theme(responsiveScale.textMd);
     --title-ratio: theme(responsiveScale.titleMd);

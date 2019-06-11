@@ -137,7 +137,7 @@ export default {
   }
 }
 
-@screen md {
+@screen lg {
   .Block {
     height: calc(100vh * 1 / 4);
   }

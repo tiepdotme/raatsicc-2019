@@ -106,7 +106,7 @@ export default {
   @apply text-sm font-semibold uppercase;
 }
 
-@screen md {
+@screen lg {
   .Nav {
     @apply pt-0;
   }

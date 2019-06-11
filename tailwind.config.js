@@ -2,8 +2,6 @@
 // https://github.com/tailwindcss/tailwindcss/releases/v1.0.0-beta.1#update-your-config-file
 // https://raw.githubusercontent.com/tailwindcss/tailwindcss/next/stubs/defaultConfig.stub.js
 
-// let defaultConfig = require("tailwindcss/defaultConfig");
-
 module.exports = {
   prefix: "",
   important: false,
@@ -62,9 +60,9 @@ module.exports = {
     },
     screens: {
       sm: "640px",
-      md: "768px",
-      lg: "960px",
-      xl: "1040px"
+      // md: "768px",
+      lg: "960px"
+      // xl: "1040px"
     },
     fontFamily: {
       sans: [
@@ -360,17 +358,17 @@ module.exports = {
     }
   },
   variants: {
-    appearance: ["responsive"],
-    backgroundAttachment: ["responsive"],
-    backgroundColor: ["responsive", "hover", "focus"],
-    backgroundPosition: ["responsive"],
-    backgroundRepeat: ["responsive"],
-    backgroundSize: ["responsive"],
-    borderCollapse: [],
-    borderColor: ["responsive", "hover", "focus"],
-    borderRadius: ["responsive"],
-    borderStyle: ["responsive"],
-    borderWidth: ["responsive"],
+    // appearance: ["responsive"],
+    // backgroundAttachment: ["responsive"],
+    // backgroundColor: ["responsive", "hover", "focus"],
+    // backgroundPosition: ["responsive"],
+    // backgroundRepeat: ["responsive"],
+    // backgroundSize: ["responsive"],
+    // borderCollapse: [],
+    // borderColor: ["responsive", "hover", "focus"],
+    // borderRadius: ["responsive"],
+    // borderStyle: ["responsive"],
+    // borderWidth: ["responsive"],
     // cursor: ["responsive"],
     display: ["responsive"],
     flexDirection: ["responsive"],
@@ -383,9 +381,9 @@ module.exports = {
     flexGrow: ["responsive"],
     flexShrink: ["responsive"],
     order: ["responsive"],
-    float: ["responsive"],
-    fontFamily: ["responsive"],
-    fontWeight: ["responsive", "hover", "focus"],
+    // float: ["responsive"],
+    // fontFamily: ["responsive"],
+    // fontWeight: ["responsive", "hover", "focus"],
     height: ["responsive"],
     lineHeight: ["responsive"],
     listStylePosition: ["responsive"],
@@ -417,8 +415,8 @@ module.exports = {
     textDecoration: ["responsive", "hover", "focus"],
     fontSmoothing: ["responsive"],
     letterSpacing: ["responsive"],
-    userSelect: ["responsive"],
-    verticalAlign: ["responsive"],
+    // userSelect: ["responsive"],
+    // verticalAlign: ["responsive"],
     visibility: ["responsive"],
     whitespace: ["responsive"],
     wordBreak: ["responsive"],
