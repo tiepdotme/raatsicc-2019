@@ -5,22 +5,20 @@
     </div>
     <HeroStripe
       v-else
-      :image="`${jobsPage.heroImage.url}?w=500&q=40&auto=format`"
+      :image="jobsPage.heroImage.url"
       :alt="jobsPage.heroTitle"
       color="blue"
     >
-      <div class="container bg-transparent">
-        <ContentColumn class="relative">
-          <div class="py-4">
-            <h1 class="Title text-white">
-              {{ jobsPage.heroTitle }}
-            </h1>
-            <p class="Subheading italic text-white">
-              {{ jobsPage.heroSubtitle }}
-            </p>
-          </div>
-        </ContentColumn>
-      </div>
+      <ContentColumn stripe class="relative">
+        <div class="py-4">
+          <h1 class="Title text-white">
+            {{ jobsPage.heroTitle }}
+          </h1>
+          <p class="Subheading italic text-white">
+            {{ jobsPage.heroSubtitle }}
+          </p>
+        </div>
+      </ContentColumn>
     </HeroStripe>
     <ContentColumn>
       <PostExcerpt

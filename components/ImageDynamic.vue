@@ -112,6 +112,10 @@ export default {
   filter: none;
 }
 
+figure {
+  margin: 0;
+}
+
 img {
   @apply object-cover;
 }

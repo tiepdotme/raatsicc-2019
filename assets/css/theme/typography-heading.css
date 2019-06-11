@@ -10,7 +10,7 @@
 .Title,
 .Heading,
 .Subheading {
-  @apply font-serif font-bold leading-snug tracking-tight;
+  @apply font-serif font-bold tracking-tight;
 }
 
 .Markdown h1,
@@ -21,11 +21,13 @@
 
 .Markdown h2,
 .Heading {
+  @apply leading-snug;
   font-size: calc(theme(fontSize.3xl) * var(--text-ratio));
 }
 
 .Markdown h3,
 .Subheading {
+  @apply leading-normal;
   font-size: calc(theme(fontSize.lg) * var(--text-ratio));
 }
 
