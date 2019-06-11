@@ -17,7 +17,10 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: pkg.description }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    htmlAttrs: {
+      lang: "en"
+    }
   },
 
   /*
@@ -52,6 +55,7 @@ module.exports = {
     "@nuxtjs/axios",
     "portal-vue/nuxt",
     "@nuxtjs/markdownit",
+    "nuxt-purgecss",
     "@nuxtjs/sitemap"
   ],
 
@@ -78,8 +82,6 @@ module.exports = {
     }
   },
 
-  axios: {},
-
   markdownit: {
     injected: true,
     html: true,
@@ -92,10 +94,29 @@ module.exports = {
     hostname: config.SITE_URL
   },
 
+  purgeCSS: {
+    mode: "postcss",
+    extractors: [
+      {
+        extractor: class {
+          static extract(content) {
+            return content.match(/[A-Za-z0–9-_/:]*[A-Za-z0–9-_/]+/g);
+          }
+        },
+        extensions: ["html", "vue", "js"]
+      }
+    ],
+    whitelistPatterns: [
+      /-(leave|enter|appear)(|-(to|from|active))$/,
+      /^(?!cursor-move).+-move$/
+    ]
+  },
+
   /*
    ** Build configuration: extend webpack config here
    */
   build: {
+    // extractCSS: true,
     postcss: {
       // Add plugin names as key and arguments as value
       // Disable a plugin by passing false as value
