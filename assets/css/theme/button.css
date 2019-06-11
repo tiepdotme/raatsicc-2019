@@ -73,6 +73,11 @@
     var(--button-box-shadow-color) 0 0 0 var(--button-box-shadow-stroke-active);
 }
 
+button[disabled] {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
 /*
   with icons
  */

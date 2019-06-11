@@ -13,7 +13,6 @@ module.exports = {
       white: "#fefefe",
       text: "#1a202c",
       textgray: "#858585",
-
       brand: {
         primary: "#d66633",
         blue: "#317884",

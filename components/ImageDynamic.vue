@@ -113,7 +113,7 @@ export default {
 }
 
 figure {
-  margin: 0;
+  @apply m-0;
 }
 
 img {

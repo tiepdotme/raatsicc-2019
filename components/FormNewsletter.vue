@@ -99,6 +99,7 @@ export default {
 .Form-validation {
   @apply font-medium justify-start w-full;
   @apply text-white mt-px;
+  @apply cursor-default;
 }
 .is-good {
   @apply bg-form-good;
