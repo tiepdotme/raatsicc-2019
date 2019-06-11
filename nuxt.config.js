@@ -18,6 +18,18 @@ module.exports = {
       { hid: "description", name: "description", content: pkg.description }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    // preload a webfont
+    // eslint-disable-next-line no-dupe-keys
+    link: [
+      {
+        rel: "preload",
+        href: "/../../fonts/Malabar-LT-W01-Regular.woff",
+        as: "font",
+        type: "font/woff2",
+        // eslint-disable-next-line no-undef
+        crossorigin
+      }
+    ],
     htmlAttrs: {
       lang: "en"
     }
