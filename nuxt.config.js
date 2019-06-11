@@ -26,8 +26,7 @@ module.exports = {
         href: "/../../fonts/Malabar-LT-W01-Regular.woff",
         as: "font",
         type: "font/woff2",
-        // eslint-disable-next-line no-undef
-        crossorigin
+        crossorigin: true
       }
     ],
     htmlAttrs: {
