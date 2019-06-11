@@ -115,5 +115,32 @@ module.exports = {
         });
       }
     }
+  },
+
+  generate: {
+    fallback: "404.html"
+    /* async routes() {
+      const res = await axiosDefaultInstance({
+        url: "/",
+        method: "POST",
+        data: {
+          query: `{
+            allApartments {
+              id
+              slug
+            }
+          }`,
+        },
+      });
+
+      const apartments = res.data.data.allApartments;
+      const apartmentRoutes = apartments
+        .map(apartment => `/apartments/${apartment.slug}`);
+
+      const exploreRoutes = explore.segments
+        .map(segment => `/explore/${segment.slug}`);
+
+      return [...apartmentRoutes, ...exploreRoutes];
+    }, */
   }
 };
