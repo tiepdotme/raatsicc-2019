@@ -41,7 +41,11 @@
               <p class="Meta text-gray">
                 <span>&copy; {{ new Date().getFullYear() }} RAATSICC</span>
                 <span class="font-thin text-gray-500 mx-px">|</span>
-                <a href="https://callumflack.design/" target="_blank">
+                <a
+                  href="https://callumflack.design/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Site by Callum Flack Design
                 </a>
               </p>
