@@ -2,11 +2,9 @@
 
 Uses:
 * Nuxt.js
-* Tailwind
+* Tailwind.css
 * Dato CMS
-* Deployed with Netlify
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3034301e-7c93-40f2-8867-478a267358f2/deploy-status)](https://app.netlify.com/sites/raatsicc/deploys)
+* [![Netlify Status](https://api.netlify.com/api/v1/badges/3034301e-7c93-40f2-8867-478a267358f2/deploy-status)](https://app.netlify.com/sites/raatsicc/deploys)
 
 ## Build Setup
 
