@@ -17,6 +17,7 @@
 @import "./theme/typography-text";
 @import "./theme/typography-heading";
 @import "./theme/layout";
+@import "./theme/layout-rule";
 @import "./theme/layout-grid";
 @import "./theme/layout-container";
 @import "./theme/layout-section";
@@ -27,6 +28,5 @@
 @import "./tailwind/utilities.css";
 
 /* Custom utils */
-@import "./theme/layout-rule";
 @import "./theme/typography-spacing";
 @import "./theme/aria";
