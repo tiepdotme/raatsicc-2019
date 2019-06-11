@@ -25,7 +25,7 @@ module.exports = {
         rel: "preload",
         href: "/../../fonts/Malabar-LT-W01-Regular.woff",
         as: "font",
-        type: "font/woff2",
+        type: "font/woff",
         crossorigin: true
       }
     ],
