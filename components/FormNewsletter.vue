@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <div v-if="successMsg" class="mb-2">
-      <strong>{{ successMsg }}</strong>
-    </div>
-    <div v-if="errorMsg" class="mb-2">
-      <icon name="info" class="text-brand-red" />
-      <strong>{{ errorMsg }}</strong>
-    </div>
+  <div class="">
     <form class="Form" @submit.prevent="handleSubmit">
       <!-- <input
           v-model="formData.name"
@@ -28,6 +21,15 @@
         Sign Up
       </button>
     </form>
+    <div v-if="successMsg" class="Form-validation is-good Button Button--input">
+      <icon name="check-circle" class="mr-1" />
+      <!-- <span>Thanks! You're all signed up.</span> -->
+      <span>{{ successMsg }}</span>
+    </div>
+    <div v-if="errorMsg" class="Form-validation is-bad Button Button--input">
+      <icon name="info" class="mr-1" />
+      <span>{{ errorMsg }}</span>
+    </div>
   </div>
 </template>
 
@@ -91,7 +93,20 @@ export default {
 
 <style lang="postcss" scoped>
 .Form {
-  @apply flex flex-row w-full;
+  @apply flex flex-row w-full relative;
+}
+
+.Form-validation {
+  @apply font-medium justify-start w-full;
+  @apply text-white mt-px;
+}
+.is-good {
+  @apply bg-form-good;
+  box-shadow: theme(colors.form.good) 0 0 0 1px;
+}
+.is-bad {
+  @apply bg-form-bad;
+  box-shadow: theme(colors.form.bad) 0 0 0 1px;
 }
 
 .Button {

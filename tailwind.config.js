@@ -35,6 +35,10 @@ module.exports = {
         700: "#4a5568",
         800: "#2d3748",
         900: "#1a202c"
+      },
+      form: {
+        good: "#38a169",
+        bad: "#e53e3e"
       }
     },
     spacing: {
