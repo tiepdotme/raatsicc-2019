@@ -14,6 +14,7 @@
         :src="url"
         :src-placeholder="urlPlaceholder"
         :srcset="srcset"
+        :alt="alt"
       />
     </figure>
   </no-ssr>
