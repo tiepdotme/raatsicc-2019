@@ -1,6 +1,12 @@
-# raatsicc-2019
+# Raatsicc v4 (2019) website
 
-> My impressive Nuxt.js project
+Uses:
+* Nuxt.js
+* Tailwind
+* Dato CMS
+* Deployed with Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3034301e-7c93-40f2-8867-478a267358f2/deploy-status)](https://app.netlify.com/sites/raatsicc/deploys)
 
 ## Build Setup
 
