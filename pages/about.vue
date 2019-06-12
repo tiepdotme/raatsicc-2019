@@ -54,7 +54,6 @@ export default {
     HeroBlocksAbout,
     LoadingSpinner
   },
-  mixins: [head],
   apollo: {
     page: gql`
       {
@@ -80,6 +79,7 @@ export default {
       }
     `
   },
+  mixins: [head],
   data: () => ({ page: null })
 };
 </script>

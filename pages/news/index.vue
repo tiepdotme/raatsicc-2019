@@ -48,9 +48,9 @@ export default {
         }
       }
     `,
-    newsPage: gql`
+    page: gql`
       {
-        newsPage {
+        page: newsPage {
           ${metaTagsQuery}
         }
       }
@@ -63,12 +63,6 @@ export default {
     PostExcerpt
   },
   mixins: [head],
-  data: () => ({ newsPage: null }),
-  computed: {
-    /* assign page to the gql query containing the meta tags */
-    page() {
-      return !this.$apollo.loading && this.$apollo.data.newsPage;
-    }
-  }
+  data: () => ({ page: null })
 };
 </script>

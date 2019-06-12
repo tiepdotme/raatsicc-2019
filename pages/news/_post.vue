@@ -48,7 +48,7 @@ import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import Post from "~/components/Post";
 import PostJob from "~/components/PostJob";
 import gql from "graphql-tag";
-import head from "~/mixins/head";
+import config from "~/config";
 
 export default {
   apollo: {
@@ -58,6 +58,8 @@ export default {
           post(filter: { slug: { eq: $slug } }) {
             slug
             title
+            # for meta tags
+            excerpt
             datePublished
             isEvent
             isJob
@@ -110,12 +112,24 @@ export default {
     Post,
     PostJob
   },
-  mixins: [head],
-  computed: {
-    /* assign page to the gql query containing the meta tags */
-    page() {
-      return !this.$apollo.loading && this.$apollo.data.post;
-    }
+  head() {
+    return {
+      /* prettier-ignore */
+      title: `RAATSICC News | ${this.post.title}`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `${this.post.description}`
+        }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: `${config.SITE_URL}${this.$route.path}`
+        }
+      ]
+    };
   }
 };
 </script>

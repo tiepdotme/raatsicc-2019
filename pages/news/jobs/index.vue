@@ -45,6 +45,7 @@ import PostArchiveLink from "~/components/PostArchiveLink.vue";
 import PostExcerpt from "~/components/PostExcerpt";
 import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -71,6 +72,7 @@ export default {
           }
           heroTitle
           heroSubtitle
+          ${metaTagsQuery}
         }
       }
     `
@@ -82,6 +84,7 @@ export default {
     PostArchiveLink,
     PostExcerpt
   },
+  mixins: [head],
   data: () => ({ allPosts: [], page: null }),
   computed: {
     posts() {
