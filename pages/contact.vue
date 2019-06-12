@@ -8,11 +8,13 @@
         src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg?w=1200&q=50&auto=format"
         alt="RAATSICC offices in Far North Queensland"
       /> -->
-      <ImageDynamic
-        src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg"
-        alt="RAATSICC offices in Far North Queensland"
-        class="Extract"
-      />
+      <Aspect ratio="536/607">
+        <ImageDynamic
+          src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg"
+          alt="RAATSICC offices in Far North Queensland"
+          class="Extract"
+        />
+      </Aspect>
       <!-- locations -->
       <div class="mt-6">
         <div class="Locations flex flex-column flex-wrap -mx-2">
@@ -55,6 +57,7 @@
 </template>
 
 <script>
+import Aspect from "~/components/Aspect";
 import CardCta from "~/components/CardCta";
 import ContentColumn from "~/components/ContentColumn";
 import ImageDynamic from "~/components/ImageDynamic";
@@ -66,6 +69,7 @@ import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   components: {
+    Aspect,
     CardCta,
     ContentColumn,
     ImageDynamic,

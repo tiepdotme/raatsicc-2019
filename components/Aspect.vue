@@ -1,7 +1,7 @@
 <template>
-  <figure class="Aspect" :ratio="ratio" :style="aspectRatio">
+  <div class="Aspect" :ratio="ratio" :style="aspectRatio">
     <slot />
-  </figure>
+  </div>
 </template>
 
 <script>
