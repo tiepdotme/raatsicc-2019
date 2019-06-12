@@ -5,7 +5,7 @@
     </div>
     <HeroStripe
       v-else
-      :image="${page.heroImage.url"
+      :image="page.heroImage.url"
       :alt="page.heroTitle"
       color="blue"
     >
