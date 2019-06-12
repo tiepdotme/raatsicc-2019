@@ -1,8 +1,27 @@
 const pkg = require("./package");
 // const path = require("path");
 import config from "./config";
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { createHttpLink } from "apollo-link-http";
+import apolloConfig from "./apollo/config";
+import fetch from "node-fetch";
+import gql from "graphql-tag";
 
 const baseURL = config.PROD ? config.SITE_URL : "http://localhost";
+
+// Apollo client for fetching list of routes to generate
+const apolloConfigData = apolloConfig();
+const apolloClient = new ApolloClient({
+  link: createHttpLink({
+    uri: apolloConfigData.httpEndpoint,
+    headers: {
+      Authorization: apolloConfigData.getAuth()
+    },
+    fetch
+  }),
+  cache: new InMemoryCache()
+});
 
 module.exports = {
   mode: "universal",
@@ -121,29 +140,30 @@ module.exports = {
   },
 
   generate: {
-    fallback: "404.html"
-    /* async routes() {
-      const res = await axiosDefaultInstance({
-        url: "/",
-        method: "POST",
-        data: {
-          query: `{
-            allApartments {
-              id
+    fallback: "404.html",
+    async routes() {
+      const data = await apolloClient.query({
+        query: gql`
+          {
+            allWhatSubpages {
               slug
             }
-          }`,
-        },
+            # default 20, max 100
+            # https://www.datocms.com/docs/content-delivery-api/pagination
+            allPosts(first: 100, orderBy: [datePublished_DESC]) {
+              slug
+            }
+          }
+        `
       });
 
-      const apartments = res.data.data.allApartments;
-      const apartmentRoutes = apartments
-        .map(apartment => `/apartments/${apartment.slug}`);
+      const whatWeDoRoutes = data.data.allWhatSubpages.map(
+        page => `/what-we-do/${page.slug}`
+      );
 
-      const exploreRoutes = explore.segments
-        .map(segment => `/explore/${segment.slug}`);
+      const postRoutes = data.data.allPosts.map(page => `/news/${page.slug}`);
 
-      return [...apartmentRoutes, ...exploreRoutes];
-    }, */
+      return [...whatWeDoRoutes, ...postRoutes];
+    }
   }
 };
