@@ -4,7 +4,6 @@ import gql from "graphql-tag";
 export function state() {
   return {
     currentPage: "/",
-    isMobileNavVisible: false,
     contactData: null
   };
 }
@@ -17,10 +16,6 @@ export const mutations = {
 
   SET_CONTACT_DATA(state, data) {
     state.contactData = data;
-  },
-
-  SET_MOBILENAV_VISIBILITY(state, visibility) {
-    state.isMobileNavVisible = visibility;
   }
 };
 

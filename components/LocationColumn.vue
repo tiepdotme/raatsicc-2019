@@ -17,6 +17,7 @@
       v-if="location.googleMapLink"
       :href="location.googleMapLink"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <span class="block">{{ location.streetAddress }}</span>
       <span class="block">{{ location.addressRemaining }}</span>

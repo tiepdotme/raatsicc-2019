@@ -14,6 +14,7 @@
         :src="url"
         :src-placeholder="urlPlaceholder"
         :srcset="srcset"
+        :alt="alt"
       />
     </figure>
   </no-ssr>
@@ -109,6 +110,10 @@ export default {
 }
 .v-lazy-image-loaded {
   filter: none;
+}
+
+figure {
+  @apply m-0;
 }
 
 img {

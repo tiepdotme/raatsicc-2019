@@ -7,7 +7,10 @@
 .Post + .Post,
 .Section {
   padding-top: calc(theme(spacing.12) * var(--block-size-ratio));
+}
 
+.Section-b {
+  padding-bottom: calc(theme(spacing.12) * var(--block-size-ratio));
 }
 
 .Section--footer {
@@ -39,7 +42,7 @@
     --block-size-ratio: theme(responsiveScale.blockSm);
   }
 }
-@screen md {
+@screen lg {
   :root {
     --block-size-ratio: theme(responsiveScale.blockMd);
   }

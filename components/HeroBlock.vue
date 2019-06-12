@@ -6,7 +6,6 @@
     class="Block sm:w-1/2 lg:w-1/4"
     :class="rootClasses"
   >
-    <!-- reactive image didn't work in assets -->
     <ImageDynamic
       class="Block-image"
       :class="imageOpacityClass"
@@ -137,7 +136,7 @@ export default {
   }
 }
 
-@screen md {
+@screen lg {
   .Block {
     height: calc(100vh * 1 / 4);
   }

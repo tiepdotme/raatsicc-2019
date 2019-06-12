@@ -142,10 +142,17 @@ export default {
     width: 108.333333333%;
   }
 }
-@screen xl {
+/* save Tailwind spinning out all xl breakpoint classes… */
+/* @screen xl {
   .Post-image {
     left: calc((theme(screens.xl) * -0.5) + 50%);
     width: theme(screens.xl);
+  }
+} */
+@media (min-width: 1040px) {
+  .Post-image {
+    left: calc((1040px * -0.5) + 50%);
+    width: 1040px;
   }
 }
 </style>

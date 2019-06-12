@@ -6,6 +6,7 @@
       <img
         class="Nav-logo"
         src="https://www.datocms-assets.com/11614/1557801537-logo-symbol.png?w=150&q=40&fm=png&auto=format"
+        alt="RAATSICC logo"
       />
       <IconLogotype class="Nav-logotype"></IconLogotype>
     </nuxt-link>
