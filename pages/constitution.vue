@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ContentColumn v-if="constitutionPage" text>
-      <div class="Markdown" v-html="$md.render(constitutionPage.body)" />
+    <ContentColumn v-if="page" text>
+      <div class="Markdown" v-html="$md.render(page.body)" />
     </ContentColumn>
   </div>
 </template>
@@ -9,20 +9,24 @@
 <script>
 import ContentColumn from "~/components/ContentColumn.vue";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
-    constitutionPage: gql`
+    page: gql`
       {
-        constitutionPage {
+        page: constitutionPage {
           body
+          ${metaTagsQuery}
         }
       }
     `
   },
   components: {
     ContentColumn
-  }
+  },
+  mixins: [head],
+  data: () => ({ page: null })
 };
 </script>
 

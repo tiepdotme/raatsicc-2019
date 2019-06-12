@@ -5,17 +5,17 @@
     </div>
     <HeroStripe
       v-else
-      :image="jobsPage.heroImage.url"
-      :alt="jobsPage.heroTitle"
+      :image="${page.heroImage.url"
+      :alt="page.heroTitle"
       color="blue"
     >
       <ContentColumn stripe class="relative">
         <div class="py-4">
           <h1 class="Title text-white">
-            {{ jobsPage.heroTitle }}
+            {{ page.heroTitle }}
           </h1>
           <p class="Subheading italic text-white">
-            {{ jobsPage.heroSubtitle }}
+            {{ page.heroSubtitle }}
           </p>
         </div>
       </ContentColumn>
@@ -43,6 +43,7 @@ import PostArchiveLink from "~/components/PostArchiveLink.vue";
 import PostExcerpt from "~/components/PostExcerpt";
 import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -61,14 +62,15 @@ export default {
         }
       }
     `,
-    jobsPage: gql`
+    page: gql`
       {
-        jobsPage {
+        page: jobsPage {
           heroImage {
             url
           }
           heroTitle
           heroSubtitle
+          ${metaTagsQuery}
         }
       }
     `
@@ -80,7 +82,8 @@ export default {
     PostArchiveLink,
     PostExcerpt
   },
-  data: () => ({ allPosts: [] }),
+  mixins: [head],
+  data: () => ({ allPosts: [], page: null }),
   computed: {
     posts() {
       // map, reduce or filter:

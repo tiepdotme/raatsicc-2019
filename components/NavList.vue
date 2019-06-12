@@ -6,6 +6,7 @@
       :to="item.link"
       :exact="item.exact"
       class="Nav-link"
+      :class="newsLink"
     >
       <span>{{ item.label }}</span>
     </nuxt-link>
@@ -16,7 +17,17 @@
 import nav from "~/data/nav";
 
 export default {
-  data: () => ({ nav })
+  data: () => ({ nav }),
+  computed: {
+    newsLink() {
+      if (this.$route.name === "news-jobs") {
+        return "is-jobs";
+      } /* else if (this.$apollo.data.post.isJob === true) {
+        return "is-jobs";
+      } */
+      return null;
+    }
+  }
 };
 </script>
 
@@ -37,13 +48,14 @@ export default {
   margin-left: 0;
 }
 
-.page-news-jobs .Nav-link.nuxt-link-active {
+/* [class*="page-news"] */
+.Nav-link.is-jobs.nuxt-link-active {
   @apply text-gray-900 border-transparent;
 }
 
 .Nav-link.nuxt-link-active,
 .Nav-link.nuxt-link-exact-active,
-.page-news-jobs .Nav-link.nuxt-link-exact-active {
+.Nav-link.is-jobs.nuxt-link-exact-active {
   @apply text-brand-primary border-brand-primary;
 }
 </style>

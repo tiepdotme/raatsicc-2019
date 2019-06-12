@@ -25,6 +25,7 @@ import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import PostArchiveLink from "~/components/PostArchiveLink.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -42,6 +43,13 @@ export default {
           }
         }
       }
+    `,
+    page: gql`
+      {
+        page: newsPage {
+          ${metaTagsQuery}
+        }
+      }
     `
   },
   components: {
@@ -50,7 +58,8 @@ export default {
     PostArchiveLink,
     PostExcerpt
   },
-  data: () => ({ allPosts: [] }),
+  mixins: [head],
+  data: () => ({ allPosts: [], page: null }),
   computed: {
     posts() {
       // map, reduce or filter:

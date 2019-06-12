@@ -21,7 +21,6 @@
               &nbsp;/ Protecting Kids Our Way.
             </span> -->
           </h1>
-          <!-- <h2 class="Title Nav-tagline">Protecting Kids Our Way.</h2> -->
           <hr class="Nav-tagline-rule" />
           <NavList />
         </div>
@@ -40,6 +39,10 @@ export default {
     NavLogo
   },
   computed: {
+    /* currentPageClass() {
+      const current = this.$store.state.currentPage.replace(/\//g, "-");
+      return `page${current}`;
+    }, */
     pageLink() {
       if (this.$route.name === "what-we-do") {
         return "/what-we-do";

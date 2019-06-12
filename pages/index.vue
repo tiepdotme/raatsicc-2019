@@ -75,6 +75,7 @@ import HeroBlocksHome from "~/components/HeroBlocksHome.vue";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import PostExcerpt from "~/components/PostExcerpt.vue";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   components: {
@@ -84,6 +85,7 @@ export default {
     LoadingSpinner,
     PostExcerpt
   },
+  mixins: [head],
   apollo: {
     allPosts: gql`
       {
@@ -101,8 +103,15 @@ export default {
           }
         }
       }
+    `,
+    page: gql`
+      {
+        page: homePage {
+          ${metaTagsQuery}
+        }
+      }
     `
   },
-  data: () => ({ allPosts: [] })
+  data: () => ({ allPosts: [], page: null })
 };
 </script>

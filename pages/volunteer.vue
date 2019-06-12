@@ -52,6 +52,7 @@ import ContentColumn from "~/components/ContentColumn.vue";
 import HeroStripe from "~/components/HeroStripe.vue";
 import LoadingSpinner from "~/components/LoadingSpinner.vue";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
@@ -78,12 +79,21 @@ export default {
           }
         }
       }
+    `,
+    page: gql`
+      {
+        page: volunteerPage {
+          ${metaTagsQuery}
+        }
+      }
     `
   },
   components: {
     ContentColumn,
     HeroStripe,
     LoadingSpinner
-  }
+  },
+  mixins: [head],
+  data: () => ({ page: null })
 };
 </script>

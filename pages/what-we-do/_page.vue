@@ -6,7 +6,7 @@
       <LoadingSpinner />
     </div>
     <ContentColumn v-else>
-      <div class="Markdown" v-html="$md.render(whatSubpage.body)" />
+      <div class="Markdown" v-html="$md.render(page.body)" />
     </ContentColumn>
   </div>
 </template>
@@ -16,14 +16,16 @@ import ContentColumn from "~/components/ContentColumn";
 import HeroBlocksWhat from "~/components/HeroBlocksWhat.vue";
 import LoadingSpinner from "~/components/LoadingSpinner";
 import gql from "graphql-tag";
+import head, { metaTagsQuery } from "~/mixins/head";
 
 export default {
   apollo: {
-    whatSubpage: {
+    page: {
       query: gql`
-        query whatSubpage($slug: String!) {
-          whatSubpage(filter: { slug: { eq: $slug } }) {
+        query page($slug: String!) {
+          page: whatSubpage(filter: { slug: { eq: $slug } }) {
             body
+            ${metaTagsQuery}
           }
         }
       `,
@@ -43,7 +45,9 @@ export default {
     ContentColumn,
     HeroBlocksWhat,
     LoadingSpinner
-  }
+  },
+  mixins: [head],
+  data: () => ({ page: null })
 };
 </script>
 
