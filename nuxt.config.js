@@ -83,6 +83,7 @@ module.exports = {
     "@nuxtjs/dotenv",
     "@nuxtjs/apollo",
     "@nuxtjs/axios",
+    // For proxing request to netlify lambda functions
     "@nuxtjs/proxy",
     "portal-vue/nuxt",
     "@nuxtjs/markdownit",
