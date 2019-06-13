@@ -1,42 +1,28 @@
 <template>
-  <div>
-    <NavHeadroom />
-    <main class="container">
-      <nuxt />
-      <div class="__nuxt-error-page">
-        <div class="Section Section-b error">
-          <icon class="text-black" name="info" width="90" height="90" />
+  <div class="__nuxt-error-page">
+    <div class="Block error">
+      <icon class="text-black" name="info" width="90" height="90" />
 
-          <div v-if="statusCode === 404" class="description">
-            <h1 class="Title st-h s-2xh">Page not found - 404</h1>
-            <NuxtLink class="Heading error-link" to="/">
-              <icon name="arrow-left" />
-              Go Back Home
-            </NuxtLink>
-          </div>
-          <div v-else>
-            <div class="Title st-h s-2xh">{{ message }}</div>
-            <p v-if="debug" class="description">
-              {{ messages.client_error_details }}
-            </p>
-          </div>
-        </div>
+      <div v-if="statusCode === 404" class="description">
+        <h1 class="Title st-h s-2xh">Page not found - 404</h1>
+        <NuxtLink class="Heading error-link" to="/">
+          <icon name="arrow-left" />
+          Go Back Home
+        </NuxtLink>
       </div>
-    </main>
-    <NavBottom />
+      <div v-else>
+        <div class="Title st-h s-2xh">{{ message }}</div>
+        <p v-if="debug" class="description">
+          {{ messages.client_error_details }}
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import NavHeadroom from "@/components/NavHeadroom";
-import NavBottom from "@/components/NavBottom";
-
 export default {
   name: "NuxtError",
-  components: {
-    NavHeadroom,
-    NavBottom
-  },
   props: {
     error: {
       type: Object,
@@ -67,12 +53,19 @@ export default {
 </script>
 
 <style>
-.error {
-  /* max-width: 600px;
+.__nuxt-error-page {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; */
+  flex-direction: column;
+}
+.__nuxt-error-page .error {
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 </style>
