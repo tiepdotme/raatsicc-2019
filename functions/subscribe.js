@@ -12,13 +12,14 @@ require("dotenv").config({
 
 const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
 const MAILCHIMP_DATA_CENTER = process.env.MAILCHIMP_DATA_CENTER;
-// Username can be any string
-const MAILCHIMP_USERNAME = "RAATSICC";
+// Enter any string as your username
+// https://developer.mailchimp.com/documentation/mailchimp/guides/get-started-with-mailchimp-api-3/
+const MAILCHIMP_USERNAME = "raatsicc";
 // Mailchimp audience list id
 const MAILCHIMP_LIST_ID = "a7a886c2cd";
 
 /*
- * Subscribe a new user to the seachange audience list
+ * Subscribe a new user to the Mailchimp audience list
  *
  * @api {post}
  *
