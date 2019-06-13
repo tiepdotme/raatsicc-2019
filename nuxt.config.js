@@ -83,6 +83,7 @@ module.exports = {
     "@nuxtjs/dotenv",
     "@nuxtjs/apollo",
     "@nuxtjs/axios",
+    "@nuxtjs/proxy",
     "portal-vue/nuxt",
     "@nuxtjs/markdownit",
     "@nuxtjs/sitemap"
