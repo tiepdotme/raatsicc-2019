@@ -1,5 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
-http://raatsicc.netlify.com/* http://www.raatsicc.org.au/:splat 301!
+https://raatsicc.netlify.com/* https://www.raatsicc.org.au/:splat 301!
 
 # clean URLs in your Netlify deployed SPAs
 /* /index.html 200

@@ -38,7 +38,7 @@
             lede="Follow us on Facebook"
             sublede="Up to the minute news"
             link-label="RAATSICC on Facebook"
-            href="http://www.facebook.com/raatsicc"
+            href="https://www.facebook.com/raatsicc"
           />
         </div>
         <div class="Grid-item w-full sm:w-1/2">
