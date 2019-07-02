@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" :to="to" :href="href">
+  <component :is="type" :to="to" :href="href" :target="target">
     <slot />
   </component>
 </template>
@@ -26,6 +26,9 @@ export default {
       } else {
         return "button";
       }
+    },
+    target() {
+      return this.href ? "_blank" : "";
     }
   }
 };
