@@ -1,5 +1,4 @@
 const pkg = require("./package");
-// const path = require("path");
 import config from "./config";
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
