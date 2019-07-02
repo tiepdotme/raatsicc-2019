@@ -42,6 +42,7 @@ module.exports = {
     },
     spacing: {
       px: "1px",
+      "2px": "2px",
       "0": "0",
       "1": "0.3rem",
       "2": "0.5rem",
@@ -63,7 +64,7 @@ module.exports = {
     },
     screens: {
       sm: "640px",
-      // md: "768px",
+      md: "768px",
       // lg: "960px"
       lg: "1040px"
       // xl: "1040px"
