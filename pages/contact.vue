@@ -8,12 +8,14 @@
         src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg?w=1200&q=50&auto=format"
         alt="RAATSICC offices in Far North Queensland"
       /> -->
-      <Aspect ratio="536/607" class="Extract">
-        <ImageDynamic
-          src="https://www.datocms-assets.com/11614/1557801541-map-locations.jpg"
-          alt="RAATSICC offices in Far North Queensland"
-        />
-      </Aspect>
+      <div class="Extract">
+        <Aspect ratio="536/607">
+          <ImageDynamic
+            src="https://www.datocms-assets.com/11614/1562038359-map-locations-2x-100.jpg"
+            alt="RAATSICC offices in Far North Queensland"
+          />
+        </Aspect>
+      </div>
       <!-- locations -->
       <div class="mt-6">
         <div class="Locations flex flex-column flex-wrap -mx-2">
@@ -22,7 +24,7 @@
             :key="item.streetAddress"
             :location="item"
             details
-            class="px-2 w-1/2 sm:w-1/3"
+            class="px-2 w-full sm:w-1/2"
           />
         </div>
       </div>

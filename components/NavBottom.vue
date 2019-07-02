@@ -42,6 +42,14 @@
                 <span>&copy; {{ new Date().getFullYear() }} RAATSICC</span>
                 <span class="font-thin text-gray-500 mx-px">|</span>
                 <a
+                  href="https://raatsicc.admin.datocms.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Login
+                </a>
+                <span class="font-thin text-gray-500 mx-px">|</span>
+                <a
                   href="https://callumflack.design/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -81,9 +89,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.Locations p:nth-of-type(1),
-.Locations p:nth-of-type(3) {
-  /* margin-bottom: 10vh; */
+/* .Locations p:nth-of-type(1), */
+.Locations p {
   @apply mb-3;
 }
 </style>

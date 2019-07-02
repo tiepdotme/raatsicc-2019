@@ -42,10 +42,9 @@ export const actions = {
           #     name
           #   }
           # }
-          allLocations(orderBy: [order_ASC]) {
+          allLocations(orderBy: [position_ASC]) {
             area
             name
-            order
             streetAddress
             addressRemaining
             phone

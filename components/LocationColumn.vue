@@ -7,7 +7,7 @@
     <span
       v-if="location.name"
       class="block font-semibold"
-      :class="{ 'mb-1': details }"
+      :class="{ 'mb-2px': details }"
     >
       {{ location.name }}
     </span>
@@ -22,10 +22,10 @@
       <span class="block">{{ location.streetAddress }}</span>
       <span class="block">{{ location.addressRemaining }}</span>
     </a>
-    <span v-else>
+    <template v-else>
       <span class="block">{{ location.streetAddress }}</span>
       <span class="block">{{ location.addressRemaining }}</span>
-    </span>
+    </template>
 
     <!-- contacts -->
     <a
@@ -33,7 +33,12 @@
       :href="`mailto:${location.email}`"
       class="block text-gray-600"
     >
-      <icon name="mail-outline" height="12" width="12" />
+      <icon
+        name="mail-outline"
+        height="12"
+        width="12"
+        :class="hideNavBottomIconsOnMobile"
+      />
       {{ location.email }}
     </a>
     <a
@@ -41,14 +46,24 @@
       :href="`tel:${location.phone}`"
       class="block text-gray-600"
     >
-      <icon name="call" height="12" width="12" />
+      <icon
+        name="call"
+        height="12"
+        width="12"
+        :class="hideNavBottomIconsOnMobile"
+      />
       {{ location.phone }}
     </a>
 
     <!-- extra details -->
     <span v-if="details">
       <span v-if="location.fax" class="block text-gray-600">
-        <icon name="move-to-inbox" height="12" width="12" />
+        <icon
+          name="move-to-inbox"
+          height="12"
+          width="12"
+          :class="hideNavBottomIconsOnMobile"
+        />
         {{ location.fax }}
       </span>
       <!-- <span
@@ -84,6 +99,9 @@ export default {
   computed: {
     textSizeClass() {
       return this.details ? "Text mb-4" : "Meta";
+    },
+    hideNavBottomIconsOnMobile() {
+      return !this.details && "hidden lg:inline-block";
     }
   }
 };
