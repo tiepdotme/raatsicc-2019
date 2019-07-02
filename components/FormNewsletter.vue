@@ -1,14 +1,6 @@
 <template>
   <div class="">
     <form class="Form" @submit.prevent="handleSubmit">
-      <!-- <input
-          v-model="formData.name"
-          class="Form-input"
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          required
-        />-->
       <input
         v-model="formData.email"
         class="Button Button--input flex-1"
@@ -84,7 +76,7 @@ export default {
         this.subscribed = true;
         this.successMsg = response.msg;
       } catch (error) {
-        this.errorMsg = "An error occured signing you up";
+        this.errorMsg = "Something went wrong… Please email us about this!";
       }
     }
   }
