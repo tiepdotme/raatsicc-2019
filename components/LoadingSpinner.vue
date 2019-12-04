@@ -40,15 +40,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .spinner {
   display: flex;
   justify-content: center;
   align-items: center;
-  * {
-    line-height: 0;
-    box-sizing: border-box;
-  }
+}
+.spinner * {
+  line-height: 0;
+  box-sizing: border-box;
 }
 .spinner-inner {
   transform-origin: center center;
