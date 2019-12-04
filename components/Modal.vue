@@ -1,8 +1,11 @@
-<template lang="pug">
-  transition(name="Modal")
-    .Modal-backdrop(v-show="show")
-      .Modal
-        slot
+<template>
+  <transition name="Modal">
+    <div v-show="show" class="Modal-backdrop">
+      <div class="Modal">
+        <slot></slot>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>

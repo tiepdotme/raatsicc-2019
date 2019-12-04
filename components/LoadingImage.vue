@@ -1,24 +1,21 @@
-<template lang="pug">
-  figure.image(
-    ref="placeholder"
-    :unmask="unmask"
-    :class="figureClass"
-  )
-    svg.u-hidden(xmlns="http://www.w3.org/2000/svg" version="1.1")
-      defs
-        filter(id="blur" color-interpolation-filters="sRGB" )
-          feGaussianBlur(stdDeviation="0" in="SourceGraphic")
-    //- the low-res image has no alt tag to avoid
-    //- the shitty broken image icon when loading
-    img(
-      :class="['low-rez', {'is-loaded': largeUrl}]"
-      :src="smallUrl"
-    )
-    img(
-      :class="['high-rez', {'is-loaded': largeUrl}]"
+<template>
+  <figure ref="placeholder" class="image" :unmask="unmask" :class="figureClass">
+    <svg class="u-hidden" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="blur" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+      </defs>
+    </svg>
+    <!-- the low-res image has no alt tag to avoid -->
+    <!-- the shitty broken image icon when loading -->
+    <img :class="['low-rez', { 'is-loaded': largeUrl }]" :src="smallUrl" />
+    <img
+      :class="['high-rez', { 'is-loaded': largeUrl }]"
       :src="largeUrl"
       :alt="alt"
-    )
+    />
+  </figure>
 </template>
 
 <script>
